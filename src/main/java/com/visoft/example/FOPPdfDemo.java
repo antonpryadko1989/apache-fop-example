@@ -39,15 +39,14 @@ public class FOPPdfDemo {
 	public static void main(String[] args) {
 
 		FOPPdfDemo fOPPdfDemo = new FOPPdfDemo();
-		
-			try {
-				fOPPdfDemo.convertToPDF("//template-HE.xsl", "//Employees-HE.xml", "//employee-HE.pdf");
-				fOPPdfDemo.convertToPDF("//template-RU.xsl", "//Employees-RU.xml", "//employee-RU.pdf");
-			} catch (IOException | TransformerException | SAXException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		
+
+		try {
+			fOPPdfDemo.convertToPDF("//template-HE.xsl", "//Employees-HE.xml", "//employee-HE.pdf");
+			fOPPdfDemo.convertToPDF("//template-RU.xsl", "//Employees-RU.xml", "//employee-RU.pdf");
+		} catch (IOException | TransformerException | SAXException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	/**
