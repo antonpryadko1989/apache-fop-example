@@ -22,6 +22,7 @@ import org.xml.sax.SAXException;
 
 public class FOPPdfDemo {
 
+	private static final String RESOURCES_TEMPLATE_DIR = "src//main//resources//templates//";
 	private static final String RESOURCES_DIR = "src//main//resources//";
 	private static final String OUTPUT_DIR = "src//main//resources//output//";
 
@@ -31,9 +32,9 @@ public class FOPPdfDemo {
 
 		try {
 
-			String xslPath = "template-HE.xsl";
-			String xmlPath = "Employees-HE.xml";
-			String pdfPath = "employee-HE.pdf";
+			String xmlPath = "XML//NCR_0.xml";
+			String xslPath = "XSL//fo_0.xsl";
+			String pdfPath = "NCR_1.pdf";
 
 			fOPPdfDemo.convertToPDF(xslPath, xmlPath, pdfPath);
 //			fOPPdfDemo.convertToPDF("//template-RU.xsl", "//Employees-RU.xml", "//employee-RU.pdf");
@@ -53,10 +54,10 @@ public class FOPPdfDemo {
 	public void convertToPDF(String template, String dataXML, String outputPDF)
 			throws IOException, TransformerException, SAXException {
 		// the XSL FO file
-		File xsltFile = new File(RESOURCES_DIR + template);
+		File xsltFile = new File(RESOURCES_TEMPLATE_DIR + template);
 		// the XML file which provides the input
 		StreamSource xmlSource = new StreamSource(
-				new File(RESOURCES_DIR + dataXML));
+				new File(RESOURCES_TEMPLATE_DIR + dataXML));
 		// create an instance of fop factory
 		FopFactory fopFactory = FopFactory
 				.newInstance(new File(RESOURCES_DIR + "//userconfig.xml"));

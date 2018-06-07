@@ -12,11 +12,11 @@
 					<font-triplet name="VarelaRound-Regular" style="normal"
 						weight="normal" />
 				</font>
-				<font metrics-file="arial.xml" kerning="yes"
-					embed-url="arial.ttf">
-					<font-triplet name="Arial" style="normal"
-						weight="normal" />
-				</font>
+				<!--<font metrics-file="arial.xml" kerning="yes"-->
+					<!--embed-url="arial.ttf">-->
+					<!--<font-triplet name="Arial" style="normal"-->
+						<!--weight="normal" />-->
+				<!--</font>-->
 			</fonts>
 
 		</renderer>

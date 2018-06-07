@@ -11,7 +11,7 @@
 				</fo:simple-page-master>
 			</fo:layout-master-set>	
 			<fo:page-sequence master-reference="A4-portrail">
-				<fo:flow flow-name="xsl-region-body" border-collapse="collapse" reference-orientation="0" font-family="Arial Unicode MS">
+				<fo:flow flow-name="xsl-region-body" border-collapse="collapse" reference-orientation="0" font-family="VarelaRound-Regular">
 				<fo:table table-layout="fixed"  width="165mm" border-color="black" border-width="0.5mm" 
 				border-style="solid" text-align="right" display-align="center" space-after="-1mm">
 					<fo:table-body>
