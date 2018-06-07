@@ -1,0 +1,17 @@
+target/
+tmp/
+temp/
+
+*.iml
+*.class
+
+# IntelliJ Files
+.idea/
+
+# Eclipse Files
+.project
+.classpath
+.settings/
+.cache-main
+.cache-tests
+/.metadata/
