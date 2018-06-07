@@ -1,4 +1,4 @@
-#Build PDF with hebrew, example
+Build PDF with hebrew, example
 
 Getting started:
 git clone ...(URL of this repo)
