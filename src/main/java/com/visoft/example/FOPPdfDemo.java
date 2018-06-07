@@ -3,6 +3,7 @@ package com.visoft.example;
 import java.io.File;
 import java.io.IOException;
 import java.io.OutputStream;
+import java.util.Date;
 
 import javax.xml.transform.Result;
 import javax.xml.transform.Transformer;
@@ -60,7 +61,7 @@ public class FOPPdfDemo {
 	 * @throws TransformerException
 	 * @throws SAXException
 	 */
-	public void convertToPDF(final String template, final String dataXML, final String outputPDF)
+	public void convertToPDF(String template, String dataXML, String outputPDF)
 			throws IOException, TransformerException, SAXException {
 		// the XSL FO file
 		File xsltFile = new File(RESOURCES_DIR + template);
@@ -74,7 +75,7 @@ public class FOPPdfDemo {
 		FOUserAgent foUserAgent = fopFactory.newFOUserAgent();
 		// Setup output
 		OutputStream out;
-		out = new java.io.FileOutputStream(OUTPUT_DIR + outputPDF);
+		out = new java.io.FileOutputStream(OUTPUT_DIR + new Date().getTime() + "_" + outputPDF);
 
 		try {
 			// Construct fop with desired output format

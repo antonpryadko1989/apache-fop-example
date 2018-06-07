@@ -4,14 +4,8 @@
 	<companyname>ABC Inc.</companyname>
 	<employee>
 		<id>101</id>
-		<name>ולדיסלב לוין</name>
-		<designation>Manager</designation>
-	</employee>
-
-	<employee>
-		<id>102</id>
-		<name>שם שלי</name>
-		<designation>Executive</designation>
+		<name>Юрий Гагарин</name>
+		<designation>Первый космонавт</designation>
 	</employee>
 
 	<employee>

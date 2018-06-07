@@ -13,7 +13,7 @@
 			</fo:layout-master-set>
 			<fo:page-sequence master-reference="simpleA4">
 				<fo:flow flow-name="xsl-region-body" line-height="1.4"
-					font-family="VarelaRound-Regular">
+					font-family="Arial">
 					<fo:block font-size="16pt" font-weight="bold" space-after="5mm">
 						Company Name:
 						<xsl:value-of select="companyname" />
@@ -29,11 +29,7 @@
 							</fo:table-body>
 						</fo:table>
 					</fo:block>
-					<fo:block xml:lang="he">
-						<fo:bidi-override unicode-bidi="embed" direction="rtl">
-							כאשר העולם רוצה לדבר, הוא מדבר ב־Unicode
-						</fo:bidi-override>
-					</fo:block>
+					
 				</fo:flow>
 			</fo:page-sequence>
 		</fo:root>
