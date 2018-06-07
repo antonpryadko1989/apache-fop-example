@@ -12,6 +12,6 @@ public class MetricsGen {
 //			System.out.println("args: " + args[i]);
 //		}
 		
-		TTFReader.main(new String[] {"C:\\Users\\vlad\\Desktop\\vi-soft-NG\\FOP-example\\apache-fop-example\\src\\main\\resources\\VarelaRound-Regular.ttf", "C:\\Users\\vlad\\Desktop\\vi-soft-NG\\FOP-example\\apache-fop-example\\src\\main\\resources\\VarelaRound-Regular.xml"});
+		TTFReader.main(new String[] {"C:\\Users\\vlad\\Desktop\\vi-soft-NG\\FOP-example\\apache-fop-example\\src\\main\\resources\\arial.ttf", "C:\\Users\\vlad\\Desktop\\vi-soft-NG\\FOP-example\\apache-fop-example\\src\\main\\resources\\arial.xml"});
 	}
 }

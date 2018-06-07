@@ -31,7 +31,8 @@
 					</fo:block>
 					<fo:block xml:lang="he">
 						<fo:bidi-override unicode-bidi="embed" direction="rtl">
-							כאשר העולם רוצה לדבר, הוא מדבר ב־Unicode</fo:bidi-override>
+							כאשר העולם רוצה לדבר, הוא מדבר ב־Unicode
+						</fo:bidi-override>
 					</fo:block>
 				</fo:flow>
 			</fo:page-sequence>
