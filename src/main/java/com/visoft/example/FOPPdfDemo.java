@@ -25,6 +25,9 @@ import org.xml.sax.SAXException;
  */
 public class FOPPdfDemo {
 
+
+	///fgljkgfd
+
 	public static final String RESOURCES_DIR;
 	public static final String OUTPUT_DIR;
 
@@ -38,7 +41,8 @@ public class FOPPdfDemo {
 		FOPPdfDemo fOPPdfDemo = new FOPPdfDemo();
 		
 			try {
-				fOPPdfDemo.convertToPDF();
+				fOPPdfDemo.convertToPDF("//template-HE.xsl", "//Employees-HE.xml", "//employee-HE.pdf");
+				fOPPdfDemo.convertToPDF("//template-RU.xsl", "//Employees-RU.xml", "//employee-RU.pdf");
 			} catch (IOException | TransformerException | SAXException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -53,13 +57,13 @@ public class FOPPdfDemo {
 	 * @throws TransformerException
 	 * @throws SAXException
 	 */
-	public void convertToPDF()
+	public void convertToPDF(final String template, final String dataXML, final String outputPDF)
 			throws IOException, TransformerException, SAXException {
 		// the XSL FO file
-		File xsltFile = new File(RESOURCES_DIR + "//template-HE.xsl");
+		File xsltFile = new File(RESOURCES_DIR + template);
 		// the XML file which provides the input
 		StreamSource xmlSource = new StreamSource(
-				new File(RESOURCES_DIR + "//Employees.xml"));
+				new File(RESOURCES_DIR + dataXML));
 		// create an instance of fop factory
 		FopFactory fopFactory = FopFactory
 				.newInstance(new File(RESOURCES_DIR + "//userconfig.xml"));
@@ -67,7 +71,7 @@ public class FOPPdfDemo {
 		FOUserAgent foUserAgent = fopFactory.newFOUserAgent();
 		// Setup output
 		OutputStream out;
-		out = new java.io.FileOutputStream(OUTPUT_DIR + "//employee.pdf");
+		out = new java.io.FileOutputStream(OUTPUT_DIR + outputPDF);
 
 		try {
 			// Construct fop with desired output format
