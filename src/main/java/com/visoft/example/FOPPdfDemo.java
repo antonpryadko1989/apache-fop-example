@@ -25,9 +25,6 @@ import org.xml.sax.SAXException;
  */
 public class FOPPdfDemo {
 
-
-	///fgljkgfd
-
 	public static final String RESOURCES_DIR;
 	public static final String OUTPUT_DIR;
 
@@ -41,8 +38,15 @@ public class FOPPdfDemo {
 		FOPPdfDemo fOPPdfDemo = new FOPPdfDemo();
 
 		try {
-			fOPPdfDemo.convertToPDF("//template-HE.xsl", "//Employees-HE.xml", "//employee-HE.pdf");
-			fOPPdfDemo.convertToPDF("//template-RU.xsl", "//Employees-RU.xml", "//employee-RU.pdf");
+
+			String xslPath = "template-HE.xsl";
+			String xmlPath = "Employees-HE.xml";
+			String pdfPath = "employee-HE.pdf";
+
+			fOPPdfDemo.convertToPDF(xslPath, xmlPath, pdfPath);
+
+
+//			fOPPdfDemo.convertToPDF("//template-RU.xsl", "//Employees-RU.xml", "//employee-RU.pdf");
 		} catch (IOException | TransformerException | SAXException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
