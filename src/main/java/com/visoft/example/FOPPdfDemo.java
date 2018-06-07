@@ -20,19 +20,10 @@ import org.apache.fop.apps.FopFactory;
 import org.apache.fop.apps.MimeConstants;
 import org.xml.sax.SAXException;
 
-/**
- * @author vlad
- *
- */
 public class FOPPdfDemo {
 
-	public static final String RESOURCES_DIR;
-	public static final String OUTPUT_DIR;
-
-	static {
-		RESOURCES_DIR = "src//main//resources//";
-		OUTPUT_DIR = "src//main//resources//output//";
-	}
+	private static final String RESOURCES_DIR = "src//main//resources//";
+	private static final String OUTPUT_DIR = "src//main//resources//output//";
 
 	public static void main(String[] args) {
 
@@ -45,8 +36,6 @@ public class FOPPdfDemo {
 			String pdfPath = "employee-HE.pdf";
 
 			fOPPdfDemo.convertToPDF(xslPath, xmlPath, pdfPath);
-
-
 //			fOPPdfDemo.convertToPDF("//template-RU.xsl", "//Employees-RU.xml", "//employee-RU.pdf");
 		} catch (IOException | TransformerException | SAXException e) {
 			// TODO Auto-generated catch block
