@@ -4,7 +4,7 @@ import org.apache.fop.fonts.apps.TTFReader;
 
 /**
  * @author vlad
- *
+ * hello world!!!
  */
 public class MetricsGen {
 	public static void main(String[] args) {
