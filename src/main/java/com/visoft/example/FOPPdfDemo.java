@@ -22,9 +22,9 @@ import org.xml.sax.SAXException;
 
 public class FOPPdfDemo {
 
-	private static final String RESOURCES_TEMPLATE_DIR = "src//main//resources//templates//";
+	private static final String RESOURCES_TEMPLATE_DIR = "E:\\WORK\\NCR_TEMPLATES\\";
 	private static final String RESOURCES_DIR = "src//main//resources//";
-	private static final String OUTPUT_DIR = "src//main//resources//output//";
+	private static final String OUTPUT_DIR = "E:\\WORK\\NCR_TEMPLATES\\";
 
 	public static void main(String[] args) {
 
@@ -32,9 +32,9 @@ public class FOPPdfDemo {
 
 		try {
 
-			String xmlPath = "XML//NCR_0.xml";
-			String xslPath = "XSL//fo_0.xsl";
-			String pdfPath = "NCR_1.pdf";
+			String xmlPath = "XML\\NCR_0.xml";
+			String xslPath = "XSL\\fo_0.xsl";
+			String pdfPath = "NCR_0.pdf";
 
 			fOPPdfDemo.convertToPDF(xslPath, xmlPath, pdfPath);
 //			fOPPdfDemo.convertToPDF("//template-RU.xsl", "//Employees-RU.xml", "//employee-RU.pdf");
