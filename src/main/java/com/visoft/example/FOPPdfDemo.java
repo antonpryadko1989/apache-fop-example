@@ -22,19 +22,29 @@ import org.xml.sax.SAXException;
 
 public class FOPPdfDemo {
 
-	private static final String RESOURCES_TEMPLATE_DIR = "E:\\WORK\\NCR_TEMPLATES\\";
+	private static final String RESOURCES_TEMPLATE_DIR = "E:\\WORK\\TEMPLATES\\";
 	private static final String RESOURCES_DIR = "src//main//resources//";
-	private static final String OUTPUT_DIR = "E:\\WORK\\NCR_TEMPLATES\\";
+	private static final String OUTPUT_DIR = "E:\\WORK\\TEMPLATES\\";
 
 	public static void main(String[] args) {
 
 		FOPPdfDemo fOPPdfDemo = new FOPPdfDemo();
 
 		try {
+//			String tempName = "SUPPLIER";
+//			String tempName = "SUB_CONTRACTOR";
+// 			String tempName = "CHECKLIST";
+//			String tempName = "MATERIAL";
+//			String tempName = "NCR_0";
+//			String tempName = "NCR_1";
+//			String tempName = "NCR_2";
+			String tempName = "POC";
 
-			String xmlPath = "XML\\NCR_0.xml";
-			String xslPath = "XSL\\fo_0.xsl";
-			String pdfPath = "NCR_0.pdf";
+
+
+			String xmlPath = "XML\\" + tempName +".xml";
+			String xslPath = "XSL\\" + tempName +".xsl";
+			String pdfPath = tempName +".pdf";
 
 			fOPPdfDemo.convertToPDF(xslPath, xmlPath, pdfPath);
 //			fOPPdfDemo.convertToPDF("//template-RU.xsl", "//Employees-RU.xml", "//employee-RU.pdf");
@@ -65,7 +75,7 @@ public class FOPPdfDemo {
 		FOUserAgent foUserAgent = fopFactory.newFOUserAgent();
 		// Setup output
 		OutputStream out;
-		out = new java.io.FileOutputStream(OUTPUT_DIR + new Date().getTime() + "_" + outputPDF);
+		out = new java.io.FileOutputStream(OUTPUT_DIR + outputPDF);
 
 		try {
 			// Construct fop with desired output format
