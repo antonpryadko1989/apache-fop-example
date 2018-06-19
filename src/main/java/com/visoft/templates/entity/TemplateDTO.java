@@ -1,5 +1,6 @@
 package com.visoft.templates.entity;
 
+import javax.validation.constraints.NotNull;
 import java.util.Map;
 
 public class TemplateDTO {
