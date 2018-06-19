@@ -56,6 +56,17 @@ public class TemplateDTO {
         return templateBody;
     }
 
+    @Override
+    public String toString() {
+        return "TemplateDTO{" +
+                "templateName='" + templateName + '\'' +
+                ", projectId='" + projectId + '\'' +
+                ", outPutName='" + outPutName + '\'' +
+                ", templateBody=" + templateBody +
+                ", body=" + body +
+                '}';
+    }
+
     public Object getBody() {
         return body;
     }

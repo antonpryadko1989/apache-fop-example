@@ -1,8 +1,13 @@
 package com.visoft;
 
-import com.visoft.example.POIExcel;
+import com.sun.org.apache.xml.internal.serialize.XMLSerializer;
+import com.visoft.example.TestObject;
 import com.visoft.templates.entity.TemplateDTO;
+import flexjson.JSON;
+import flexjson.JSONSerializer;
 import org.dom4j.DocumentException;
+import org.json.JSONObject;
+import org.json.XML;
 
 import java.io.IOException;
 import java.util.HashMap;
@@ -23,10 +28,18 @@ public class Application {
         bodyMap.put("4", "4444");
         bodyMap.put("5", "55555");
         temp. setTemplateBody(bodyMap);
+//        temp.setBody(new TestObject("21","32"));
 
 
-        POIExcel poi = new POIExcel();
-        System.out.println(poi.getTemplate(temp));
+        JSONObject jsonObj = new JSONObject("{\"phonetype\":\"N95\",\"cat\":\"WP\",\"docs\":[{\"a\":\"ff\",\"bb\":854},{\"bb\":78},{\"a\":\"ff\",\"bb\":78}]}");
+        temp.setBody(jsonObj);
+//        POIExcel poi = new POIExcel();
+//        System.out.println(poi.getTemplate(temp));
+        System.out.println(json2XML(temp));
     }
-
+    private static String json2XML(Object str) {
+        JSONObject json = new JSONObject(str);
+        String xml = XML.toString(json);
+        return xml;
+    }
 }
