@@ -16,8 +16,7 @@ import java.util.Map;
 public class Application {
 
 
-    public static void main(String[] args) throws IOException, DocumentException {
-        TemplateDTO temp = new TemplateDTO();
+    public static String object2XML(TemplateDTO temp) throws IOException, DocumentException {
         Map<String, String> bodyMap = new HashMap<>();
         temp.setProjectId("1");
         temp.setTemplateName("TEMP_1.xlsx");
@@ -29,17 +28,13 @@ public class Application {
         bodyMap.put("5", "55555");
         temp. setTemplateBody(bodyMap);
 //        temp.setBody(new TestObject("21","32"));
+        temp.setBody("dsaad");
 
 
-        JSONObject jsonObj = new JSONObject("{\"phonetype\":\"N95\",\"cat\":\"WP\",\"docs\":[{\"a\":\"ff\",\"bb\":854},{\"bb\":78},{\"a\":\"ff\",\"bb\":78}]}");
-        temp.setBody(jsonObj);
-//        POIExcel poi = new POIExcel();
-//        System.out.println(poi.getTemplate(temp));
-        System.out.println(json2XML(temp));
-    }
-    private static String json2XML(Object str) {
-        JSONObject json = new JSONObject(str);
-        String xml = XML.toString(json);
-        return xml;
+//        JSONObject jsonObj = new JSONObject("{\"phonetype\":\"N95\",\"cat\":\"WP\",\"docs\":[{\"a\":\"ff\",\"bb\":854},{\"bb\":78},{\"a\":\"ff\",\"bb\":78}]}");
+//        temp.setBody(jsonObj);
+        JSONObject json = new JSONObject(temp);
+        return XML.toString(json);
+
     }
 }
