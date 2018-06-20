@@ -22,6 +22,7 @@ import org.json.JSONObject;
 import org.json.XML;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
+import org.springframework.web.servlet.mvc.method.annotation.StreamingResponseBody;
 import org.xml.sax.SAXException;
 
 @Service
@@ -34,7 +35,7 @@ public class FOPPdfDemo {
 
 	private static final String RESOURCES_DIR = "src/main/resources/";
 
-	String getPDFUrl(TemplateDTO template) {
+	StreamingResponseBody getPDFUrl(TemplateDTO template) {
 
 		File f =  Paths.get(templatesRepository, template.getProjectId(),  template.getTemplateName()).toFile();
 		if(f.isDirectory()){
@@ -52,7 +53,7 @@ public class FOPPdfDemo {
 		throw new PathValidationException("error", "Something get wrong");
 	}
 
-	private String convertPDF(TemplateDTO template)
+	private StreamingResponseBody convertPDF(TemplateDTO template)
 			throws IOException, TransformerException, SAXException, ParserConfigurationException {
 		File xsltFile = Paths.get(templatesRepository, template.getProjectId(), template.getTemplateName()).toFile();
 		JSONObject jsonObject = new JSONObject(template);
@@ -63,12 +64,13 @@ public class FOPPdfDemo {
 		file.deleteOnExit();
 		String tempPath = file.getAbsolutePath();
 		StreamSource xmlSource = new StreamSource(new File(tempPath));
-
 		FopFactory fopFactory = FopFactory.newInstance(Paths.get(RESOURCES_DIR, "/userconfig.xml").toFile());
 		FOUserAgent foUserAgent = fopFactory.newFOUserAgent();
-		String outFile = Paths.get(templatesRepository, template.getProjectId(), new Date().getTime() + template.getOutPutName()).toString();
-		OutputStream out;
-		out = new java.io.FileOutputStream(outFile);
+//		String outFile = Paths.get(templatesRepository, template.getProjectId(), System.nanoTime() + "_" + template.getOutPutName()).toString();
+//		OutputStream out;
+//		out = new java.io.FileOutputStream(outFile);
+
+		ByteArrayOutputStream out = new ByteArrayOutputStream();
 		try {
 			Fop fop = fopFactory.newFop(MimeConstants.MIME_PDF, foUserAgent, out);
 			TransformerFactory factory = TransformerFactory.newInstance();
@@ -79,6 +81,15 @@ public class FOPPdfDemo {
 			out.close();
 			Files.delete(Paths.get(tempPath));
 		}
-		return outFile;
+
+
+		InputStream inputStream = new ByteArrayInputStream(out.toByteArray());
+		return outputStream -> {
+			int nRead;
+			byte[] data = new byte[1024];
+			while ((nRead = inputStream.read(data, 0, data.length)) != -1) {
+				outputStream.write(data, 0, nRead);
+			}
+		};
 	}
 }

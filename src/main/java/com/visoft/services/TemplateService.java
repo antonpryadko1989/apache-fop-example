@@ -2,18 +2,13 @@ package com.visoft.services;
 
 import com.visoft.exceptions.TemplateValidationException;
 import com.visoft.templates.entity.TemplateDTO;
-import org.json.JSONObject;
-import org.json.XML;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+import org.springframework.web.servlet.mvc.method.annotation.StreamingResponseBody;
 
 import javax.annotation.Resource;
-import java.util.Collection;
-import java.util.Collections;
+import java.io.*;
+import java.nio.file.Paths;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -25,13 +20,24 @@ public class TemplateService {
 
     private HttpHeaders responseHeaders = new HttpHeaders();
 
-    public ResponseEntity<String> getPDFFromTemplate(TemplateDTO template) {
+    public StreamingResponseBody getPDFFromTemplate(TemplateDTO template) {
         Map<String, String> templateValid = templateValidator(template);
         if(templateValid.isEmpty()) {
-            return new ResponseEntity<>(fopPdfDemo.getPDFUrl(template), HttpStatus.OK);
+            return fopPdfDemo.getPDFUrl(template);
         }
         throw new TemplateValidationException("I need more information ", templateValid);
     }
+//
+//    public StreamingResponseBody downloadPDF(String path) throws IOException {
+//        InputStream inputStream = new FileInputStream(Paths.get(path).toFile());
+//        return outputStream -> {
+//            int nRead;
+//            byte[] data = new byte[1024];
+//            while ((nRead = inputStream.read(data, 0, data.length)) != -1) {
+//                outputStream.write(data, 0, nRead);
+//            }
+//        };
+//    }
 
     private HashMap<String, String> templateValidator(TemplateDTO template) {
         HashMap<String, String> userValid = new HashMap<>();
