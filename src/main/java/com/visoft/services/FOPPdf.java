@@ -12,6 +12,7 @@ import javax.xml.transform.*;
 import javax.xml.transform.sax.SAXResult;
 import javax.xml.transform.stream.StreamSource;
 
+import com.itextpdf.text.pdf.qrcode.ByteArray;
 import com.visoft.exceptions.PathValidationException;
 import com.visoft.templates.entity.TemplateDTO;
 import org.apache.fop.apps.FOUserAgent;
@@ -26,16 +27,20 @@ import org.springframework.web.servlet.mvc.method.annotation.StreamingResponseBo
 import org.xml.sax.SAXException;
 
 @Service
-public class FOPPdfDemo {
+public class FOPPdf {
 
 	@Value("${templates.repository}")
 	private String templatesRepository;
 
-//	private static final String RESOURCES = "E:/WORK/TEMPLATES/";
+	@Value("${xml.start}")
+	private String xmlStart;
+
+	@Value("${xml.end}")
+	private String xmlEnd;
 
 	private static final String RESOURCES_DIR = "src/main/resources/";
 
-	StreamingResponseBody getPDFUrl(TemplateDTO template) {
+	StreamingResponseBody getPDFFile(TemplateDTO template) {
 
 		File f =  Paths.get(templatesRepository, template.getProjectId(),  template.getTemplateName()).toFile();
 		if(f.isDirectory()){
@@ -57,19 +62,10 @@ public class FOPPdfDemo {
 			throws IOException, TransformerException, SAXException, ParserConfigurationException {
 		File xsltFile = Paths.get(templatesRepository, template.getProjectId(), template.getTemplateName()).toFile();
 		JSONObject jsonObject = new JSONObject(template);
-		String str = "<?xml version=\"1.0\" encoding=\"UTF-8\"?><root>"  + XML.toString(jsonObject) + "</root>";
-		Path path = Files.createTempFile(template.getProjectId(), ".xml");
-		File file = path.toFile();
-		Files.write(path, str.getBytes(StandardCharsets.UTF_8));
-		file.deleteOnExit();
-		String tempPath = file.getAbsolutePath();
-		StreamSource xmlSource = new StreamSource(new File(tempPath));
+		String str = xmlStart  + XML.toString(jsonObject) + xmlEnd;
+		StreamSource xmlSource = new StreamSource(new ByteArrayInputStream(str.getBytes()));
 		FopFactory fopFactory = FopFactory.newInstance(Paths.get(RESOURCES_DIR, "/userconfig.xml").toFile());
 		FOUserAgent foUserAgent = fopFactory.newFOUserAgent();
-//		String outFile = Paths.get(templatesRepository, template.getProjectId(), System.nanoTime() + "_" + template.getOutPutName()).toString();
-//		OutputStream out;
-//		out = new java.io.FileOutputStream(outFile);
-
 		ByteArrayOutputStream out = new ByteArrayOutputStream();
 		try {
 			Fop fop = fopFactory.newFop(MimeConstants.MIME_PDF, foUserAgent, out);
@@ -79,10 +75,7 @@ public class FOPPdfDemo {
 			transformer.transform(xmlSource, res);
 		} finally {
 			out.close();
-			Files.delete(Paths.get(tempPath));
 		}
-
-
 		InputStream inputStream = new ByteArrayInputStream(out.toByteArray());
 		return outputStream -> {
 			int nRead;

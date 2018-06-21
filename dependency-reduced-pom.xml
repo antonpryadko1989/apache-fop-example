@@ -80,7 +80,7 @@
         <configuration>
           <archive>
             <manifest>
-              <mainClass>com.visoft.services.FOPPdfDemo</mainClass>
+              <mainClass>com.visoft.services.FOPPdf</mainClass>
             </manifest>
           </archive>
         </configuration>
@@ -130,6 +130,12 @@
       <artifactId>junit</artifactId>
       <version>3.8.1</version>
       <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-io</artifactId>
+      <version>1.3.2</version>
+      <scope>compile</scope>
     </dependency>
   </dependencies>
   <properties>

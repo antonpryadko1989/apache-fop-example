@@ -1,5 +1,6 @@
 package com.visoft.api;
 
+import com.visoft.exceptions.FormatException;
 import com.visoft.exceptions.PathValidationException;
 import com.visoft.exceptions.TemplateValidationException;
 import org.json.JSONObject;
@@ -22,9 +23,16 @@ public class ErrorController extends ResponseEntityExceptionHandler {
         errorMessage.put(temp.getMessage(), temp.getException());
         return new ResponseEntity<>(errorMessage, new HttpHeaders(), HttpStatus.BAD_REQUEST);
     }
-//
+
     @ExceptionHandler(PathValidationException.class)
     public ResponseEntity<Object> validationError(PathValidationException temp){
+        Map<String, String> errorMessage = new HashMap<>();
+        errorMessage.put(temp.getMessage(), temp.getException());
+        return new ResponseEntity<>(errorMessage, new HttpHeaders(), HttpStatus.BAD_REQUEST);
+    }
+
+    @ExceptionHandler(PathValidationException.class)
+    public ResponseEntity<Object> validationError(FormatException temp){
         Map<String, String> errorMessage = new HashMap<>();
         errorMessage.put(temp.getMessage(), temp.getException());
         return new ResponseEntity<>(errorMessage, new HttpHeaders(), HttpStatus.BAD_REQUEST);

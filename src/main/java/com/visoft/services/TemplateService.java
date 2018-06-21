@@ -1,5 +1,6 @@
 package com.visoft.services;
 
+import com.itextpdf.text.DocumentException;
 import com.visoft.exceptions.TemplateValidationException;
 import com.visoft.templates.entity.TemplateDTO;
 import org.springframework.http.HttpHeaders;
@@ -7,52 +8,68 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.servlet.mvc.method.annotation.StreamingResponseBody;
 
 import javax.annotation.Resource;
-import java.io.*;
-import java.nio.file.Paths;
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
 @Service(value = "templateService")
 public class TemplateService {
 
-    @Resource
-    private FOPPdfDemo fopPdfDemo;
+    private static final String NOT_EXIST = "Does not exist";
+    private static final String NOT_ENOUGH_INFORMATION = "Not enough information ";
 
-    private HttpHeaders responseHeaders = new HttpHeaders();
+    @Resource
+    private FOPPdf fopPdf;
+
+
+    @Resource
+    private POIXls poiXls;
 
     public StreamingResponseBody getPDFFromTemplate(TemplateDTO template) {
         Map<String, String> templateValid = templateValidator(template);
+        templateValid.putAll(checkBody(template));
         if(templateValid.isEmpty()) {
-            return fopPdfDemo.getPDFUrl(template);
+            return fopPdf.getPDFFile(template);
         }
-        throw new TemplateValidationException("I need more information ", templateValid);
+        throw new TemplateValidationException(NOT_ENOUGH_INFORMATION, templateValid);
     }
-//
-//    public StreamingResponseBody downloadPDF(String path) throws IOException {
-//        InputStream inputStream = new FileInputStream(Paths.get(path).toFile());
-//        return outputStream -> {
-//            int nRead;
-//            byte[] data = new byte[1024];
-//            while ((nRead = inputStream.read(data, 0, data.length)) != -1) {
-//                outputStream.write(data, 0, nRead);
-//            }
-//        };
-//    }
 
-    private HashMap<String, String> templateValidator(TemplateDTO template) {
-        HashMap<String, String> userValid = new HashMap<>();
+    public StreamingResponseBody getXSLFromTemplate(TemplateDTO template) throws IOException, DocumentException {
+        Map<String, String> templateValid = templateValidator(template);
+        templateValid.putAll(checkTemplateBody(template));
+        if(templateValid.isEmpty()) {
+            return poiXls.getXLSXFile(template);
+        }
+        throw new TemplateValidationException(NOT_ENOUGH_INFORMATION, templateValid);
+    }
+
+    private Map<String, String> templateValidator(TemplateDTO template) {
+        Map<String, String> templateValid = new HashMap<>();
         if (template.getTemplateName() == null || template.getTemplateName().equals("")) {
-            userValid.put("templateName", "Does not exist");
+            templateValid.put("templateName", NOT_EXIST);
         }
         if (template.getProjectId() == null || template.getProjectId().equals("")) {
-            userValid.put("projectId", "Does not exist");
+            templateValid.put("projectId", NOT_EXIST);
         }
         if (template.getOutPutName() == null || template.getOutPutName().equals("")) {
-            userValid.put("outPutName", "Does not exist");
+            templateValid.put("outPutName", NOT_EXIST);
         }
+        return templateValid;
+    }
+
+    private Map<String, String> checkBody(TemplateDTO template) {
+        Map<String, String> bodyValid = new HashMap<>();
         if (template.getBody() == null || template.getBody().equals("")) {
-            userValid.put("body", "Does not exist");
+            bodyValid.put("body", NOT_EXIST);
         }
-        return userValid;
+        return bodyValid;
+    }
+
+    private Map<String, String> checkTemplateBody(TemplateDTO template) {
+        Map<String, String> bodyValid = new HashMap<>();
+        if (template.getTemplateBody()== null || template.getTemplateBody().isEmpty()) {
+            bodyValid.put("templateBody", NOT_EXIST);
+        }
+        return bodyValid;
     }
 }

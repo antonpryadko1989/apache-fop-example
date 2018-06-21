@@ -5,6 +5,7 @@ import com.visoft.services.TemplateService;
 import com.visoft.templates.entity.TemplateDTO;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.method.annotation.StreamingResponseBody;
 
@@ -13,13 +14,21 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.HashMap;
+import java.util.Map;
 
-@RestController
+@Controller
 @RequestMapping(value = "/visoft/api")
 public class TemplateController {
 
     @Value("${templatesPath}")
     private String templatesPath;
+
+    @Value("${app.xls}")
+    private String appXLS;
+
+    @Value("${app.xlsx}")
+    private String appXLSX;
 
     @Resource
     private TemplateService templateService;
@@ -107,13 +116,20 @@ public class TemplateController {
 //        return response;
 //
 //    }
+
     @RequestMapping(value = "/downloadPdf", method = RequestMethod.POST,
             headers = {"Accept=application/json"}, produces = {"application/pdf; charset=UTF-8"})
-    public StreamingResponseBody downloadPdf(HttpServletResponse response,
-                                             @RequestBody TemplateDTO template) {
-        response.setContentType("application/pdf");
-                return templateService.getPDFFromTemplate(template);
-}
+    public StreamingResponseBody downloadPdf(HttpServletResponse response, @RequestBody TemplateDTO template) {
+        response.setContentType("application/pdf; filename=" + template.getOutPutName());
+        response.setHeader("filename", template.getOutPutName());
+        return templateService.getPDFFromTemplate(template);
+            }
 
-
+    @RequestMapping(value = "/downloadXlsx", method = RequestMethod.POST,
+            headers = {"Accept=application/json"}, produces = {"application/pdf; charset=UTF-8"})
+    public StreamingResponseBody downloadXLSX(HttpServletResponse response, @RequestBody TemplateDTO template) {
+        response.setContentType("application/pdf; filename=" + template.getOutPutName());
+        response.setHeader("filename", template.getOutPutName());
+        return templateService.getXSLFromTemplate(template);
+    }
 }
