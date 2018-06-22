@@ -41,7 +41,6 @@ public class FOPPdf {
 	private static final String RESOURCES_DIR = "src/main/resources/";
 
 	StreamingResponseBody getPDFFile(TemplateDTO template) {
-
 		File f =  Paths.get(templatesRepository, template.getProjectId(),  template.getTemplateName()).toFile();
 		if(f.isDirectory()){
 			throw new PathValidationException("error", "It's directory");
@@ -49,7 +48,6 @@ public class FOPPdf {
 		if(!f.exists()){
 			throw new PathValidationException("error", "File not exist");
 		}
-
 		try {
 			return convertPDF(template);
 		} catch (IOException | TransformerException | SAXException | ParserConfigurationException e) {
@@ -77,6 +75,10 @@ public class FOPPdf {
 			out.close();
 		}
 		InputStream inputStream = new ByteArrayInputStream(out.toByteArray());
+
+
+
+
 		return outputStream -> {
 			int nRead;
 			byte[] data = new byte[1024];
