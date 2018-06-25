@@ -1,5 +1,6 @@
 package com.visoft.services;
 
+import com.visoft.exceptions.FileConvertException;
 import com.visoft.exceptions.PathValidationException;
 import com.visoft.templates.entity.TemplateDTO;
 import com.visoft.templates.regulars.TemplateValue;
@@ -12,6 +13,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.apache.tika.metadata.Metadata;
 import org.apache.tika.mime.MediaType;
 import org.apache.tika.parser.AutoDetectParser;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.servlet.mvc.method.annotation.StreamingResponseBody;
@@ -31,6 +33,9 @@ public class POIXls {
 
     @Value("${app.XLS}")
     private String appXLS;
+
+    @Autowired
+    private Input2OutputService resultService;
 
     StreamingResponseBody getExcelFile(TemplateDTO template) throws IOException {
         File f = Paths.get(templatesRepository, template.getProjectId(), template.getTemplateName()).toFile();
@@ -57,13 +62,7 @@ public class POIXls {
         ByteArrayOutputStream out = new ByteArrayOutputStream();
         workbook.write(out);
         InputStream inputStream = new ByteArrayInputStream(out.toByteArray());
-        return outputStream -> {
-            int nRead;
-            byte[] data = new byte[1024];
-            while ((nRead = inputStream.read(data, 0, data.length)) != -1) {
-                outputStream.write(data, 0, nRead);
-            }
-        };
+        return resultService.getOutput(inputStream);
     }
 
     private Workbook getWorkbook(String filePath)
@@ -80,7 +79,7 @@ public class POIXls {
             workbook = new HSSFWorkbook(inputFile);
             return workbook;
         } else {
-            throw new IllegalArgumentException("The specified file is not Excel file");
+            throw new FileConvertException("The specified file is not Excel file");
         }
     }
 }

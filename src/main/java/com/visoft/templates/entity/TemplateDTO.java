@@ -1,6 +1,5 @@
 package com.visoft.templates.entity;
 
-import javax.validation.constraints.NotNull;
 import java.util.Map;
 
 public class TemplateDTO {
@@ -57,6 +56,8 @@ public class TemplateDTO {
         return templateBody;
     }
 
+    public Object getBody() { return body; }
+
     @Override
     public String toString() {
         return "TemplateDTO{" +
@@ -68,7 +69,4 @@ public class TemplateDTO {
                 '}';
     }
 
-    public Object getBody() {
-        return body;
-    }
 }

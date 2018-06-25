@@ -1,18 +1,13 @@
 package com.visoft.services;
 
 import java.io.*;
-import java.nio.charset.StandardCharsets;
-import java.nio.file.Files;
-import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.Date;
 
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.transform.*;
 import javax.xml.transform.sax.SAXResult;
 import javax.xml.transform.stream.StreamSource;
 
-import com.itextpdf.text.pdf.qrcode.ByteArray;
 import com.visoft.exceptions.PathValidationException;
 import com.visoft.templates.entity.TemplateDTO;
 import org.apache.fop.apps.FOUserAgent;
@@ -21,6 +16,7 @@ import org.apache.fop.apps.FopFactory;
 import org.apache.fop.apps.MimeConstants;
 import org.json.JSONObject;
 import org.json.XML;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.servlet.mvc.method.annotation.StreamingResponseBody;
@@ -37,6 +33,9 @@ public class FOPPdf {
 
 	@Value("${xml.end}")
 	private String xmlEnd;
+
+	@Autowired
+	private Input2OutputService resultService;
 
 	private static final String RESOURCES_DIR = "src/main/resources/";
 
@@ -75,16 +74,6 @@ public class FOPPdf {
 			out.close();
 		}
 		InputStream inputStream = new ByteArrayInputStream(out.toByteArray());
-
-
-
-
-		return outputStream -> {
-			int nRead;
-			byte[] data = new byte[1024];
-			while ((nRead = inputStream.read(data, 0, data.length)) != -1) {
-				outputStream.write(data, 0, nRead);
-			}
-		};
+		return resultService.getOutput(inputStream);
 	}
 }

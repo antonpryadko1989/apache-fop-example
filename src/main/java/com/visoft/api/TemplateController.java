@@ -1,10 +1,8 @@
 package com.visoft.api;
 
-import com.itextpdf.text.DocumentException;
 import com.visoft.services.TemplateService;
 import com.visoft.templates.entity.TemplateDTO;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.method.annotation.StreamingResponseBody;
@@ -32,26 +30,24 @@ public class TemplateController {
     private TemplateService templateService;
 
     @RequestMapping(value = "/downloadPdf", method = RequestMethod.POST,
-            headers = {"Accept=application/json"}, produces = {"application/pdf; charset=UTF-8"})
+            headers = {"Accept=application/json"})
     public StreamingResponseBody downloadPdf(HttpServletResponse response, @RequestBody TemplateDTO template) {
         response.setContentType("application/pdf; filename=" + template.getOutPutName());
         response.setHeader("filename", template.getOutPutName());
         return templateService.getPDFFromTemplate(template);
             }
 
-    @RequestMapping(value = "/downloadExcel", method = RequestMethod.POST,
-            headers = {"Accept=application/json"}, produces = {"application/vnd.ms-excel; charset=UTF-8"})
-    public StreamingResponseBody downloadXLSX(final HttpServletResponse response, @RequestBody TemplateDTO template) throws IOException, DocumentException {
+    @RequestMapping(value = "/downloadExcel", method = RequestMethod.POST, headers = {"Accept=application/json"})
+    public StreamingResponseBody getExcelFromTemplate(final HttpServletResponse response, @RequestBody TemplateDTO template) {
         response.setHeader("Content-Disposition", "attachment; filename=" + template.getOutPutName());
-        response.setContentType("application/xml; filename=" + template.getOutPutName() + "; charset=UTF-8");
+        response.setContentType("application/octet-stream; filename=" + template.getOutPutName() + "; charset=UTF-8");
         response.setHeader("filename", template.getOutPutName());
         return templateService.getExcelFromTemplate(template);
     }
 
-    @RequestMapping(value = "/download", method = RequestMethod.GET)
-    public void download(final HttpServletResponse response, @RequestParam("templateName") String templateName) throws IOException {
-        response.setHeader("Content-Disposition", "attachment; filename=" + templateName);
-        FileInputStream fileIn = new FileInputStream(Paths.get("E:/WORK/TEMP/NCR.xlsx").toFile());
+    @RequestMapping(value = "/download/{projectId}/{path}", method = RequestMethod.GET)
+    public void download(HttpServletResponse response, @PathVariable("projectId") String projectId, @PathVariable("path") String path) throws IOException {
+        FileInputStream fileIn = new FileInputStream(Paths.get(templatesPath, projectId, path).toFile());
         ServletOutputStream out = response.getOutputStream();
 
         byte[] outputByte = new byte[4096];
@@ -60,8 +56,5 @@ public class TemplateController {
         }
         fileIn.close();
         out.close();
-
     }
-
-
 }

@@ -1,19 +1,12 @@
 package com.visoft.services;
 
-import com.itextpdf.text.DocumentException;
 import com.visoft.exceptions.TemplateValidationException;
 import com.visoft.templates.entity.TemplateDTO;
-import org.apache.poi.hssf.usermodel.HSSFCellStyle;
-import org.apache.poi.hssf.usermodel.HSSFSheet;
-import org.apache.poi.hssf.usermodel.HSSFWorkbook;
-import org.springframework.http.HttpHeaders;
 import org.springframework.stereotype.Service;
 import org.springframework.web.servlet.mvc.method.annotation.StreamingResponseBody;
 
 import javax.annotation.Resource;
-import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.nio.file.Paths;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -39,11 +32,15 @@ public class TemplateService {
         throw new TemplateValidationException(NOT_ENOUGH_INFORMATION, templateValid);
     }
 
-    public StreamingResponseBody getExcelFromTemplate(TemplateDTO template) throws IOException, DocumentException {
+    public StreamingResponseBody getExcelFromTemplate(TemplateDTO template) {
         Map<String, String> templateValid = templateValidator(template);
         templateValid.putAll(checkTemplateBody(template));
         if(templateValid.isEmpty()) {
-            return poiXls.getExcelFile(template);
+            try {
+                return poiXls.getExcelFile(template);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
         throw new TemplateValidationException(NOT_ENOUGH_INFORMATION, templateValid);
     }
