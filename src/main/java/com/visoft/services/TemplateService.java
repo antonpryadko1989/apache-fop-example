@@ -5,6 +5,7 @@ import com.visoft.templates.entity.TemplateDTO;
 import org.springframework.stereotype.Service;
 import org.springframework.web.servlet.mvc.method.annotation.StreamingResponseBody;
 
+
 import javax.annotation.Resource;
 import java.io.IOException;
 import java.util.HashMap;
@@ -25,7 +26,6 @@ public class TemplateService {
 
     public StreamingResponseBody getPDFFromTemplate(TemplateDTO template) {
         Map<String, String> templateValid = templateValidator(template);
-        templateValid.putAll(checkBody(template));
         if(templateValid.isEmpty()) {
             return fopPdf.getPDFFile(template);
         }
@@ -34,7 +34,6 @@ public class TemplateService {
 
     public StreamingResponseBody getExcelFromTemplate(TemplateDTO template) {
         Map<String, String> templateValid = templateValidator(template);
-        templateValid.putAll(checkTemplateBody(template));
         if(templateValid.isEmpty()) {
             try {
                 return poiXls.getExcelFile(template);
@@ -56,23 +55,9 @@ public class TemplateService {
         if (template.getOutPutName() == null || template.getOutPutName().equals("")) {
             templateValid.put("outPutName", NOT_EXIST);
         }
+        if (template.getBody() == null) {
+            templateValid.put("body", NOT_EXIST);
+        }
         return templateValid;
     }
-
-    private Map<String, String> checkBody(TemplateDTO template) {
-        Map<String, String> bodyValid = new HashMap<>();
-        if (template.getBody() == null || template.getBody().equals("")) {
-            bodyValid.put("body", NOT_EXIST);
-        }
-        return bodyValid;
-    }
-
-    private Map<String, String> checkTemplateBody(TemplateDTO template) {
-        Map<String, String> bodyValid = new HashMap<>();
-        if (template.getTemplateBody()== null || template.getTemplateBody().isEmpty()) {
-            bodyValid.put("templateBody", NOT_EXIST);
-        }
-        return bodyValid;
-    }
-
 }

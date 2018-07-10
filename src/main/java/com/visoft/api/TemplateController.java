@@ -37,13 +37,13 @@ public class TemplateController {
         return templateService.getPDFFromTemplate(template);
             }
 
-    @RequestMapping(value = "/downloadExcel", method = RequestMethod.POST, headers = {"Accept=application/json"})
-    public StreamingResponseBody getExcelFromTemplate(final HttpServletResponse response, @RequestBody TemplateDTO template) {
-        response.setHeader("Content-Disposition", "attachment; filename=" + template.getOutPutName());
-        response.setContentType("application/octet-stream; filename=" + template.getOutPutName() + "; charset=UTF-8");
-        response.setHeader("filename", template.getOutPutName());
-        return templateService.getExcelFromTemplate(template);
-    }
+//    @RequestMapping(value = "/downloadExcel", method = RequestMethod.POST, headers = {"Accept=application/json"})
+//    public StreamingResponseBody getExcelFromTemplate(final HttpServletResponse response, @RequestBody TemplateDTO template) {
+//        response.setHeader("Content-Disposition", "attachment; filename=" + template.getOutPutName());
+//        response.setContentType("application/octet-stream; filename=" + template.getOutPutName() + "; charset=UTF-8");
+//        response.setHeader("filename", template.getOutPutName());
+//        return templateService.getExcelFromTemplate(template);
+//    }
 
     @RequestMapping(value = "/download/{projectId}/{path}", method = RequestMethod.GET)
     public void download(HttpServletResponse response, @PathVariable("projectId") String projectId, @PathVariable("path") String path) throws IOException {
