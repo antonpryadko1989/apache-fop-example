@@ -1,17 +1,14 @@
 package com.visoft.services;
 
 import com.visoft.exceptions.FileConvertException;
-import com.visoft.exceptions.PathValidationException;
 import com.visoft.templates.entity.TemplateBody;
 import com.visoft.templates.entity.TemplateDTO;
-import com.visoft.templates.regulars.TemplateValue;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
-import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.CellStyle;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.util.CellRangeAddress;
-import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.apache.tika.metadata.Metadata;
@@ -28,7 +25,6 @@ import java.util.*;
 
 @Service
 public class POIXls {
-
 
     @Value("${templates.repository}")
     private String templatesRepository;
@@ -54,7 +50,7 @@ public class POIXls {
     private static final String QC_COMPANY = "QC Company / חברת בקרת איכות";
     private static final String QA_COMPANY = "QA Company / חברת הבטחת איכות";
     private static final String NCR_NUMBER = "אי התאמה מס' / NCR Number";
-    private static final String NCR_OPENED= "NCR opened / נפתח ע\"י";
+    private static final String NCR_OPENED = "NCR opened / נפתח ע\"י";
     private static final String POSITION = "Position / תפקיד";
     private static final String NAME = "Name / שם";
     private static final String DATE_OF_NCR = "Date of NCR / תאריך הפתיחה";
@@ -70,7 +66,6 @@ public class POIXls {
     private static final String SIDE = "Side / הסט";
     private static final String NCR_LEVEL = "NCR Level / דרגה";
     private static final String NUMBER_OF_DAYS_LATE = "Number Of Days Late/ מס ימי עיכוב לסגירה";
-
     private static final String EXPECTED_CLOSING_DATE = "Expected Closing Date / תאריך סגירה משוער";
     private static final String UPDATED_EXPECTED_CLOSING_DATE = "Updated Expected Closing Date / תאריך משוער לסגירה מקורי";
     private static final String SUB_PROJECT = "Sub Project / תת פרויקט";
@@ -80,7 +75,15 @@ public class POIXls {
     private static final String DESCRIPTION_OF_PERFORMED_CORRECTIVE_ACTION = "Description of performed corrective action / פעולה מתקנת שבוצעה";
     private static final String RESPONSIBLE_PERSON = "Responsible person / שם האחראי";
     private static final String REMARKS = "Remarks / הערות";
-
+    private static final String  ACCEPTANCE_OF_CORRECTIVE_ACTION = "Acceptance of corrective action / אישור ביצוע פעילות מתקנת";
+    private static final String NCR_CLOSED = "NCR closed / נסגרה ע\"י";
+    private static final String CLOSING_DATE = "Closing Date / תאריך סגירה";
+    private static final String ADDITIONAL_DOCUMENTS = "Additional Documents / מסמכים נוספים";
+    private static final String ITEM = "\"Item\n" + "פרטים\"\t\n";
+    private static final String  EXISTS = "Exists/Does not exist\n" + "קיים / לא קיים";
+    private static final String  CERTIFICATE_NO = "Certificate No. / אישור מס";
+    private static final String  EXPIRATION = "Expiration\n" + "תוקף";
+    private static final String ATTACHED_DOCUMENTS = "Attached Documents\n" + "מסמכים מצורפים";
 
     private static final String TEMPLATE_NAME_VAL = "templateName";
     private static final String VERSION_VAL = "version";
@@ -92,10 +95,10 @@ public class POIXls {
     private static final String QC_COMPANY_VAL = "qcCompany";
     private static final String QA_COMPANY_VAL = "qaCompany";
     private static final String NCR_NUMBER_VAL = "ncrNumber";
-    private static final String QC_NAME_VAL = "ncrOpenQCName";
-    private static final String QC_DATE_OF_NCR_VAL = "ncrOpenQCDate";
-    private static final String QA_NAME_VAL = "ncrOpenQAName";
-    private static final String QA_DATE_OF_NCR_VAL = "ncrOpenQADate";
+    private static final String QC_OPENED_NAME_VAL = "ncrOpenQCName";
+    private static final String QC_OPENED_DATE_OF_NCR_VAL = "ncrOpenQCDate";
+    private static final String QA_OPENED_NAME_VAL = "ncrOpenQAName";
+    private static final String QA_OPENED_DATE_OF_NCR_VAL = "ncrOpenQADate";
     private static final String ELEMENT_STATION_ROAD_TUNNEL_BRIDGE_VAL = "elementStationRoadTunnelBridge";
     private static final String STRUCTURE_VAL = "structure";
     private static final String ELEMENT_VAL = "element";
@@ -115,6 +118,18 @@ public class POIXls {
     private static final String RESPONSIBLE_PERSON_VAL = "responsiblePerson";
     private static final String REMARKS_VAL = "remarks";
 
+    private static final String QC_CLOSED_NAME_VAL = "ncrClosedQCName";
+    private static final String QC_CLOSED_DATE_OF_NCR_VAL = "ncrClosedQCDate";
+    private static final String QA_CLOSED_NAME_VAL = "ncrClosedQAName";
+    private static final String QA_CLOSED_DATE_OF_NCR_VAL = "ncrClosedQADate";
+
+    private static final String ADDITIONAL_DOCUMENTS_VAL = "additionalDocuments";
+    private static final String ITEM_VAL = "item";
+    private static final String EXISTS_VAL = "exists";
+    private static final String CERTIFICATE_NO_VAL = "certificateNo";
+    private static final String EXPIRATION_VAL = "expiration";
+    private static final String ATTACHED_DOCUMENTS_VAL = "attachedDocuments";
+
     public static void main(String[] args) {
         TemplateDTO template = getDefaultTemplate();
         XSSFWorkbook workbook = new XSSFWorkbook();
@@ -128,7 +143,6 @@ public class POIXls {
                 template.getBody().getBodyElements().get(VERSION_VAL),
                 template.getBody().getBodyElements().get(DATE_VAL));
         rowNum = rowNum + 2;
-
         setValuesToRow(sheet,row, rowNum, MAIN_CONTRACTOR, template.getBody().getBodyElements().get(MAIN_CONTRACTOR_VAL),
                 PROJECT_NAME, template.getBody().getBodyElements().get(PROJECT_NAME_VAL));
         rowNum++;
@@ -138,14 +152,18 @@ public class POIXls {
         setValuesToRow(sheet, row, rowNum, QC_COMPANY, template.getBody().getBodyElements().get(QC_COMPANY_VAL),
                 QA_COMPANY, template.getBody().getBodyElements().get(QA_COMPANY_VAL));
         rowNum = rowNum + 2;
-
+        sheet.getPrintSetup();
         row = sheet.createRow(rowNum);
         mergeCells(sheet, rowNum, rowNum, 1, 4);
         mergeCells(sheet, rowNum, rowNum, 5, 8);
         row.createCell(1).setCellValue(NCR_NUMBER);
         row.createCell(5).setCellValue(template.getBody().getBodyElements().get(NCR_NUMBER_VAL));
         rowNum = rowNum + 2;
-        addQaQc(sheet, rowNum, template.getBody());
+        addQaQc(sheet, rowNum, NCR_OPENED, DATE_OF_NCR,
+                template.getBody().getBodyElements().get(QC_OPENED_NAME_VAL),
+                template.getBody().getBodyElements().get(QC_OPENED_DATE_OF_NCR_VAL),
+                template.getBody().getBodyElements().get(QA_OPENED_NAME_VAL),
+                template.getBody().getBodyElements().get(QA_OPENED_DATE_OF_NCR_VAL));
         rowNum = rowNum + 3;
         row = sheet.createRow(rowNum);
         mergeCells(sheet, rowNum, rowNum, 1, 8);
@@ -193,10 +211,23 @@ public class POIXls {
         row = sheet.createRow(rowNum);
         setValuesToRow(sheet, row, rowNum, REMARKS, template.getBody().getBodyElements().get(REMARKS_VAL));
         rowNum++;
-
-
-        row = sheet.createRow(rowNum+1);
-        row.createCell(1).setCellValue("Hello Word!");
+        row = sheet.createRow(rowNum);
+        mergeCells(sheet, rowNum, rowNum, 1, 8);
+        row.createCell(1).setCellValue(ACCEPTANCE_OF_CORRECTIVE_ACTION);
+        rowNum++;
+        addQaQc(sheet, rowNum, NCR_CLOSED, CLOSING_DATE,
+                template.getBody().getBodyElements().get(QC_CLOSED_NAME_VAL),
+                template.getBody().getBodyElements().get(QC_CLOSED_DATE_OF_NCR_VAL),
+                template.getBody().getBodyElements().get(QA_CLOSED_NAME_VAL),
+                template.getBody().getBodyElements().get(QA_CLOSED_DATE_OF_NCR_VAL));
+        rowNum = rowNum + 3;
+        row = sheet.createRow(rowNum);
+        mergeCells(sheet, rowNum, rowNum, 1, 8);
+        row.createCell(1).setCellValue(ADDITIONAL_DOCUMENTS);
+        rowNum++;
+        setValuesToRow(sheet, rowNum, ITEM, EXISTS, CERTIFICATE_NO, EXPIRATION, ATTACHED_DOCUMENTS);
+        rowNum++;
+        setValuesToRow(sheet, rowNum,template.getBody().getBodyLists().get(ADDITIONAL_DOCUMENTS_VAL));
         try {
             FileOutputStream fileOut = new FileOutputStream(TEMPLATES + "XLSX/" + System.currentTimeMillis() +".xlsx");
             workbook.write(fileOut);
@@ -214,17 +245,48 @@ public class POIXls {
         return sheet;
     }
 
-    private static Sheet addQaQc(Sheet sheet, int rowNum, TemplateBody body) {
+    private static Sheet setValuesToRow(Sheet sheet, int rowNum, List<Map<String, String>> list){
+        if (list.isEmpty()){
+            for(int i = 0; i < 2; i++){
+                setValuesToRow(sheet, rowNum, null, null, null, null, null);
+                rowNum++;
+            }
+        }else {
+            for(Map<String, String> d: list){
+                setValuesToRow(sheet, rowNum, d.get(ITEM_VAL), d.get(EXISTS_VAL), d.get(CERTIFICATE_NO_VAL),
+                        d.get(EXPIRATION_VAL), d.get(ATTACHED_DOCUMENTS_VAL));
+                rowNum++;
+            }
+        }
+        return sheet;
+    }
+
+    private static Sheet setValuesToRow(Sheet sheet,  int rowNum, String first, String second, String third, String fourth, String fifth) {
         Row row = sheet.createRow(rowNum);
-        setValuesToRow(sheet, row, rowNum, NCR_OPENED, POSITION, NAME, DATE_OF_NCR);
+        mergeCells(sheet, rowNum, rowNum, 1, 2);
+        row.createCell(1).setCellValue(first);
+        mergeCells(sheet, rowNum, rowNum, 3, 4);
+        row.createCell(3).setCellValue(second);
+        row.createCell(5).setCellValue(third);
+        row.createCell(6).setCellValue(fourth);
+        mergeCells(sheet, rowNum, rowNum, 7, 8);
+        row.createCell(7).setCellValue(fifth);
+        return sheet;
+    }
+
+
+
+    private static Sheet addQaQc(Sheet sheet, int rowNum, String ncr, String ncrDate, String qcName, String qcDate, String qaName, String qaDate) {
+        Row row = sheet.createRow(rowNum);
+        setValuesToRow(sheet, row, rowNum, ncr, POSITION, NAME, ncrDate);
         rowNum++;
         row = sheet.createRow(rowNum);
         mergeCells(sheet, rowNum, rowNum + 1, 1, 2);
         row.createCell(1).setCellValue(QA_QC);
-        setValuesToRow(sheet, row, rowNum, QCM, body.getBodyElements().get(QC_NAME_VAL), body.getBodyElements().get(QC_DATE_OF_NCR_VAL));
+        setValuesToRow(sheet, row, rowNum, QCM, qcName, qcDate);
         rowNum++;
         row = sheet.createRow(rowNum);
-        setValuesToRow(sheet, row, rowNum, QAM, body.getBodyElements().get(QA_NAME_VAL), body.getBodyElements().get(QA_DATE_OF_NCR_VAL));
+        setValuesToRow(sheet, row, rowNum, QAM, qaName, qaDate);
         return sheet;
     }
 
@@ -293,13 +355,14 @@ public class POIXls {
     private static Map<String,List<Map<String,String>>> setDefaultBodyLists() {
         Map<String, List<Map<String, String>>> bodyLists = new HashMap<>();
         bodyLists.put("additionalDocuments", setDefaultAdditionalDocuments());
+//        bodyLists.put("additionalDocuments", new ArrayList<>());
         return bodyLists;
     }
 
 
     private static List<Map<String,String>> setDefaultAdditionalDocuments() {
         List<Map<String, String>> additionalDocuments = new ArrayList<>();
-        for(int i = 0; i < 5; i++){
+        for(int i = 0; i < 10; i++){
             Map<String, String> addDoc1 = new HashMap<>();
             addDoc1.put("item", "i" + i);
             addDoc1.put("exists", "e" + i);
