@@ -89,7 +89,7 @@ public class TemplateService {
         byte[] outputByteArray = null;
         if (!multipartFile.isEmpty()) {
             try {
-                return poiXls.processFileFitToOnePage(multipartFile.getBytes(),
+                return poiXls.addLogoToSheet(multipartFile.getBytes(),
                         countCells);
             } catch (Exception e) {
                 throw new RuntimeException(e);

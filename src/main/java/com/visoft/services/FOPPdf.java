@@ -50,14 +50,14 @@ public class FOPPdf {
 		}
 		try {
 			return convertPDF(template);
-		} catch (IOException | TransformerException | SAXException | ParserConfigurationException e) {
+		} catch (IOException | TransformerException | SAXException e) {
 			e.printStackTrace();
 		}
 		throw new PathValidationException("error", "Something get wrong");
 	}
 
 	private StreamingResponseBody convertPDF(TemplateDTO template)
-			throws IOException, TransformerException, SAXException, ParserConfigurationException {
+			throws IOException, TransformerException, SAXException{
 		File xsltFile = Paths.get(templatesRepository, template.getProjectId(), template.getTemplateName()).toFile();
 		JSONObject jsonObject = new JSONObject(template);
 		String str = xmlStart  + XML.toString(jsonObject) + xmlEnd;

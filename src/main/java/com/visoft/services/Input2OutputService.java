@@ -12,7 +12,7 @@ import java.io.InputStream;
 @Service
 public class Input2OutputService {
 
-    public StreamingResponseBody getOutput(InputStream inputStream){
+    StreamingResponseBody getOutput(InputStream inputStream){
         return outputStream -> {
             int nRead;
             byte[] data = new byte[10240];

@@ -29,7 +29,6 @@ import java.util.*;
 import static com.visoft.cellStyleUtil.CellStyleUtil.*;
 import static com.visoft.cellStyleUtil.FontParams.setFontParams;
 import static com.visoft.services.Const.*;
-import static org.apache.poi.ss.util.RegionUtil.*;
 
 @Service
 public class POIXls {
@@ -83,11 +82,10 @@ public class POIXls {
                     if(body.getLogo().getCountCells() > 8){
                         body.getLogo().setCountCells(8);
                     }
-                    anchor.setCol1(9 - body.getLogo().getCountCells());//
-                // from column B-G
-                    anchor.setRow1(xlsxObject.getRowNum());     // from 2
-                    anchor.setCol2(9);                          // to column Z
-                    anchor.setRow2(xlsxObject.getRowNum() + 1); // to 3
+                    anchor.setCol1(9 - body.getLogo().getCountCells());
+                    anchor.setRow1(xlsxObject.getRowNum());
+                    anchor.setCol2(9);
+                    anchor.setRow2(xlsxObject.getRowNum() + 1);
                     Picture pict = drawingPatriarch.createPicture(anchor, pictureIndex);
                 } catch (FileNotFoundException e) {
                     e.printStackTrace();
@@ -98,42 +96,25 @@ public class POIXls {
         xlsxObject.increment();
     }
 
-    public static void addHeaderInfo(XLSXObject xlsxObject,
-                                     Map<String, String> body,
-                                     XSSFCellStyle styleOne,
-                                     XSSFCellStyle styleTwo,
-                                     XSSFCellStyle styleThree,
-                                     XSSFCellStyle styleFour,
-                                     XSSFCellStyle styleFive,
-                                     XSSFCellStyle styleSix) {
+    public static void addHeaderInfo(XLSXObject xlsxObject, Map<String, String> body,
+                                     XSSFCellStyle style1, XSSFCellStyle style2, XSSFCellStyle style3,
+                                     XSSFCellStyle style4, XSSFCellStyle style5, XSSFCellStyle style6) {
         if(body.get(CHECKLIST_QPN_VAL)!=null){
             addHeaderInfo(xlsxObject,
-                    CHECKLIST_FORM_NO,
-                    CHECKLIST_QPN,
-                    CHECKLIST_TEMPLATE_NAME,
-                    VERSION,
-                    DATE,
-                    styleOne, styleTwo, styleThree);
+                    CHECKLIST_FORM_NO, CHECKLIST_QPN, CHECKLIST_TEMPLATE_NAME, VERSION, DATE,
+                    style1, style2, style3);
             addHeaderInfo(xlsxObject,
-                    body.get(CHECKLIST_FORM_NO_VAL),
-                    body.get(CHECKLIST_QPN_VAL),
-                    body.get(TEMPLATE_NAME_VAL),
-                    body.get(VERSION_VAL),
-                    body.get(DATE_VAL),
-                    styleFour, styleFive, styleSix);
+                    body.get(CHECKLIST_FORM_NO_VAL), body.get(CHECKLIST_QPN_VAL),
+                    body.get(TEMPLATE_NAME_VAL), body.get(VERSION_VAL), body.get(DATE_VAL),
+                    style4, style5, style6);
         }else{
             addHeaderInfo(xlsxObject,
-                    CHECKLIST_FORM_NO,
-                    CHECKLIST_TEMPLATE_NAME,
-                    VERSION,
-                    DATE,
-                    styleOne, styleTwo, styleThree);
+                    CHECKLIST_FORM_NO, CHECKLIST_TEMPLATE_NAME, VERSION, DATE,
+                    style1, style2, style3);
             addHeaderInfo(xlsxObject,
-                    body.get(CHECKLIST_FORM_NO_VAL),
-                    body.get(TEMPLATE_NAME_VAL),
-                    body.get(VERSION_VAL),
-                    body.get(DATE_VAL),
-                    styleFour, styleFive, styleSix);
+                    body.get(CHECKLIST_FORM_NO_VAL), body.get(TEMPLATE_NAME_VAL),
+                    body.get(VERSION_VAL), body.get(DATE_VAL),
+                    style4, style5, style6);
         }
     }
 
@@ -304,8 +285,8 @@ public class POIXls {
                 xlsxObject.getRowNum(), 1, 3);
         mergeCells(xlsxObject.getSheet(), xlsxObject.getRowNum(),
                 xlsxObject.getRowNum(), 4, 5);
-         mergeCells(xlsxObject.getSheet(), xlsxObject.getRowNum(),
-                 xlsxObject.getRowNum(), 6, 8);
+        mergeCells(xlsxObject.getSheet(), xlsxObject.getRowNum(),
+                xlsxObject.getRowNum(), 6, 8);
         heightList.add(getDinamicHeight(first, getDefLengthBCDFont12IL(),
                 IL_DEF_ROW_HEIGHT_FONT_18));
         heightList.add(getDinamicHeight(second, getDefLengthEFFont12IL(),
@@ -356,13 +337,6 @@ public class POIXls {
                 }
             }
         }
-    }
-
-    public StreamingResponseBody writeWorkBook(XSSFWorkbook workbook) throws IOException {
-        ByteArrayOutputStream out = new ByteArrayOutputStream();
-        workbook.write(out);
-        InputStream inputStream = new ByteArrayInputStream(out.toByteArray());
-        return resultService.getOutput(inputStream);
     }
 
     public static void addEmptyStringWithGivenHeight(XLSXObject xlsxObject, int i) {
@@ -534,13 +508,13 @@ public class POIXls {
         row.createCell(8).setCellStyle(style3);
         row.getCell(1).setCellValue(first);
         row.getCell(7).setCellValue(second);
+        row.getCell(8).setCellValue(third);
         mergeCells(xlsxObject.getSheet(), xlsxObject.getRowNum(),
                 xlsxObject.getRowNum(), 1, 6);
         heightList.add(getDinamicHeight(first, getDefLengthBGFont18IL(),
                 IL_DEF_ROW_HEIGHT_FONT_18));
         heightList.add(getDinamicHeight(second, cellLengthFont12IL[7],
                 IL_DEF_ROW_HEIGHT_FONT_18));
-        row.getCell(8).setCellValue(third);
         heightList.add(getDinamicHeight(third, cellLengthFont12IL[8],
                 IL_DEF_ROW_HEIGHT_FONT_18));
         row.setHeightInPoints(Collections.max(heightList));
@@ -570,20 +544,15 @@ public class POIXls {
     }
 
     private static void addHeaderInfo (XLSXObject xlsxObject,
-                                       String first,
-                                       String second,
-                                       String third,
-                                       String fourth,
-                                       XSSFCellStyle styleOne,
-                                       XSSFCellStyle styleTwo,
-                                       XSSFCellStyle styleThree) {
+                                       String first, String second, String third, String fourth,
+                                       XSSFCellStyle style1, XSSFCellStyle style2, XSSFCellStyle style3) {
         Row row = xlsxObject.getSheet().createRow(xlsxObject.getRowNum());
-        row.createCell(1).setCellStyle(styleOne);
+        row.createCell(1).setCellStyle(style1);
         for (int i=2; i<=6; i++){
-            row.createCell(i).setCellStyle(styleTwo);
+            row.createCell(i).setCellStyle(style2);
         }
-        row.createCell(7).setCellStyle(styleTwo);
-        row.createCell(8).setCellStyle(styleThree);
+        row.createCell(7).setCellStyle(style2);
+        row.createCell(8).setCellStyle(style3);
         mergeCells(xlsxObject.getSheet(), xlsxObject.getRowNum(),
                 xlsxObject.getRowNum(), 2, 6);
         row.getCell(1).setCellValue(first);
@@ -598,13 +567,16 @@ public class POIXls {
                                    XSSFCellStyle style1, XSSFCellStyle style2, XSSFCellStyle style3, XSSFCellStyle style4,
                                    XSSFCellStyle style5, XSSFCellStyle style6, XSSFCellStyle style7, XSSFCellStyle style8,
                                    XSSFCellStyle style9, XSSFCellStyle style10, XSSFCellStyle style11, XSSFCellStyle style12) {
-        setValuesToRow(xlsxObject, MAIN_CONTRACTOR, template.getBody() .getBodyElements().get(MAIN_CONTRACTOR_VAL),
+        setValuesToRow(xlsxObject,
+                MAIN_CONTRACTOR, template.getBody().getBodyElements().get(MAIN_CONTRACTOR_VAL),
                 PROJECT_NAME, template.getBody().getBodyElements(). get(PROJECT_NAME_VAL),
                 style1, style2, style3, style4);
-        setValuesToRow(xlsxObject, MANAGEMENT_COMPANY, template.getBody().getBodyElements().get(MANAGEMENT_COMPANY_VAL),
+        setValuesToRow(xlsxObject,
+                MANAGEMENT_COMPANY, template.getBody().getBodyElements().get(MANAGEMENT_COMPANY_VAL),
                 CONTRACT_NO, template.getBody().getBodyElements().get(CONTRACT_NO_VAL),
                 style5, style6, style7, style8);
-        setValuesToRow(xlsxObject, QC_COMPANY, template.getBody().getBodyElements().get(QC_COMPANY_VAL),
+        setValuesToRow(xlsxObject,
+                QC_COMPANY, template.getBody().getBodyElements().get(QC_COMPANY_VAL),
                 QA_COMPANY, template.getBody().getBodyElements().get(QA_COMPANY_VAL),
                 style9, style10, style11, style12);
     }
@@ -626,22 +598,14 @@ public class POIXls {
         row.getCell(3).setCellValue(second);
         row.getCell(5).setCellValue(third);
         row.getCell(7).setCellValue(fourth);
-        mergeCells(xlsxObject.getSheet(), xlsxObject.getRowNum(),
-                xlsxObject.getRowNum(), 1, 2);
-        mergeCells(xlsxObject.getSheet(), xlsxObject.getRowNum(),
-                xlsxObject.getRowNum(), 3, 4);
-        mergeCells(xlsxObject.getSheet(), xlsxObject.getRowNum(),
-                xlsxObject.getRowNum(), 5, 6);
-        mergeCells(xlsxObject.getSheet(), xlsxObject.getRowNum(),
-                xlsxObject.getRowNum(), 7, 8);
-        heightList.add(getDinamicHeight(first, getDefLengthBCFont12IL(),
-                IL_DEF_ROW_HEIGHT_FONT_18));
-        heightList.add(getDinamicHeight(second, getDefLengthDEFont12IL(),
-                IL_DEF_ROW_HEIGHT_FONT_18));
-        heightList.add(getDinamicHeight(third, getDefLengthFGFont12IL(),
-                IL_DEF_ROW_HEIGHT_FONT_18));
-        heightList.add(getDinamicHeight(fourth, getDefLengthHIFont12IL(),
-                IL_DEF_ROW_HEIGHT_FONT_18));
+        mergeCells(xlsxObject.getSheet(), xlsxObject.getRowNum(), xlsxObject.getRowNum(), 1, 2);
+        mergeCells(xlsxObject.getSheet(), xlsxObject.getRowNum(), xlsxObject.getRowNum(), 3, 4);
+        mergeCells(xlsxObject.getSheet(), xlsxObject.getRowNum(), xlsxObject.getRowNum(), 5, 6);
+        mergeCells(xlsxObject.getSheet(), xlsxObject.getRowNum(), xlsxObject.getRowNum(), 7, 8);
+        heightList.add(getDinamicHeight(first, getDefLengthBCFont12IL(), IL_DEF_ROW_HEIGHT_FONT_18));
+        heightList.add(getDinamicHeight(second, getDefLengthDEFont12IL(), IL_DEF_ROW_HEIGHT_FONT_18));
+        heightList.add(getDinamicHeight(third, getDefLengthFGFont12IL(), IL_DEF_ROW_HEIGHT_FONT_18));
+        heightList.add(getDinamicHeight(fourth, getDefLengthHIFont12IL(), IL_DEF_ROW_HEIGHT_FONT_18));
         row.setHeightInPoints(Collections.max(heightList));
         xlsxObject.increment();
     }
@@ -655,25 +619,18 @@ public class POIXls {
         for (int i=1; i<=4; i++){
             row.createCell(i).setCellStyle(style1);
             row.createCell(i+4).setCellStyle(style2);
-
         }
         row.getCell(1).setCellValue(first);
         row.getCell(5).setCellValue(second);
-        mergeCells(xlsxObject.getSheet(), xlsxObject.getRowNum(),
-                xlsxObject.getRowNum(), 1, 4);
-        mergeCells(xlsxObject.getSheet(), xlsxObject.getRowNum(),
-                xlsxObject.getRowNum(), 5, 8);
-        heightList.add(getDinamicHeight(first, getDefLengthBEFont12IL(),
-                IL_DEF_ROW_HEIGHT_FONT_18));
-        heightList.add(getDinamicHeight(second, getDefLengthFIFont12IL(),
-                IL_DEF_ROW_HEIGHT_FONT_18));
+        mergeCells(xlsxObject.getSheet(), xlsxObject.getRowNum(), xlsxObject.getRowNum(), 1, 4);
+        mergeCells(xlsxObject.getSheet(), xlsxObject.getRowNum(), xlsxObject.getRowNum(), 5, 8);
+        heightList.add(getDinamicHeight(first, getDefLengthBEFont12IL(), IL_DEF_ROW_HEIGHT_FONT_18));
+        heightList.add(getDinamicHeight(second, getDefLengthFIFont12IL(), IL_DEF_ROW_HEIGHT_FONT_18));
         row.setHeightInPoints(Collections.max(heightList));
         xlsxObject.increment();
     }
 
-    public static void addAlignmentRow(XLSXObject xlsxObject,
-                                       String value,
-                                       XSSFCellStyle style) {
+    public static void addAlignmentRow(XLSXObject xlsxObject, String value, XSSFCellStyle style) {
         Row row = xlsxObject.getSheet().createRow(xlsxObject.getRowNum());
         mergeCells(xlsxObject.getSheet(), xlsxObject.getRowNum(), xlsxObject.getRowNum(), 1, 8);
         for (int i = 1; i <= 8; i++){
@@ -703,23 +660,15 @@ public class POIXls {
         row.getCell(5).setCellValue(third);
         row.getCell(6).setCellValue(fourth);
         row.getCell(7).setCellValue(fifth);
-        mergeCells(xlsxObject.getSheet(), xlsxObject.getRowNum(),
-                xlsxObject.getRowNum(), 1, 2);
-        mergeCells(xlsxObject.getSheet(), xlsxObject.getRowNum(),
-                xlsxObject.getRowNum(), 3, 4);
-        mergeCells(xlsxObject.getSheet(), xlsxObject.getRowNum(),
-                xlsxObject.getRowNum(), 7, 8);
+        mergeCells(xlsxObject.getSheet(), xlsxObject.getRowNum(), xlsxObject.getRowNum(), 1, 2);
+        mergeCells(xlsxObject.getSheet(), xlsxObject.getRowNum(), xlsxObject.getRowNum(), 3, 4);
+        mergeCells(xlsxObject.getSheet(), xlsxObject.getRowNum(), xlsxObject.getRowNum(), 7, 8);
         heightList.add(IL_DEF_ROW_HEIGHT_FONT_18);
-        heightList.add(getDinamicHeight(first, getDefLengthBCFont12IL(),
-                IL_DEF_ROW_HEIGHT_FONT_12));
-        heightList.add(getDinamicHeight(second, getDefLengthDEFont12IL(),
-                IL_DEF_ROW_HEIGHT_FONT_12));
-        heightList.add(getDinamicHeight(third, cellLengthFont12IL[5],
-                IL_DEF_ROW_HEIGHT_FONT_12));
-        heightList.add(getDinamicHeight(fourth, cellLengthFont12IL[6],
-                IL_DEF_ROW_HEIGHT_FONT_12));
-        heightList.add(getDinamicHeight(fifth, getDefLengthHIFont12IL(),
-                IL_DEF_ROW_HEIGHT_FONT_12));
+        heightList.add(getDinamicHeight(first, getDefLengthBCFont12IL(), IL_DEF_ROW_HEIGHT_FONT_12));
+        heightList.add(getDinamicHeight(second, getDefLengthDEFont12IL(), IL_DEF_ROW_HEIGHT_FONT_12));
+        heightList.add(getDinamicHeight(third, cellLengthFont12IL[5], IL_DEF_ROW_HEIGHT_FONT_12));
+        heightList.add(getDinamicHeight(fourth, cellLengthFont12IL[6], IL_DEF_ROW_HEIGHT_FONT_12));
+        heightList.add(getDinamicHeight(fifth, getDefLengthHIFont12IL(), IL_DEF_ROW_HEIGHT_FONT_12));
         row.setHeightInPoints(Collections.max(heightList));
         xlsxObject.increment();
     }
@@ -773,10 +722,8 @@ public class POIXls {
         row.getCell(6).setCellValue(fourth);
         row.getCell(7).setCellValue(fifth);
         row.getCell(8).setCellValue(sixth);
-        mergeCells(xlsxObject.getSheet(), xlsxObject.getRowNum(),
-                xlsxObject.getRowNum(), 1, 2);
-        mergeCells(xlsxObject.getSheet(), xlsxObject.getRowNum(),
-                xlsxObject.getRowNum(), 3, 4);
+        mergeCells(xlsxObject.getSheet(), xlsxObject.getRowNum(), xlsxObject.getRowNum(), 1, 2);
+        mergeCells(xlsxObject.getSheet(), xlsxObject.getRowNum(), xlsxObject.getRowNum(), 3, 4);
         row.setHeightInPoints(35);
         xlsxObject.increment();
     }
@@ -838,31 +785,22 @@ public class POIXls {
         row.getCell(6).setCellValue(fourth);
         row.getCell(7).setCellValue(fifth);
         row.getCell(8).setCellValue(sixth);
-        mergeCells(xlsxObject.getSheet(), xlsxObject.getRowNum(),
-                xlsxObject.getRowNum(), 1, 2);
-        mergeCells(xlsxObject.getSheet(), xlsxObject.getRowNum(),
-                xlsxObject.getRowNum(), 3, 4);
+        mergeCells(xlsxObject.getSheet(), xlsxObject.getRowNum(), xlsxObject.getRowNum(), 1, 2);
+        mergeCells(xlsxObject.getSheet(), xlsxObject.getRowNum(), xlsxObject.getRowNum(), 3, 4);
         heightList.add(IL_DEF_ROW_HEIGHT_FONT_18);
         if(!isConst){
-            heightList.add(getDinamicHeight(first, getDefLengthBCFont12IL(),
-                    IL_DEF_ROW_HEIGHT_FONT_18));
-            heightList.add(getDinamicHeight(second, getDefLengthDEFont12IL(),
-                    IL_DEF_ROW_HEIGHT_FONT_18));
-            heightList.add(getDinamicHeight(third, cellLengthFont12IL[5],
-                    IL_DEF_ROW_HEIGHT_FONT_18));
-            heightList.add(getDinamicHeight(fourth, cellLengthFont12IL[6],
-                    IL_DEF_ROW_HEIGHT_FONT_18));
-            heightList.add(getDinamicHeight(fifth, cellLengthFont12IL[7],
-                    IL_DEF_ROW_HEIGHT_FONT_18));
-            heightList.add(getDinamicHeight(sixth, cellLengthFont12IL[8],
-                    IL_DEF_ROW_HEIGHT_FONT_18));
+            heightList.add(getDinamicHeight(first, getDefLengthBCFont12IL(), IL_DEF_ROW_HEIGHT_FONT_18));
+            heightList.add(getDinamicHeight(second, getDefLengthDEFont12IL(), IL_DEF_ROW_HEIGHT_FONT_18));
+            heightList.add(getDinamicHeight(third, cellLengthFont12IL[5], IL_DEF_ROW_HEIGHT_FONT_18));
+            heightList.add(getDinamicHeight(fourth, cellLengthFont12IL[6], IL_DEF_ROW_HEIGHT_FONT_18));
+            heightList.add(getDinamicHeight(fifth, cellLengthFont12IL[7], IL_DEF_ROW_HEIGHT_FONT_18));
+            heightList.add(getDinamicHeight(sixth, cellLengthFont12IL[8], IL_DEF_ROW_HEIGHT_FONT_18));
         }
         row.setHeightInPoints(Collections.max(heightList));
         xlsxObject.increment();
     }
 
-    public static void addChecklistItemsList(XLSXObject xlsxObject,
-                                             List<Map<String, String>> list,
+    public static void addChecklistItemsList(XLSXObject xlsxObject, List<Map<String, String>> list,
                                              XSSFCellStyle style1, XSSFCellStyle style2, XSSFCellStyle style3, XSSFCellStyle style4,
                                              XSSFCellStyle style5, XSSFCellStyle style6, XSSFCellStyle style7, XSSFCellStyle style8,
                                              XSSFCellStyle style9, XSSFCellStyle style10, XSSFCellStyle style11, XSSFCellStyle style12,
@@ -873,49 +811,36 @@ public class POIXls {
         }
         if(list.size()==1){
             addChecklistItem(xlsxObject,
-                    list.get(0).get(CHECKLIST_ITEMS_WORK_DEFINITION_VAL),
-                    list.get(0).get(CHECKLIST_ITEMS_RESPONSIBLE_PARTY_VAL),
-                    list.get(0).get(CHECKLIST_ITEMS_NAME_VAL),
-                    list.get(0).get(CHECKLIST_ITEMS_SIGNATURE_VAL),
-                    list.get(0).get(CHECKLIST_ITEMS_DATE_VAL),
-                    list.get(0).get(CHECKLIST_ITEMS_NOTES_VAL),
+                    list.get(0).get(CHECKLIST_ITEMS_WORK_DEFINITION_VAL), list.get(0).get(CHECKLIST_ITEMS_RESPONSIBLE_PARTY_VAL),
+                    list.get(0).get(CHECKLIST_ITEMS_NAME_VAL), list.get(0).get(CHECKLIST_ITEMS_SIGNATURE_VAL),
+                    list.get(0).get(CHECKLIST_ITEMS_DATE_VAL), list.get(0).get(CHECKLIST_ITEMS_NOTES_VAL),
                     style13, style14, style15, style16, false);
         } else {
             for(int i=0; i<list.size(); i++){
                 if(i==0){
                     addChecklistItem(xlsxObject,
-                            list.get(i).get(CHECKLIST_ITEMS_WORK_DEFINITION_VAL),
-                            list.get(i).get(CHECKLIST_ITEMS_RESPONSIBLE_PARTY_VAL),
-                            list.get(i).get(CHECKLIST_ITEMS_NAME_VAL),
-                            list.get(i).get(CHECKLIST_ITEMS_SIGNATURE_VAL),
-                            list.get(i).get(CHECKLIST_ITEMS_DATE_VAL),
-                            list.get(i).get(CHECKLIST_ITEMS_NOTES_VAL),
+                            list.get(i).get(CHECKLIST_ITEMS_WORK_DEFINITION_VAL), list.get(i).get(CHECKLIST_ITEMS_RESPONSIBLE_PARTY_VAL),
+                            list.get(i).get(CHECKLIST_ITEMS_NAME_VAL), list.get(i).get(CHECKLIST_ITEMS_SIGNATURE_VAL),
+                            list.get(i).get(CHECKLIST_ITEMS_DATE_VAL), list.get(i).get(CHECKLIST_ITEMS_NOTES_VAL),
                             style1, style2, style3, style4, false);
                 } else if(i==list.size()-1){
                     addChecklistItem(xlsxObject,
-                            list.get(i).get(CHECKLIST_ITEMS_WORK_DEFINITION_VAL),
-                            list.get(i).get(CHECKLIST_ITEMS_RESPONSIBLE_PARTY_VAL),
-                            list.get(i).get(CHECKLIST_ITEMS_NAME_VAL),
-                            list.get(i).get(CHECKLIST_ITEMS_SIGNATURE_VAL),
-                            list.get(i).get(CHECKLIST_ITEMS_DATE_VAL),
-                            list.get(i).get(CHECKLIST_ITEMS_NOTES_VAL),
+                            list.get(i).get(CHECKLIST_ITEMS_WORK_DEFINITION_VAL), list.get(i).get(CHECKLIST_ITEMS_RESPONSIBLE_PARTY_VAL),
+                            list.get(i).get(CHECKLIST_ITEMS_NAME_VAL), list.get(i).get(CHECKLIST_ITEMS_SIGNATURE_VAL),
+                            list.get(i).get(CHECKLIST_ITEMS_DATE_VAL), list.get(i).get(CHECKLIST_ITEMS_NOTES_VAL),
                             style9, style10, style11, style12, false);
                 } else {
                     addChecklistItem(xlsxObject,
-                            list.get(i).get(CHECKLIST_ITEMS_WORK_DEFINITION_VAL),
-                            list.get(i).get(CHECKLIST_ITEMS_RESPONSIBLE_PARTY_VAL),
-                            list.get(i).get(CHECKLIST_ITEMS_NAME_VAL),
-                            list.get(i).get(CHECKLIST_ITEMS_SIGNATURE_VAL),
-                            list.get(i).get(CHECKLIST_ITEMS_DATE_VAL),
-                            list.get(i).get(CHECKLIST_ITEMS_NOTES_VAL),
+                            list.get(i).get(CHECKLIST_ITEMS_WORK_DEFINITION_VAL), list.get(i).get(CHECKLIST_ITEMS_RESPONSIBLE_PARTY_VAL),
+                            list.get(i).get(CHECKLIST_ITEMS_NAME_VAL), list.get(i).get(CHECKLIST_ITEMS_SIGNATURE_VAL),
+                            list.get(i).get(CHECKLIST_ITEMS_DATE_VAL), list.get(i).get(CHECKLIST_ITEMS_NOTES_VAL),
                             style5, style6, style7, style8, false);
                 }
             }
         }
     }
 
-    public static void setValuesToRow(XLSXObject xlsxObject,
-                                      LinkedMap<String, String> body,
+    public static void setValuesToRow(XLSXObject xlsxObject, LinkedMap<String, String> body,
                                       XSSFCellStyle style1, XSSFCellStyle style2,
                                       XSSFCellStyle style3, XSSFCellStyle style4,
                                       XSSFCellStyle style5, XSSFCellStyle style6){
@@ -930,8 +855,7 @@ public class POIXls {
         }
     }
 
-    public static void setValuesToRow(XLSXObject xlsxObject,
-                                      LinkedMap<String, String> body,
+    public static void setValuesToRow(XLSXObject xlsxObject, LinkedMap<String, String> body,
                                       XSSFCellStyle style1, XSSFCellStyle style2,
                                       XSSFCellStyle style3, XSSFCellStyle style4){
         for (String s : body.keySet()){
@@ -1012,8 +936,7 @@ public class POIXls {
         return value.length() - value.replaceAll("\n","").length();
     }
 
-    StreamingResponseBody processFileFitToOnePage(byte[] bytes,
-                                                  int countCells) throws IOException {
+    StreamingResponseBody addLogoToSheet(byte[] bytes, int countCells) throws IOException {
         XSSFWorkbook workbook = new XSSFWorkbook();
         XSSFSheet sheet = workbook.createSheet("LOGO");
         setILColumnWidths(sheet);
