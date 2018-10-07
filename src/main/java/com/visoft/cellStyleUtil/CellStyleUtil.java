@@ -4,8 +4,10 @@ import com.visoft.services.Alignment;
 import com.visoft.templates.entity.XLSXObject;
 import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.XSSFCellStyle;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
 
-import static org.apache.poi.ss.usermodel.BorderStyle.*;
+import static org.apache.poi.ss.usermodel.BorderStyle.MEDIUM;
+import static org.apache.poi.ss.usermodel.BorderStyle.THIN;
 
 public class CellStyleUtil {
 
@@ -17,7 +19,7 @@ public class CellStyleUtil {
         return font;
     }
 
-    public static XSSFCellStyle  setBordersAndFont(XLSXObject xlsxObject,
+    private static XSSFCellStyle setBordersAndFont(XLSXObject xlsxObject,
                                                    FontParams fontParams,
                                                    BorderStyle left,
                                                    BorderStyle top,
@@ -36,7 +38,7 @@ public class CellStyleUtil {
     }
 
 
-    public static XSSFCellStyle  setBordersAndFont(XLSXObject xlsxObject,
+    public static XSSFCellStyle setBordersAndFont(XLSXObject xlsxObject,
                                                    FontParams fontParams,
                                                    BorderStyle left,
                                                    BorderStyle top,
@@ -58,6 +60,16 @@ public class CellStyleUtil {
         return style;
     }
 
+    public static XSSFCellStyle setAllBordersByBorderStyle (XSSFSheet sh,
+                                                            BorderStyle bs) {
+        XSSFCellStyle style = sh.getWorkbook().createCellStyle();
+        style.setBorderLeft(bs);
+        style.setBorderTop(bs);
+        style.setBorderRight(bs);
+        style.setBorderBottom(bs);
+        return style;
+    }
+
     public static XSSFCellStyle  setAllBordersThin(XLSXObject xlsxObject,
                                                    FontParams fontParams) {
         return setBordersAndFont(xlsxObject, fontParams,
@@ -66,7 +78,7 @@ public class CellStyleUtil {
     }
 
 
-    public static XSSFCellStyle  setAllBordersByStyle(XLSXObject xlsxObject,
+    public static XSSFCellStyle setAllBordersByStyle(XLSXObject xlsxObject,
                                                FontParams fontParams,
                                                BorderStyle borderStyle) {
         return setBordersAndFont(xlsxObject, fontParams,
@@ -93,7 +105,10 @@ public class CellStyleUtil {
         return style;
     }
 
-    public static XSSFCellStyle setAlignmentByParam(XLSXObject xlsxObject, FontParams fontParams, Alignment alignment) {
+    public static XSSFCellStyle setAlignmentByParam(XLSXObject xlsxObject,
+                                                    FontParams fontParams,
+                                                    Alignment alignment,
+                                                    BorderStyle borderStyle) {
         XSSFCellStyle style = (XSSFCellStyle) xlsxObject.getSheet().getWorkbook().createCellStyle();
         style.setFont(createFont(xlsxObject, fontParams));
         style.setVerticalAlignment(VerticalAlignment.CENTER);
@@ -106,6 +121,10 @@ public class CellStyleUtil {
         if(alignment.equals(Alignment.RIGHT)){
             style.setAlignment(HorizontalAlignment.RIGHT);
         }
+        style.setBorderLeft(borderStyle);
+        style.setBorderTop(borderStyle);
+        style.setBorderRight(borderStyle);
+        style.setBorderBottom(borderStyle);
         return style;
     }
 
@@ -133,10 +152,82 @@ public class CellStyleUtil {
         style.setVerticalAlignment(verticalAlignment);
     }
 
-    private static XSSFCellStyle
-    setAlignmentsCenterBottom (XSSFCellStyle style){
+    private static XSSFCellStyle setAlignmentsCenterBottom (XSSFCellStyle style){
         style.setAlignment(HorizontalAlignment.CENTER);
         style.setVerticalAlignment(VerticalAlignment.BOTTOM);
         return style;
+    }
+
+    public static XSSFCellStyle getLTMediumRBThinFont(XLSXObject xlsxObject, FontParams font) {
+        return setBordersAndFont(xlsxObject, font,
+                BorderStyle.MEDIUM, BorderStyle.MEDIUM,
+                BorderStyle.THIN, BorderStyle.THIN);
+    }
+
+    public static XSSFCellStyle getRMediumLTBThinFont(XLSXObject xlsxObject, FontParams font) {
+        return setBordersAndFont(xlsxObject, font,
+                BorderStyle.THIN, BorderStyle.THIN,
+                BorderStyle.MEDIUM, BorderStyle.THIN);
+    }
+
+    public static XSSFCellStyle getTMediumLRBThinFont(XLSXObject xlsxObject, FontParams font) {
+        return setBordersAndFont(xlsxObject, font,
+                BorderStyle.THIN, BorderStyle.MEDIUM,
+                BorderStyle.THIN, BorderStyle.THIN);
+    }
+
+    public static XSSFCellStyle getTRMediumLBThinFont(XLSXObject xlsxObject, FontParams font){
+        return setBordersAndFont(xlsxObject, font,
+                BorderStyle.THIN, BorderStyle.MEDIUM,
+                BorderStyle.MEDIUM, BorderStyle.THIN);
+    }
+
+    public static XSSFCellStyle getLBMediumTRThinFont(XLSXObject xlsxObject, FontParams font){
+        return setBordersAndFont(
+                xlsxObject, font,
+                BorderStyle.MEDIUM, BorderStyle.THIN,
+                BorderStyle.THIN, BorderStyle.MEDIUM);
+    }
+
+    public static XSSFCellStyle getBMediumLTRThinFont(XLSXObject xlsxObject, FontParams font){
+        return setBordersAndFont(xlsxObject, font,
+                BorderStyle.THIN, BorderStyle.THIN,
+                BorderStyle.THIN, BorderStyle.MEDIUM);
+    }
+
+    public static XSSFCellStyle getRBMediumLTThinFont(XLSXObject xlsxObject, FontParams font){
+        return setBordersAndFont(xlsxObject, font,
+                BorderStyle.THIN, BorderStyle.THIN,
+                BorderStyle.MEDIUM, BorderStyle.MEDIUM);
+    }
+
+    public static XSSFCellStyle getLTBMediumRThinFont(XLSXObject xlsxObject, FontParams font){
+        return setBordersAndFont(xlsxObject, font,
+                BorderStyle.MEDIUM, BorderStyle.MEDIUM,
+                BorderStyle.THIN, BorderStyle.MEDIUM);
+    }
+
+    public static XSSFCellStyle getTBMediumLRThinFont(XLSXObject xlsxObject, FontParams font){
+        return setBordersAndFont(xlsxObject, font,
+                BorderStyle.THIN, BorderStyle.MEDIUM,
+                BorderStyle.THIN, BorderStyle.MEDIUM);
+    }
+
+    public static XSSFCellStyle getTRBMediumLThinFont(XLSXObject xlsxObject, FontParams font){
+        return setBordersAndFont(xlsxObject, font,
+                BorderStyle.THIN, BorderStyle.MEDIUM,
+                BorderStyle.MEDIUM, BorderStyle.MEDIUM);
+    }
+
+    public static XSSFCellStyle getLMediumTRBThinFont(XLSXObject xlsxObject, FontParams font) {
+        return setBordersAndFont(xlsxObject, font,
+                BorderStyle.MEDIUM, BorderStyle.THIN,
+                BorderStyle.THIN, BorderStyle.THIN);
+    }
+
+    public static XSSFCellStyle getLBMediumRTThinFont(XLSXObject xlsxObject, FontParams font) {
+        return setBordersAndFont(xlsxObject, font,
+                BorderStyle.MEDIUM, BorderStyle.THIN,
+                BorderStyle.THIN, BorderStyle.MEDIUM);
     }
 }

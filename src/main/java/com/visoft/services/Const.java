@@ -9,10 +9,8 @@ public interface Const {
     int[] cellLengthFont12IL = {2, 18, 18, 16, 16, 18, 14, 18 ,13};
     int IL_DEF_ROW_HEIGHT_FONT_18 = 35;
     int IL_DEF_ROW_HEIGHT_FONT_12 = 24;
-    String TEMPLATES = "E:/WORK/TEMPLATES/";
     int FONT_RATE = 20;
     int COLUMN_WIDTHS_RATE = 36;
-//    String FONT_NAME_ARIAL = "Arial";
     String FONT_NAME_CALIBRI = "Calibri";
     String NCR_TEMPLATE_NAME = "טופס אי התאמה";
     String POC_TEMPLATE_NAME = "דו\"ח קטעי ניסוי";
@@ -32,7 +30,7 @@ public interface Const {
     String PRELIM_MATERIALS_INS_TEMPLATE_NAME =
             "בקרה מקדימה לחומרים";
     String LOGO_VAL = "logoValue";
-    String LOGO_PATH = "logoPath";
+    String LOGO_PATH = "logo.jpg";
     String CHECKLIST_FORM_NO = "Form N \n" + "רשימת תיוג מס'";
     String CHECKLIST_QPN = "QP N / מס'נוהל";
     String CHECKLIST_TEMPLATE_NAME = "Procedure Name / שם הנוהל";
@@ -83,8 +81,6 @@ public interface Const {
             "תאריך משוער לסגירה מקורי";
     String SUB_PROJECT = "Sub Project / תת פרויקט";
     String NCR_DESCRIPTION = "NCR description / תאור אי ההתאמה";
-    String RESPONSIBLE_PARTY = "Responsible Party (Design ,Contractor," +
-            "Supplier) / גורם אחראי לליקוי (תכנון, ביצוע, ספק)";
     String CORRECTIVE_ACTION = "Corrective action / פעולה מתקנת נדרשת";
     String DESCRIPTION_OF_PERFORMED_CORRECTIVE_ACTION =
             "Description of performed corrective action / פעולה מתקנת שבוצעה";
@@ -122,15 +118,14 @@ public interface Const {
     String QC_COMPANY_VAL = "qcCompany";
     String QA_COMPANY_VAL = "qaCompany";
     String NCR_NUMBER_VAL = "ncrNumber";
-    String QC_OPENED_NAME_VAL = "ncrOpenQCName";
-    String QC_OPENED_DATE_OF_NCR_VAL = "ncrOpenQCDate";
-    String QA_OPENED_NAME_VAL = "ncrOpenQAName";
-    String QA_OPENED_DATE_OF_NCR_VAL = "ncrOpenQADate";
+    String QC_OPENED_NAME_VAL = "ncrOpenedQCName";
+    String QC_OPENED_DATE_OF_NCR_VAL = "ncrOpenedQCDate";
+    String QA_OPENED_NAME_VAL = "ncrOpenedQAName";
+    String QA_OPENED_DATE_OF_NCR_VAL = "ncrOpenedQADate";
     String DRAWING_NO_VAL = "drawingNo";
     String DRAWING_VERSION_REVISION_VAL = "versionRevision";
     String DRAWING_NAME_VAL = "drawingName";
-    String ELEMENT_STATION_ROAD_TUNNEL_BRIDGE_VAL =
-            "elementStationRoadTunnelBridge";
+    String ELEMENT_STATION_ROAD_TUNNEL_BRIDGE_VAL = "elementStationRoadTunnelBridge";
     String STRUCTURE_VAL = "structure";
     String ELEMENT_VAL = "element";
     String FROM_SECTION_VAL = "fromSection";
@@ -139,24 +134,21 @@ public interface Const {
     String NCR_LEVEL_VAL = "ncrLevel";
     String ELEMENT_LAYER_VAL = "elementLayer";
     String BLUE_BOOK_CODE_VAL = "blueBookCode";
-    String SUB_ELEMENT_VAL = "SubElement";
+    String SUB_ELEMENT_VAL = "subElement";
     String NUMBER_OF_DAYS_LATE_VAL = "numberOfDaysLate";
     String EXPECTED_CLOSING_DATE_VAL = "expectedClosingDate";
     String UPDATED_EXPECTED_CLOSING_DATE_VAL = "updatedExpectedClosingDate";
     String SUB_PROJECT_VAL = "subProject";
     String NCR_DESCRIPTION_VAL = "ncrDescription";
     String CORRECTIVE_ACTION_VAL = "correctiveAction";
-    String DESCRIPTION_OF_PERFORMED_CORRECTIVE_ACTION_VAL =
-            "descriptionOfPerformedCorrectiveAction";
+    String DESCRIPTION_OF_PERFORMED_CORRECTIVE_ACTION_VAL = "descriptionOfPerformedCorrectiveAction";
     String RESPONSIBLE_PERSON_VAL = "responsiblePerson";
     String REMARKS_VAL = "remarks";
     String APPROXIMATE_CLOSING_DATE_VAL = "approximateClosingDate";
-    String RESPONSIBLE_PARTY_DESIGN_CONTRACTOR_SUPPLIER_VAL =
-            "responsiblePartyDesignContractorSupplier";
+    String RESPONSIBLE_PARTY_DESIGN_CONTRACTOR_SUPPLIER_VAL = "responsiblePartyDesignContractorSupplier";
     String DAMAGE_VAL = "damage";
     String QUALITY_IMPACT_VAL = "qualityImpact";
-    String ORIGINAL_EXPECTED_CLOSING_DATE_VAL  =
-            "originalExpectedClosingDate";
+    String ORIGINAL_EXPECTED_CLOSING_DATE_VAL  = "originalExpectedClosingDate";
     String RESPONSIBLE_PARTY_ROLE_VAL = "responsiblePartyRole";
     String IS_OPENED_BEFORE_VAL = "isOpenedBefore";
     String OPENED_BEFORE_NCR_NO_VAL = "openedBeforeNcrNo";
@@ -197,16 +189,13 @@ public interface Const {
 
     String APP_OF_SUBCONTR_APPROVAL_NO = "Approval No. / אישור מס'";
     String APP_OF_SUBCONTR_SUB_CONTRACTOR_NAME = "Sub-Contractor name";
-    String APP_OF_SUBCONTR_FIELD_OF_ACTIVITY  =
-            "Field of Activity / תחום פעילות";
+    String APP_OF_SUBCONTR_FIELD_OF_ACTIVITY  = "Field of Activity / תחום פעילות";
     String APP_OF_SUBCONTR_SUBPROJECT = "Subproject / תת פרויקט";
-    String APP_OF_SUBCONTR_CONTACT =
-            "Contact Person and telephone / אנשי קשר וטלפון";
+    String APP_OF_SUBCONTR_CONTACT = "Contact Person and telephone / אנשי קשר וטלפון";
 
     String APP_OF_SUBCONTR_APPROVAL_NO_VAL = "approvalNo";
-    String APP_OF_SUBCONTR_SUB_CONTRACTOR_NAME_VAL = "SubContractorName";
-    String APP_OF_SUBCONTR_FIELD_OF_ACTIVITY_VAL  =
-            "fieldOfActivity";
+    String APP_OF_SUBCONTR_SUB_CONTRACTOR_NAME_VAL = "subContractorName";
+    String APP_OF_SUBCONTR_FIELD_OF_ACTIVITY_VAL  = "fieldOfActivity";
     String APP_OF_SUBCONTR_SUBPROJECT_VAL = "subProject";
     String APP_OF_SUBCONTR_CONTACT_VAL = "contact";
 
@@ -225,22 +214,16 @@ public interface Const {
     String PRELIM_MATERIALS_INS_APPROVAL_NO = "Approval No. / אישור מס'";
     String PRELIM_MATERIALS_INS_SUPPLIER_NAME = "Supplier Name / שם ספק";
     String PRELIM_MATERIALS_INS_SUBPROJECT = "Subproject / תת פרויקט";
-    String PRELIM_MATERIALS_INS_SOURCE_OF_MATERIAL =
-            "Source Of Material / מקור החומר";
-    String PRELIM_MATERIALS_INS_MATERIAL_SUPPLIED =
-            "Material Supplied / חומר מסופק";
-    String PRELIM_MATERIALS_INS_MATERIAL_USE =
-            "Material Use / ייעוד השימוש בחומר";
+    String PRELIM_MATERIALS_INS_SOURCE_OF_MATERIAL = "Source Of Material / מקור החומר";
+    String PRELIM_MATERIALS_INS_MATERIAL_SUPPLIED = "Material Supplied / חומר מסופק";
+    String PRELIM_MATERIALS_INS_MATERIAL_USE = "Material Use / ייעוד השימוש בחומר";
 
     String PRELIM_MATERIALS_INS_APPROVAL_NO_VAL = "approvalNo";
     String PRELIM_MATERIALS_INS_SUPPLIER_NAME_VAL = "supplierName";
     String PRELIM_MATERIALS_INS_SUBPROJECT_VAL = "subProject";
-    String PRELIM_MATERIALS_INS_SOURCE_OF_MATERIAL_VAL =
-            "sourceOfMaterial";
-    String PRELIM_MATERIALS_INS_MATERIAL_SUPPLIED_VAL =
-            "materialSupplied";
-    String PRELIM_MATERIALS_INS_MATERIAL_USE_VAL =
-            "materialUse";
+    String PRELIM_MATERIALS_INS_SOURCE_OF_MATERIAL_VAL = "sourceOfMaterial";
+    String PRELIM_MATERIALS_INS_MATERIAL_SUPPLIED_VAL = "materialSupplied";
+    String PRELIM_MATERIALS_INS_MATERIAL_USE_VAL = "materialUse";
 
     String APPROVALS  = "Approvals / אישורים";
     String APPROVALS_ROLE  = "Role \n תפקיד";
@@ -249,7 +232,7 @@ public interface Const {
     String APPROVALS_DATE = "Date \n תאריך";
     String APPROVALS_STATUS = "Status (Approved / Not Approved) \n" +
             "סטטוס (מאושר / לא מאושר)";
-    String APPROVALS_VAL = "approvals";       // List name
+    String APPROVALS_VAL = "approvals";
     String APPROVALS_ROLE_VAL = "role";
     String APPROVALS_NAME_VAL = "name";
     String APPROVALS_SIGNATURE_VAL = "signature";
@@ -270,13 +253,10 @@ public interface Const {
 
     String ADDITIONAL_DOCUMENTS = "Additional Documents / מסמכים נוספים";
     String ADDITIONAL_DOCUMENTS_ITEM = "Item \n" + "פרטים";
-    String ADDITIONAL_DOCUMENTS_EXISTS =
-            "Exists/Does not exist\n" + "קיים / לא קיים";
-    String ADDITIONAL_DOCUMENTS_CERTIFICATE_NO =
-            "Certificate No. / אישור מס";
+    String ADDITIONAL_DOCUMENTS_EXISTS = "Exists/Does not exist\n" + "קיים / לא קיים";
+    String ADDITIONAL_DOCUMENTS_CERTIFICATE_NO = "Certificate No. / אישור מס";
     String ADDITIONAL_DOCUMENTS_EXPIRATION = "Expiration \n" + "תוקף";
-    String ADDITIONAL_DOCUMENTS_ATTACHED_DOCUMENTS =
-            "Attached Documents\n" + "מסמכים מצורפים";
+    String ADDITIONAL_DOCUMENTS_ATTACHED_DOCUMENTS = "Attached Documents\n" + "מסמכים מצורפים";
 
     String ADDITIONAL_DOCUMENTS_VAL = "additionalDocuments";
     String ADDITIONAL_DOCUMENTS_ITEM_VAL = "item";
@@ -287,12 +267,10 @@ public interface Const {
 
     String CERTIFICATIONS = "Certifications / תעודות";
     String CERTIFICATIONS_ITEM = "Item \n פרטים";
-    String CERTIFICATIONS_EXISTS =
-            "Exists/Does not exist\n קיים / לא קיים";
+    String CERTIFICATIONS_EXISTS = "Exists/Does not exist\n קיים / לא קיים";
     String CERTIFICATIONS_CERTIFICATE_NO = "Certificate No. / אישור מס";
     String CERTIFICATIONS_EXPIRATION = "Expiration \n תוקף";
-    String CERTIFICATIONS_ATTACHED_DOCUMENTS =
-            "Attached Documents \n מסמכים מצורפים";
+    String CERTIFICATIONS_ATTACHED_DOCUMENTS = "Attached Documents \n מסמכים מצורפים";
     String CERTIFICATIONS_VAL = "certifications";
     String CERTIFICATIONS_ITEM_VAL = "item";
     String CERTIFICATIONS_EXISTS_VAL = "exists";
@@ -301,20 +279,13 @@ public interface Const {
     String CERTIFICATIONS_ATTACHED_DOCUMENTS_VAL = "attachedDocuments";
 
 
-    String PRELIMINARY_INSPECTION_RESULTS =
-            "Prelimitary Inspection Results / סיכום בדיקה מקדימה";
-    String PRELIM_INSPEC_RESULT_TYPE_OF_INSPECTION =
-            "Type of Inspection / סוג הבדיקה";
-    String PRELIM_INSPEC_RESULT_SPEC_REQUIREMENTS =
-            "Spec Requirements / דרישות מפרטיות";
-    String PRELIM_INSPEC_RESULT_INSPECTION_RESULTS =
-            "Inspection Results / תוצאות בדיקה";
-    String PRELIM_INSPEC_RESULT_CERTIFICATE_NO =
-            "Certificate N / oתעודה מס'";
-    String PRELIM_INSPEC_RESULT_PASS_FAIL =
-            "Pass- Fail / עבר - נכשל";
-    String PRELIM_INSPEC_RESULT_COMMENTS =
-            "Comments / הערות";
+    String PRELIMINARY_INSPECTION_RESULTS = "Prelimitary Inspection Results / סיכום בדיקה מקדימה";
+    String PRELIM_INSPEC_RESULT_TYPE_OF_INSPECTION = "Type of Inspection / סוג הבדיקה";
+    String PRELIM_INSPEC_RESULT_SPEC_REQUIREMENTS = "Spec Requirements / דרישות מפרטיות";
+    String PRELIM_INSPEC_RESULT_INSPECTION_RESULTS = "Inspection Results / תוצאות בדיקה";
+    String PRELIM_INSPEC_RESULT_CERTIFICATE_NO = "Certificate N / oתעודה מס'";
+    String PRELIM_INSPEC_RESULT_PASS_FAIL = "Pass- Fail / עבר - נכשל";
+    String PRELIM_INSPEC_RESULT_COMMENTS = "Comments / הערות";
 
     String PRELIMINARY_INSPECTION_RESULTS_VAL = "prelimitaryInspectionResults";
     String PRELIM_INSPEC_RESULT_TYPE_OF_INSPECTION_VAL = "typeOfInspection";
@@ -342,7 +313,6 @@ public interface Const {
     String CHECKLIST_ITEMS_SIGNATURE_VAL = "signature";
     String CHECKLIST_ITEMS_DATE_VAL = "date";
     String CHECKLIST_ITEMS_NOTES_VAL = "notes";
-
 
     String NCR = "NCR";
     String POC = "POC";
@@ -377,7 +347,7 @@ public interface Const {
             QA_CLOSED_NAME_VAL, QA_CLOSED_DATE_OF_NCR_VAL,
     };
 
-    String[] DEF_BODY_ELEMENTS = {LOGO_VAL, TEMPLATE_NAME_VAL, VERSION_VAL,
+    String[] DEF_BODY_ELEMENTS = {LOGO_PATH, LOGO_VAL, TEMPLATE_NAME_VAL, VERSION_VAL,
             DATE_VAL, MAIN_CONTRACTOR_VAL, MANAGEMENT_COMPANY_VAL,
             QC_COMPANY_VAL, PROJECT_NAME_VAL, CONTRACT_NO_VAL, QA_COMPANY_VAL
     };
@@ -418,7 +388,6 @@ public interface Const {
             CERTIFICATIONS_CERTIFICATE_NO_VAL,
             CERTIFICATIONS_EXPIRATION_VAL ,
             CERTIFICATIONS_ATTACHED_DOCUMENTS_VAL
-
     };
 
     String[] PRELIM_INSPEC_RESULT = {
@@ -444,6 +413,7 @@ public interface Const {
             DRAWING_VERSION_REVISION_VAL,
             DRAWING_NAME_VAL
     };
+    String LOGO_REPOSITORY = "C:\\Users\\Hopkins\\Desktop\\LOGO3EXCEL\\";
 
     /*
     * 1 index of column B
@@ -479,19 +449,6 @@ public interface Const {
     static int getDefLengthFIFont12IL(){
         int count = 0;
         for (int i = 5; i <= 8; i++){
-            count += cellLengthFont12IL[i];
-        }
-        return count;
-    }
-
-    /*
-    * 3 index of column D
-    * 6 index of column G
-    * return merging columns length for 12 font size
-    */
-    static int getDefLengthDGFont12IL(){
-        int count = 0;
-        for (int i = 3; i <= 6; i++){
             count += cellLengthFont12IL[i];
         }
         return count;

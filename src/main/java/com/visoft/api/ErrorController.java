@@ -1,6 +1,8 @@
 package com.visoft.api;
 
 import com.visoft.exceptions.PathValidationException;
+import com.visoft.exceptions.PreviewLogoException;
+import com.visoft.exceptions.TemplateNameException;
 import com.visoft.exceptions.TemplateValidationException;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -21,9 +23,24 @@ public class ErrorController extends ResponseEntityExceptionHandler {
         return new ResponseEntity<>(errorMessage, new HttpHeaders(), HttpStatus.BAD_REQUEST);
     }
 
+    @ExceptionHandler(TemplateNameException.class)
+    public ResponseEntity<Object> validationTemplateNameError
+            (TemplateNameException temp){
+        Map<String, String> errorMessage = new HashMap<>();
+        errorMessage.put(temp.getMessage(), temp.getException());
+        return new ResponseEntity<>(errorMessage, new HttpHeaders(), HttpStatus.BAD_REQUEST);
+    }
+
     @ExceptionHandler(PathValidationException.class)
     public ResponseEntity<Object> validationError(PathValidationException temp){
         Map<String, String> errorMessage = new HashMap<>();
+        errorMessage.put(temp.getMessage(), temp.getException());
+        return new ResponseEntity<>(errorMessage, new HttpHeaders(), HttpStatus.BAD_REQUEST);
+    }
+
+    @ExceptionHandler(PreviewLogoException.class)
+    public ResponseEntity<Object> validationError(PreviewLogoException temp){
+        Map<String, Integer> errorMessage = new HashMap<>();
         errorMessage.put(temp.getMessage(), temp.getException());
         return new ResponseEntity<>(errorMessage, new HttpHeaders(), HttpStatus.BAD_REQUEST);
     }

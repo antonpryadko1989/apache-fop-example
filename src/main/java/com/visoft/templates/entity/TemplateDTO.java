@@ -17,11 +17,15 @@ public class TemplateDTO {
     private TemplateBody body;
     private ConfigType configType;
 
+
     public TemplateDTO() {
     }
 
-    public TemplateDTO(String templateName, String projectId, String outPutName,
-                       String sheetName, TemplateBody body,
+    public TemplateDTO(String templateName,
+                       String projectId,
+                       String outPutName,
+                       String sheetName,
+                       TemplateBody body,
                        ConfigType configType) {
         this.templateName = templateName;
         this.projectId = projectId;
@@ -29,14 +33,6 @@ public class TemplateDTO {
         this.sheetName = sheetName;
         this.body = body;
         this.configType = configType;
-    }
-
-    public String getSheetName() {
-        return sheetName;
-    }
-
-    public void setSheetName(String sheetName) {
-        this.sheetName = sheetName;
     }
 
     public String getTemplateName() {
@@ -63,6 +59,18 @@ public class TemplateDTO {
         this.outPutName = outPutName;
     }
 
+    public String getSheetName() {
+        return sheetName;
+    }
+
+    public void setSheetName(String sheetName) {
+        this.sheetName = sheetName;
+    }
+
+    public TemplateBody getBody() {
+        return body;
+    }
+
     public void setBody(TemplateBody body) {
         this.body = body;
     }
@@ -75,13 +83,8 @@ public class TemplateDTO {
         this.configType = configType;
     }
 
-    public TemplateBody getBody() {
-        return body;
-
-    }
-
     public boolean templateBodyListNotEmpty(TemplateDTO template) {
-        return template.getBody().getBodyLists()!=null;
+        return template.getBody().getBodyLists() != null;
     }
 
     @Override
@@ -109,7 +112,8 @@ public class TemplateDTO {
 
     private static TemplateBody setDefaultBody(String templateName) {
         TemplateBody body = new TemplateBody();
-        switch (templateName){
+        body.setLogo(setDefaultLogo());
+        switch (templateName) {
             case NCR:
                 body.setBodyElements(
                         setDefaultNCRBodyElements(
@@ -143,74 +147,80 @@ public class TemplateDTO {
             default:
                 break;
         }
-//        body.setBodyLists(setDefaultBodyLists());
+        body.setBodyLists(setDefaultBodyLists());
         return body;
     }
 
-    private static Map<String,String> setDefaultChecklistBodyElements(
-            Map<String, String> result){
+    private static Logo setDefaultLogo() {
+        Logo logo = new Logo();
+//        logo.setCountCells(98);
+        logo.setPath(LOGO_PATH);
+        return logo;
+    }
+
+    private static Map<String, String> setDefaultChecklistBodyElements(
+            Map<String, String> result) {
         result.putAll(fillMap(CHECKLIST_BODY));
         return result;
     }
 
-    private static Map<String,String> setDefaultPreliminaryMaterialsInspectionBodyElements(
+    private static Map<String, String> setDefaultPreliminaryMaterialsInspectionBodyElements(
             Map<String, String> result) {
         result.putAll(fillMap(PRELIM_MATERIALS_INS_APPROVAL_BODY));
         return result;
     }
 
-    private static Map<String,String>
-    setDefaultApprovalOfSuppliersBodyElements(Map<String, String> result){
+    private static Map<String, String>
+    setDefaultApprovalOfSuppliersBodyElements(Map<String, String> result) {
         result.putAll(fillMap(APP_OF_SUPPL_APPROVAL_BODY));
         return result;
     }
 
-    private static Map<String,String>
+    private static Map<String, String>
     setDefaultApprovalOfSubcontractorsBodyElements(Map<String, String> result) {
         result.putAll(fillMap(APP_OF_SUBCONTR_APPROVAL_BODY));
         return result;
     }
 
-    private static Map<String,String>
+    private static Map<String, String>
     setDefaultPOCBodyElements(Map<String, String> bodyElements) {
         bodyElements.putAll(fillMap(POC_BODY));
         return bodyElements;
     }
 
-    private static Map<String,String> setDefaultNCRBodyElements(
+    private static Map<String, String> setDefaultNCRBodyElements(
             Map<String, String> bodyElements) {
         bodyElements.putAll(fillMap(NCR_BODY));
         return bodyElements;
     }
 
-    private static Map<String,String> setDefaultBodyElements(){
+    private static Map<String, String> setDefaultBodyElements() {
         return fillMap(DEF_BODY_ELEMENTS);
     }
 
-    private static Map<String,List<Map<String,String>>> setDefaultBodyLists() {
+    private static Map<String, List<Map<String, String>>> setDefaultBodyLists() {
         Map<String, List<Map<String, String>>> bodyLists = new HashMap<>();
-//        bodyLists.put(ADDITIONAL_DOCUMENTS_VAL, setDefaultAdditionalDocuments());
-//        bodyLists.put(DRAWINGS_VAL, setDefaultDrawings());
-//        bodyLists.put(APPROVALS_VAL, setDefaultApprovals());
-//        bodyLists.put(CERTIFICATIONS_VAL, setDefaultCertifications());
-//        bodyLists.put(PRELIMINARY_INSPECTION_RESULTS_VAL,
-//                setDefaultPreliminaryInspectionResults());
-//        bodyLists.put(CHECKLIST_ELEMENTS_VAL , setDefaulChecklistElements());
-//        bodyLists.put(CHECKLIST_ELEMENTS_VAL , new ArrayList<>());
-//        bodyLists.put(CHECKLIST_ITEMS_VAL, setDefaultChecklistItems());
+        bodyLists.put(ADDITIONAL_DOCUMENTS_VAL, setDefaultAdditionalDocuments());
+        bodyLists.put(DRAWINGS_VAL, setDefaultDrawings());
+        bodyLists.put(APPROVALS_VAL, setDefaultApprovals());
+        bodyLists.put(CERTIFICATIONS_VAL, setDefaultCertifications());
+        bodyLists.put(PRELIMINARY_INSPECTION_RESULTS_VAL,
+                setDefaultPreliminaryInspectionResults());
+        bodyLists.put(CHECKLIST_ELEMENTS_VAL, setDefaulChecklistElements());
+        bodyLists.put(CHECKLIST_ITEMS_VAL, setDefaultChecklistItems());
         return bodyLists;
     }
 
-    private static List<Map<String,String>> setDefaulChecklistElements() {
+    private static List<Map<String, String>> setDefaulChecklistElements() {
         List<Map<String, String>> list = new ArrayList<>();
-        for(int i = 0; i < 5; i++){
+        for (int i = 0; i < 5; i++) {
             list.add(fillMap(CHECKLIST_ELEMENT_KEY_VALUE, i));
         }
         return list;
     }
 
 
-    private static List<Map<String,String>> setDefaultApprovals() {
+    private static List<Map<String, String>> setDefaultApprovals() {
         List<Map<String, String>> result = new ArrayList<>();
         /*  add QA1 */
         result.add(fillApprovalInMap(
@@ -264,42 +274,42 @@ public class TemplateDTO {
         return result;
     }
 
-    private static List<Map<String,String>> setDefaultCertifications() {
+    private static List<Map<String, String>> setDefaultCertifications() {
         List<Map<String, String>> result = new ArrayList<>();
-        for(int i = 0; i < 5; i++){
+        for (int i = 0; i < 5; i++) {
             result.add(fillMap(CERTIFICATIONS_ARR, i));
         }
         return result;
     }
 
-    private static List<Map<String,String>> setDefaultPreliminaryInspectionResults() {
+    private static List<Map<String, String>> setDefaultPreliminaryInspectionResults() {
         List<Map<String, String>> result = new ArrayList<>();
-        for (int i = 0; i < 5; i++){
-            result.add(fillMap(PRELIM_INSPEC_RESULT , i));
+        for (int i = 0; i < 5; i++) {
+            result.add(fillMap(PRELIM_INSPEC_RESULT, i));
         }
         return result;
     }
 
-    private static List<Map<String,String>> setDefaultChecklistItems() {
+    private static List<Map<String, String>> setDefaultChecklistItems() {
         List<Map<String, String>> list = new ArrayList<>();
-        for(int i = 0; i < 4; i++){
+        for (int i = 0; i < 4; i++) {
             list.add(fillMap(CHECKLIST_ITEMS_ARR, i));
         }
         return list;
     }
 
-    private static Map<String, String> fillMap(String[] strings){
+    private static Map<String, String> fillMap(String[] strings) {
         Map<String, String> result = new HashMap<>();
-        for (String a:strings) {
-          result.put(a, a);
+        for (String a : strings) {
+            result.put(a, a);
         }
         return result;
     }
 
     private static Map<String, String> fillMap(String[] strings,
-                                               int i){
+                                               int i) {
         Map<String, String> result = new HashMap<>();
-        for (String a:strings) {
+        for (String a : strings) {
             result.put(a, a + " " + i);
         }
         return result;
@@ -309,7 +319,7 @@ public class TemplateDTO {
                                                          String second,
                                                          String third,
                                                          String fourth,
-                                                         String fifth){
+                                                         String fifth) {
         Map<String, String> result = new HashMap<>();
         result.put(APPROVALS_ROLE_VAL, first);
         result.put(APPROVALS_NAME_VAL, second);
@@ -319,22 +329,22 @@ public class TemplateDTO {
         return result;
     }
 
-    private static List<Map<String,String>> setDefaultDrawings() {
+    private static List<Map<String, String>> setDefaultDrawings() {
         List<Map<String, String>> result = new ArrayList<>();
-        for(int i = 0; i < 5; i++){
+        for (int i = 0; i < 5; i++) {
             result.add(fillMap(DRAWINGS_ARR, i));
         }
-        return  result;
+        return result;
     }
 
-    private static List<Map<String,String>> setDefaultAdditionalDocuments() {
+    private static List<Map<String, String>> setDefaultAdditionalDocuments() {
         List<Map<String, String>> result = new ArrayList<>();
-        for(int i = 0; i < 10; i++){
-
+        for (int i = 0; i < 10; i++) {
 
 
             result.add(fillMap(CERTIFICATIONS_ARR, i));
         }
-        return  result;
+        return result;
     }
+
 }
