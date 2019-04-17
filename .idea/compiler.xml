@@ -6,17 +6,12 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="po-fop-pdfbox-itext" />
+        <module name="apache" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="apache-fop-example" target="1.8" />
-      <module name="po-f" target="1.8" />
-      <module name="po-fop" target="1.8" />
-      <module name="po-fop-" target="1.8" />
-      <module name="po-fop-pdf" target="1.8" />
+      <module name="apache" target="1.8" />
       <module name="po-fop-pdfbox-itext" target="1.8" />
-      <module name="poi-fop-pdfbox-itext" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

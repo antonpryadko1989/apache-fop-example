@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/po-fop-pdfbox-itext.iml" filepath="$PROJECT_DIR$/po-fop-pdfbox-itext.iml" />
+      <module fileurl="file://$PROJECT_DIR$/apache.iml" filepath="$PROJECT_DIR$/apache.iml" />
     </modules>
   </component>
 </project>
