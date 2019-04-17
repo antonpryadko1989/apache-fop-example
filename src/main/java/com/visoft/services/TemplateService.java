@@ -5,8 +5,6 @@ import com.visoft.exceptions.TemplateNameException;
 import com.visoft.exceptions.TemplateValidationException;
 import com.visoft.services.impl.*;
 import com.visoft.templates.entity.TemplateDTO;
-import com.visoft.templates.enums.ConfigType;
-import org.apache.commons.codec.binary.Base64;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.method.annotation.StreamingResponseBody;
@@ -16,7 +14,7 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
-import static com.visoft.services.Const.*;
+import static com.visoft.utils.Const.*;
 
 @Service(value = "templateService")
 public class TemplateService {
@@ -82,7 +80,7 @@ public class TemplateService {
     }
 
     public StreamingResponseBody previewXLSXLogo(int countCells,
-                                                MultipartFile multipartFile) {
+                                                 MultipartFile multipartFile) {
         if (countCells < 3 || countCells > 8) {
             throw new PreviewLogoException("must be between 3-8", countCells);
         }
@@ -104,22 +102,22 @@ public class TemplateService {
             XLSXBuilder builder;
             switch (template.getTemplateName().toUpperCase()){
                 case NCR:
-                    builder = new NCRXlsx();
+                    builder = new NCRReportImpl();
                     return builder.buildXLSX(template);
                 case POC:
-                    builder = new POCXlsx();
+                    builder = new POCReportImpl();
                     return builder.buildXLSX(template);
                 case APPROVAL_OF_SUBCONTRACTORS:
-                    builder = new ApprovalOfSubcontractorsXLSX();
+                    builder = new ApprovalOfSubcontractorsReportImpl();
                     return builder.buildXLSX(template);
                 case APPROVAL_OF_SUPPLIERS:
-                    builder = new ApprovalOfSuppliersXlsx();
+                    builder = new ApprovalOfSuppliersReportImpl();
                     return builder.buildXLSX(template);
                 case PRELIMINARY_MATERIALS_INSPECTION:
-                    builder = new PreliminaryMaterialsInspectionXlsx();
+                    builder = new PreliminaryMaterialsInspectionReportImpl();
                     return builder.buildXLSX(template);
                 case CHECKLIST:
-                    builder = new ChecklistXlsx();
+                    builder = new ChecklistReportImpl();
                     return builder.buildXLSX(template);
                 default:
                     throw new TemplateNameException(

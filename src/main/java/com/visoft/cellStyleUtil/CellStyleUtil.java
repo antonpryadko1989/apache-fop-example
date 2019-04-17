@@ -4,6 +4,8 @@ import com.visoft.services.Alignment;
 import com.visoft.templates.entity.XLSXObject;
 import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.XSSFCellStyle;
+import org.apache.poi.xssf.usermodel.XSSFColor;
+import org.apache.poi.xssf.usermodel.XSSFFont;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 
 import static org.apache.poi.ss.usermodel.BorderStyle.MEDIUM;
@@ -16,6 +18,9 @@ public class CellStyleUtil {
         font.setFontName(fontParams.getFontName());
         font.setBold(fontParams.isBold());
         font.setFontHeight(fontParams.getFontHeight());
+        if(fontParams.isUnderline()){
+            font.setUnderline(XSSFFont.U_SINGLE);
+        }
         return font;
     }
 
@@ -37,8 +42,7 @@ public class CellStyleUtil {
         return style;
     }
 
-
-    public static XSSFCellStyle setBordersAndFont(XLSXObject xlsxObject,
+    private static XSSFCellStyle setBordersAndFont(XLSXObject xlsxObject,
                                                    FontParams fontParams,
                                                    BorderStyle left,
                                                    BorderStyle top,
@@ -57,6 +61,20 @@ public class CellStyleUtil {
         style.setBorderRight(right);
         style.setBorderBottom(bottom);
         setAlignments(style, verticalAlignment, horizontalAlignment);
+        return style;
+    }
+
+    private static XSSFCellStyle setBorders(XLSXObject xlsxObject,
+                                            BorderStyle left,
+                                            BorderStyle top,
+                                            BorderStyle right,
+                                            BorderStyle bottom) {
+        XSSFCellStyle style = (XSSFCellStyle) xlsxObject.getSheet()
+                .getWorkbook().createCellStyle();
+        style.setBorderLeft(left);
+        style.setBorderTop(top);
+        style.setBorderRight(right);
+        style.setBorderBottom(bottom);
         return style;
     }
 
@@ -89,10 +107,8 @@ public class CellStyleUtil {
     public static XSSFCellStyle  setAllBordersByStyle(XLSXObject xlsxObject,
                                                       FontParams fontParams,
                                                       BorderStyle borderStyle,
-                                                      VerticalAlignment
-                                                              verticalAlignment,
-                                                      HorizontalAlignment
-                                                              horizontalAlignment){
+                                                      VerticalAlignment verticalAlignment,
+                                                      HorizontalAlignment horizontalAlignment){
         return setBordersAndFont(xlsxObject, fontParams,
                 borderStyle, borderStyle,
                 borderStyle, borderStyle,
@@ -121,6 +137,41 @@ public class CellStyleUtil {
         if(alignment.equals(Alignment.RIGHT)){
             style.setAlignment(HorizontalAlignment.RIGHT);
         }
+        style.setBorderLeft(borderStyle);
+        style.setBorderTop(borderStyle);
+        style.setBorderRight(borderStyle);
+        style.setBorderBottom(borderStyle);
+        return style;
+    }
+
+    public static XSSFCellStyle setAlignmentByParam(XLSXObject xlsxObject,
+                                                    FontParams fontParams,
+                                                    VerticalAlignment verticalAlignment,
+                                                    HorizontalAlignment horizontalAlignment,
+                                                    BorderStyle borderStyle) {
+        XSSFCellStyle style = (XSSFCellStyle) xlsxObject.getSheet().getWorkbook().createCellStyle();
+        style.setFont(createFont(xlsxObject, fontParams));
+        style.setVerticalAlignment(verticalAlignment);
+        style.setAlignment(horizontalAlignment);
+        style.setBorderLeft(borderStyle);
+        style.setBorderTop(borderStyle);
+        style.setBorderRight(borderStyle);
+        style.setBorderBottom(borderStyle);
+        return style;
+    }
+
+    public static XSSFCellStyle setAlignmentAndColorByParam(XLSXObject xlsxObject,
+                                                            FontParams fontParams,
+                                                            HorizontalAlignment horizontalAlignment,
+                                                            VerticalAlignment verticalAlignment,
+                                                            BorderStyle borderStyle,
+                                                            IndexedColors color) {
+        XSSFCellStyle style = (XSSFCellStyle) xlsxObject.getSheet().getWorkbook().createCellStyle();
+        style.setFont(createFont(xlsxObject, fontParams));
+        style.setFillForegroundColor(color.getIndex());
+        style.setFillPattern(FillPatternType.SOLID_FOREGROUND);
+        style.setVerticalAlignment(verticalAlignment);
+        style.setAlignment(horizontalAlignment);
         style.setBorderLeft(borderStyle);
         style.setBorderTop(borderStyle);
         style.setBorderRight(borderStyle);
@@ -229,5 +280,11 @@ public class CellStyleUtil {
         return setBordersAndFont(xlsxObject, font,
                 BorderStyle.MEDIUM, BorderStyle.THIN,
                 BorderStyle.THIN, BorderStyle.MEDIUM);
+    }
+
+    public static XSSFCellStyle getLTMediumRBThin(XLSXObject xlsxObject){
+        return setBorders(xlsxObject,
+                BorderStyle.MEDIUM, BorderStyle.MEDIUM,
+                BorderStyle.THIN, BorderStyle.THIN);
     }
 }

@@ -10,8 +10,7 @@ public class TemplateValidationException extends RuntimeException{
         this.exception = exception;
     }
 
-    public TemplateValidationException(String message, Map<String, String>
-            exception){
+    public TemplateValidationException(String message, Map<String, String> exception){
         super(message);
         this.exception = exception;
     }

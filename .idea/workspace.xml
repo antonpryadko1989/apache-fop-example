@@ -5,17 +5,101 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c653c9e4-5513-4768-a432-6e1e74983e82" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/visoft/PDFMerge.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/visoft/api/SummaryReportController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/visoft/api/XLSXController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/visoft/dto/AdditionalDocument.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/visoft/dto/DeficienciesReportDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/visoft/dto/ReportBody.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/visoft/dto/ReportLogo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/visoft/dto/SummaryReportDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/visoft/exceptions/DeficienciesReportException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/visoft/exceptions/SummaryReportException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/visoft/services/PoiXSSFCellStyleService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/visoft/services/SummaryReportService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/visoft/services/XLSXReportBuilder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/visoft/services/XLSXService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/visoft/services/XLSXSummaryReportBuilder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/visoft/services/XSSFCellStyleService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/visoft/services/impl/FailesSafetyReportImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/visoft/services/impl/FailesSafetySummaryReportImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/visoft/services/impl/HandlingTrafficAccidentReportImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/visoft/services/impl/HandlingTrafficAccidentSummaryReportImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/visoft/services/impl/ReportBodyConverter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/visoft/services/impl/SafetySupervisoryTreatmentAfterMonitoringSummaryReportImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/visoft/services/impl/TreatmentOfImpairedByMonitoringReportImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/visoft/utils/MineTypeValidator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/visoft/utils/ReportValidationService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/visoft/utils/SummaryReportValidationService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/visoft/utils/excelReportUtils/ColumnUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/visoft/utils/excelReportUtils/FontConst.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/visoft/utils/excelReportUtils/HandlingTrafficAccidentReportConst.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/visoft/utils/excelReportUtils/ReportLogoValidator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/visoft/utils/excelReportUtils/SummaryReportConverter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/visoft/utils/excelReportUtils/SummaryReportServiceConst.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/visoft/utils/excelReportUtils/SummaryReportUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/visoft/utils/excelReportUtils/XLSXReportUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/visoft/utils/excelReportUtils/XLSXServiceConst.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apache-fop-example.iml" beforeDir="false" afterPath="$PROJECT_DIR$/apache-fop-example.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dependency-reduced-pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/dependency-reduced-pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/visoft/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/visoft/Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/visoft/api/ErrorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/visoft/api/ErrorController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/visoft/api/TemplateController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/visoft/api/TemplateController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/visoft/cellStyleUtil/CellStyleUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/visoft/cellStyleUtil/CellStyleUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/visoft/cellStyleUtil/FontParams.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/visoft/cellStyleUtil/FontParams.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/visoft/example/MetricsGen.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/visoft/example/TestObject.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/visoft/exceptions/PreviewLogoException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/visoft/exceptions/PreviewLogoException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/visoft/exceptions/TemplateNameException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/visoft/exceptions/TemplateNameException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/visoft/exceptions/TemplateValidationException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/visoft/exceptions/TemplateValidationException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/visoft/services/Const.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/visoft/utils/Const.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/visoft/services/FOPPdf.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/visoft/services/FOPPdf.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/visoft/services/Input2OutputService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/visoft/services/Input2OutputService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/visoft/services/POIXls.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/visoft/services/POIXls.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/visoft/services/TemplateService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/visoft/services/TemplateService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/visoft/services/XLSXBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/visoft/services/XLSXBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/visoft/services/impl/ApprovalOfSubcontractorsXLSX.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/visoft/services/impl/ApprovalOfSubcontractorsReportImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/visoft/services/impl/ApprovalOfSuppliersXlsx.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/visoft/services/impl/ApprovalOfSuppliersReportImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/visoft/services/impl/ChecklistXlsx.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/visoft/services/impl/ChecklistReportImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/visoft/services/impl/NCRXlsx.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/visoft/services/impl/NCRReportImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/visoft/services/impl/POCXlsx.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/visoft/services/impl/POCReportImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/visoft/services/impl/PreliminaryMaterialsInspectionXlsx.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/visoft/services/impl/PreliminaryMaterialsInspectionReportImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/visoft/templates/entity/TemplateBody.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/visoft/templates/entity/Body.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/visoft/templates/entity/TemplateDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/visoft/templates/entity/TemplateDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/visoft/templates/enums/OrderInBlock.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/11947.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/11947.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Employees-HE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Employees-RU.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/VarelaRound-Regular.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/VarelaRound-Regular.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/arial.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/arial.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/examples/NCR/PDF/NCR_0.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/examples/NCR/PDF/NCR_1.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/examples/NCR/PDF/NCR_2.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/examples/NCR/XLS/NCR_0.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/examples/NCR/XLS/NCR_1.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/examples/NCR/XLS/NCR_2.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/template-HE.xsl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/template-RU.xsl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/userconfig.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/VarelaRound-Regular.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/VarelaRound-Regular.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/visoft/example/MetricsGen.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/template-HE.xsl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/userconfig.xml" beforeDir="false" />
     </list>
     <ignored path="apache-fop-example.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path=".idea/dataSources.local.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
-    <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -29,16 +113,48 @@
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
   </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="-919145268">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="1" />
+          <entry key="project.open.time.1" value="1" />
+          <entry key="project.open.time.13" value="1" />
+          <entry key="project.open.time.16" value="1" />
+          <entry key="project.open.time.2" value="1" />
+          <entry key="project.open.time.34" value="1" />
+          <entry key="project.opened" value="5" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="CLASS" value="41" />
+          <entry key="JAVA" value="456" />
+          <entry key="Markdown" value="1" />
+          <entry key="Properties" value="3" />
+          <entry key="XML" value="3" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="JAVA" value="25777" />
+          <entry key="PLAIN_TEXT" value="11" />
+          <entry key="Properties" value="44" />
+          <entry key="XML" value="67" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
   <component name="FavoritesManager">
     <favorites_list name="apache-fop-example" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Input2OutputService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/visoft/services/Input2OutputService.java">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/visoft/services/impl/HandlingTrafficAccidentReportImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="174">
-              <caret line="14" column="61" lean-forward="true" selection-start-line="14" selection-start-column="61" selection-end-line="14" selection-end-column="61" />
+            <state relative-caret-position="482">
+              <caret line="33" column="13" lean-forward="true" selection-start-line="33" selection-start-column="13" selection-end-line="33" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -46,11 +162,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Const.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/visoft/services/Const.java">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/visoft/services/XLSXService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="142">
-              <caret line="108" column="44" lean-forward="true" selection-start-line="108" selection-start-column="44" selection-end-line="108" selection-end-column="44" />
+            <state relative-caret-position="54">
+              <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -58,11 +174,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PreliminaryMaterialsInspectionXlsx.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/visoft/services/impl/PreliminaryMaterialsInspectionXlsx.java">
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://$MAVEN_REPOSITORY$/ch/qos/logback/logback-classic/1.0.13/logback-classic-1.0.13.jar!/ch/qos/logback/classic/Logger.class">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="287">
-              <caret line="84" column="23" lean-forward="true" selection-start-line="84" selection-start-column="23" selection-end-line="84" selection-end-column="23" />
+            <state relative-caret-position="349">
+              <caret line="249" lean-forward="true" selection-start-line="249" selection-end-line="249" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/visoft/api/XLSXController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="302">
+              <caret line="28" column="38" lean-forward="true" selection-start-line="28" selection-start-column="38" selection-end-line="28" selection-end-column="38" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -70,20 +195,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="InvocableHandlerMethod.class" pinned="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/5.0.7.RELEASE/spring-web-5.0.7.RELEASE.jar!/org/springframework/web/method/support/InvocableHandlerMethod.class">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/visoft/utils/excelReportUtils/XLSXReportUtils.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="182">
-              <caret line="128" selection-start-line="128" selection-end-line="128" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TemplateService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/visoft/services/TemplateService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="130">
-              <caret line="91" column="39" lean-forward="true" selection-start-line="91" selection-start-column="39" selection-end-line="91" selection-end-column="39" />
+            <state relative-caret-position="238">
+              <caret line="236" column="39" lean-forward="true" selection-start-line="236" selection-start-column="39" selection-end-line="236" selection-end-column="39" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -91,47 +207,33 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FOPPdf.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/visoft/services/FOPPdf.java">
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://C:/Java/jdk1.8.0_77/src.zip!/java/lang/NumberFormatException.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="370">
-              <caret line="77" column="52" lean-forward="true" selection-start-line="77" selection-start-column="52" selection-end-line="77" selection-end-column="52" />
+            <state relative-caret-position="305">
+              <caret line="64" selection-start-line="64" selection-end-line="64" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/visoft/dto/ReportLogo.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="260">
+              <caret line="13" column="16" lean-forward="true" selection-start-line="13" selection-start-column="16" selection-end-line="13" selection-end-column="16" />
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#904#929#1" expanded="true" />
-                <element signature="e#977#991#1" expanded="true" />
-                <element signature="e#1028#1040#1" expanded="true" />
+                <element signature="e#319#320#0" expanded="true" />
+                <element signature="e#352#353#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ApprovalOfSubcontractorsXLSX.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/visoft/services/impl/ApprovalOfSubcontractorsXLSX.java">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/visoft/utils/excelReportUtils/ReportLogoValidator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="108" column="18" lean-forward="true" selection-start-line="108" selection-start-column="18" selection-end-line="108" selection-end-column="18" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="application.properties" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="39" lean-forward="true" selection-start-line="2" selection-start-column="21" selection-end-line="2" selection-end-column="39" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TemplateController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/visoft/api/TemplateController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="156">
-              <caret line="37" selection-start-line="37" selection-end-line="37" />
+            <state relative-caret-position="54">
+              <caret line="13" column="34" selection-start-line="13" selection-start-column="34" selection-end-line="13" selection-end-column="34" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -139,19 +241,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="POIXls.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/visoft/services/POIXls.java">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/visoft/utils/MineTypeValidator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="174">
-              <caret line="45" column="29" lean-forward="true" selection-start-line="45" selection-start-column="29" selection-end-line="45" selection-end-column="29" />
+            <state relative-caret-position="180">
+              <caret line="9" column="36" lean-forward="true" selection-start-line="9" selection-start-column="36" selection-end-line="9" selection-end-column="36" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#21396#21397#0" expanded="true" />
-                <element signature="e#21474#21475#0" expanded="true" />
-                <element signature="e#56080#56081#0" expanded="true" />
-                <element signature="e#56154#56155#0" expanded="true" />
-                <marker date="1538924350914" expanded="true" signature="46304:46953" ph="..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://$MAVEN_REPOSITORY$/ch/qos/logback/logback-classic/1.0.13/logback-classic-1.0.13.jar!/ch/qos/logback/classic/LoggerContext.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="145">
+              <caret line="193" selection-start-line="193" selection-end-line="193" />
             </state>
           </provider>
         </entry>
@@ -161,107 +267,107 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Enum" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>sty</find>
-      <find>styleOne</find>
-      <find>lMediumTRBThinCalibri12Bold</find>
-      <find>getTMediumLRBThinFont</find>
-      <find>fifth</find>
-      <find>row.createCell(8).setCellStyle(style3);</find>
-      <find>setValuesToRow(</find>
-      <find>borderMediumCalibri20BoldAligmentRight</find>
-      <find>addApprovalOfSubcontractorsBody</find>
-      <find>borderThinCalibri18Bold</find>
-      <find>addCertifications</find>
-      <find>tMediumLRBThinCalibri12Bold</find>
-      <find>tRMediumLBThinCalibri12Bold</find>
-      <find>lBMediumRTThinCalibri12Bold</find>
-      <find>rBMediumLTThinCalibri12Bold</find>
-      <find>fontCalibri12bold</find>
-      <find>bMediumLTRThinCalibri12Bold</find>
-      <find>allBordersThinCalibri12Bold</find>
-      <find>rBMediumLTThinCalibri12</find>
-      <find>tMediumLRBThinCalibri12</find>
-      <find>addPreliminaryMaterialsInspectionBody</find>
-      <find>//todo</find>
-      <find>addQaQc</find>
-      <find>certifications</find>
-      <find>Approval No.</find>
-      <find>APP_OF_SUPPL_APPROVAL_NO_</find>
-      <find>PRELIMINARY_INSPECTION_RESULTS_</find>
-      <find>CHECKLIST_FORM_NO_</find>
-      <find>fi</find>
-      <find>processFileFitToOnePage</find>
+      <find>underlying</find>
+      <find>פרטי צוות היס&quot;\מ</find>
+      <find>TE</find>
+      <find>דיווח טלפוני לכוחות חירום</find>
+      <find>רכבים מעורבים</find>
+      <find>טופס טיפול באירוע תאונת דרכים</find>
+      <find>styles[0]</find>
+      <find>_SUMMARY_REPORT_HEADER_NAME</find>
+      <find>תאריך סיום</find>
+      <find>מסי ליקוי</find>
+      <find>גורם המטפל</find>
+      <find>טיפול הנדרש</find>
+      <find>דיווח טלפוני לצוות תפעול</find>
+      <find>CONTRACT_NUMBER_</find>
+      <find>fontArial12bold</find>
+      <find>סטטוס (טופל/ בטיפול)</find>
+      <find>הערות</find>
+      <find>דיווח טלפוני להנהלת הפרויקט</find>
+      <find>פירוט ביצוע פעולה מתקנת</find>
+      <find>שעת סיום</find>
+      <find>תאריך ניטור</find>
+      <find>נפתחה  על יד</find>
+      <find>קוד בדיקה</find>
+      <find>מיקום הליקוי</find>
+      <find>אלמנט</find>
+      <find>הסט</find>
+      <find>תאריך פתיחה</find>
+      <find>שעת פתיחה</find>
+      <find>תאריך  סיום</find>
+      <find>FAILES_SAFETY_SUMMARY_REPORT_LOCATION</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/src/main/java/com/visoft/api/TemplateController.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/main/java/com/visoft/services/TemplateService.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/visoft/api/TemplateController.java" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/visoft/exceptions/PathValidationException.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/visoft/exceptions/FileConvertException.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/visoft/services/qService.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
-        <option value="$PROJECT_DIR$/src/main/java/com/visoft/services/MyErrorListniner.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/visoft/services/MyErrorListener.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/visoft/templates/entity/Body.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/visoft/templates/entity/Employee.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/visoft/templates/entity/BodyObject.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/visoft/templates/entity/Drawings.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/visoft/templates/entity/Elements.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/visoft/templates/entity/Items.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/visoft/services/ConvertPDF2Excel.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/visoft/cellStyleUtil/CellStyleUtel.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/visoft/services/OrderInBlock.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/visoft/services/ConfigType.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/visoft/templates/enums/ConfigType.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/visoft/cellStyleUtil/BorderStyle.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/visoft/cellStyleUtil/StyleObject.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/visoft/templates/enums/OrderInBlock.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/visoft/services/Alignment.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/visoft/services/ListMapComparator.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/visoft/services/NCR.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/visoft/services/impl/NcrXLSX.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/visoft/templates/entity/XLSXObject.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/visoft/cellStyleUtil/FontParams.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/visoft/services/impl/TestClass.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/visoft/templates/entity/TemplateBody.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/visoft/templates/entity/Logo.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/visoft/templates/entity/TemplateDTO.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/visoft/exceptions/PreviewLogoException.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/visoft/templates/enums/TemplateExtension.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/visoft/exceptions/TemplateValidationException.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/visoft/exceptions/TemplateNameException.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/visoft/api/ErrorController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/visoft/services/XLSXBuilder.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/visoft/api/TemplateController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/visoft/cellStyleUtil/CellStyleUtil.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/visoft/services/impl/ApprovalOfSuppliersXlsx.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/visoft/services/impl/ApprovalOfSubcontractorsXLSX.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/visoft/services/impl/ChecklistXlsx.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/visoft/services/impl/POCXlsx.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/visoft/services/impl/PreliminaryMaterialsInspectionXlsx.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/visoft/Application.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/visoft/services/impl/NCRXlsx.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/visoft/services/Const.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/visoft/dto/DeficienciesReportDTO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/visoft/exceptions/DeficienciesReportException.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/visoft/services/TemplateService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/visoft/services/POIXls.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/visoft/services/FOPPdf.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/visoft/services/Input2OutputService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/visoft/services/FOPPdf.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/visoft/utils/XLSXConst.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/visoft/AAA.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/visoft/services/A.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/visoft/api/TemplateController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/visoft/services/impl/ChecklistReportImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/visoft/services/PoiXSSFCellStyleService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/visoft/services/POIXls.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/visoft/services/impl/ReportBodyConvertor.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/visoft/services/impl/NCRReportImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/visoft/services/impl/ApprovalOfSubcontractorsReportImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/visoft/services/impl/PreliminaryMaterialsInspectionReportImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/visoft/services/impl/ApprovalOfSuppliersReportImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/visoft/services/impl/ReportBodyConverter.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/visoft/dto/SummaryReportDTO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/visoft/services/XLSXReportBuilder.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/visoft/services/XLSXSummaryReportBuilder.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/visoft/exceptions/SummaryReportsException.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/visoft/api/ErrorController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/visoft/exceptions/SummaryReportException.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/visoft/services/impl/TreatmentOfImpairedByMonitoringReportSummaryReportImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/visoft/utils/SummaryReportValidationService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/visoft/utils/Const.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/visoft/services/impl/POCReportImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/visoft/cellStyleUtil/FontParams.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/visoft/cellStyleUtil/CellStyleUtil.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/visoft/utils/excelReportUtils/SummaryReportUtils.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/visoft/utils/excelReportUtils/SummaryReportConverter.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/visoft/services/impl/SafetySupervisoryTreatmentAfterMonitoringImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/visoft/services/SummaryReportService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/visoft/services/impl/FailesSafetyReportImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/visoft/services/impl/TreatmentOfImpairedByMonitoringReportImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/visoft/services/impl/FailesSafetySummaryReportImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/visoft/services/impl/SafetySupervisoryTreatmentAfterMonitoringSummaryReportImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/visoft/services/XSSFCellStyleService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/visoft/services/impl/HandlingTrafficAccidentSummaryReportImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/visoft/services/impl/HandlingTrafficAccidentReportImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/visoft/utils/excelReportUtils/XLSXServiceConst.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/visoft/utils/excelReportUtils/SummaryReportServiceConst.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/visoft/api/SummaryReportController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/visoft/dto/ReportBody.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/visoft/utils/ReportValidationService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/visoft/utils/MineTypeValidator.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/visoft/utils/excelReportUtils/ReportLogoValidator.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/visoft/api/XLSXController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/visoft/utils/excelReportUtils/XLSXReportUtils.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/visoft/services/XLSXService.java" />
       </list>
     </option>
   </component>
@@ -290,17 +396,20 @@
           <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
           <item name="apache-fop-example" type="9519ce18:MavenProjectsStructure$ProjectNode" />
         </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="apache-fop-example" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Lifecycle" type="58874e2:MavenProjectsStructure$LifecycleNode" />
+        </path>
       </expand>
       <select />
     </treeState>
   </component>
-  <component name="NodePackageJsonFileManager">
-    <packageJsonPaths />
-  </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-7" />
-    <option name="width" value="974" />
-    <option name="height" value="1047" />
+    <option name="x" value="-44" />
+    <option name="y" value="296" />
+    <option name="width" value="3852" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -350,43 +459,43 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="apache-fop-example" type="b2602c69:ProjectViewProjectNode" />
-              <item name="apache-fop-example" type="462c0819:PsiDirectoryNode" />
+              <item name="poi-fop-pdfbox-itext" type="b2602c69:ProjectViewProjectNode" />
+              <item name="poi-fop-pdfbox-itext" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="apache-fop-example" type="b2602c69:ProjectViewProjectNode" />
-              <item name="apache-fop-example" type="462c0819:PsiDirectoryNode" />
+              <item name="poi-fop-pdfbox-itext" type="b2602c69:ProjectViewProjectNode" />
+              <item name="poi-fop-pdfbox-itext" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="apache-fop-example" type="b2602c69:ProjectViewProjectNode" />
-              <item name="apache-fop-example" type="462c0819:PsiDirectoryNode" />
+              <item name="poi-fop-pdfbox-itext" type="b2602c69:ProjectViewProjectNode" />
+              <item name="poi-fop-pdfbox-itext" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="apache-fop-example" type="b2602c69:ProjectViewProjectNode" />
-              <item name="apache-fop-example" type="462c0819:PsiDirectoryNode" />
+              <item name="poi-fop-pdfbox-itext" type="b2602c69:ProjectViewProjectNode" />
+              <item name="poi-fop-pdfbox-itext" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="apache-fop-example" type="b2602c69:ProjectViewProjectNode" />
-              <item name="apache-fop-example" type="462c0819:PsiDirectoryNode" />
+              <item name="poi-fop-pdfbox-itext" type="b2602c69:ProjectViewProjectNode" />
+              <item name="poi-fop-pdfbox-itext" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="visoft" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="apache-fop-example" type="b2602c69:ProjectViewProjectNode" />
-              <item name="apache-fop-example" type="462c0819:PsiDirectoryNode" />
+              <item name="poi-fop-pdfbox-itext" type="b2602c69:ProjectViewProjectNode" />
+              <item name="poi-fop-pdfbox-itext" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
@@ -394,35 +503,8 @@
               <item name="api" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="apache-fop-example" type="b2602c69:ProjectViewProjectNode" />
-              <item name="apache-fop-example" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="visoft" type="462c0819:PsiDirectoryNode" />
-              <item name="cellStyleUtil" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="apache-fop-example" type="b2602c69:ProjectViewProjectNode" />
-              <item name="apache-fop-example" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="visoft" type="462c0819:PsiDirectoryNode" />
-              <item name="example" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="apache-fop-example" type="b2602c69:ProjectViewProjectNode" />
-              <item name="apache-fop-example" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="visoft" type="462c0819:PsiDirectoryNode" />
-              <item name="exceptions" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="apache-fop-example" type="b2602c69:ProjectViewProjectNode" />
-              <item name="apache-fop-example" type="462c0819:PsiDirectoryNode" />
+              <item name="poi-fop-pdfbox-itext" type="b2602c69:ProjectViewProjectNode" />
+              <item name="poi-fop-pdfbox-itext" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
@@ -430,8 +512,8 @@
               <item name="services" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="apache-fop-example" type="b2602c69:ProjectViewProjectNode" />
-              <item name="apache-fop-example" type="462c0819:PsiDirectoryNode" />
+              <item name="poi-fop-pdfbox-itext" type="b2602c69:ProjectViewProjectNode" />
+              <item name="poi-fop-pdfbox-itext" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
@@ -440,57 +522,41 @@
               <item name="impl" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="apache-fop-example" type="b2602c69:ProjectViewProjectNode" />
-              <item name="apache-fop-example" type="462c0819:PsiDirectoryNode" />
+              <item name="poi-fop-pdfbox-itext" type="b2602c69:ProjectViewProjectNode" />
+              <item name="poi-fop-pdfbox-itext" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="visoft" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="apache-fop-example" type="b2602c69:ProjectViewProjectNode" />
-              <item name="apache-fop-example" type="462c0819:PsiDirectoryNode" />
+              <item name="poi-fop-pdfbox-itext" type="b2602c69:ProjectViewProjectNode" />
+              <item name="poi-fop-pdfbox-itext" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="visoft" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="entity" type="462c0819:PsiDirectoryNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
+              <item name="excelReportUtils" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="apache-fop-example" type="b2602c69:ProjectViewProjectNode" />
-              <item name="apache-fop-example" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="visoft" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="enums" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="apache-fop-example" type="b2602c69:ProjectViewProjectNode" />
-              <item name="apache-fop-example" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="visoft" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="regulars" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="apache-fop-example" type="b2602c69:ProjectViewProjectNode" />
-              <item name="apache-fop-example" type="462c0819:PsiDirectoryNode" />
+              <item name="poi-fop-pdfbox-itext" type="b2602c69:ProjectViewProjectNode" />
+              <item name="poi-fop-pdfbox-itext" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="poi-fop-pdfbox-itext" type="b2602c69:ProjectViewProjectNode" />
+              <item name="poi-fop-pdfbox-itext" type="462c0819:PsiDirectoryNode" />
+              <item name="target" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -500,8 +566,9 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1555509260749" />
     <property name="extract.method.default.visibility" value="private" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../От Сергея/Yugan/Yugan/Visoftsytem web application/converter/pom.xml" />
+    <property name="last_opened_file_path" value="E:/шлюхочат" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -511,6 +578,12 @@
     <key name="MoveMembersDialog.RECENTS_KEY">
       <recent name="com.visoft.services.Const" />
     </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\WORK\poi-fop-pdfbox-itext\src\main\java\com\visoft\api" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.visoft.services" />
+    </key>
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.visoft.services.impl" />
       <recent name="com.visoft.services" />
@@ -519,6 +592,11 @@
     </key>
   </component>
   <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
     <option name="ruleStates">
       <list>
         <RuleState>
@@ -529,171 +607,9 @@
         </RuleState>
       </list>
     </option>
+    <option name="contentProportion" value="0.11525974" />
   </component>
-  <component name="RunManager" selected="Spring Boot.Unnamed">
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <option name="HEIGHT" value="0" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="WIDTH" value="0" />
-    </configuration>
-    <configuration name="ChecklistXlsx" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.visoft.services.impl.ChecklistXlsx" />
-      <module name="apache-fop-example" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.visoft.services.impl.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-    </configuration>
-    <configuration name="NCRXlsx" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.visoft.services.impl.NCRXlsx" />
-      <module name="apache-fop-example" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.visoft.services.impl.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-    </configuration>
-    <configuration name="POIXls" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.visoft.services.POIXls" />
-      <module name="apache-fop-example" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.visoft.templates.enums.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-    </configuration>
-    <configuration name="TestClass" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.visoft.services.impl.TestClass" />
-      <module name="apache-fop-example" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.visoft.services.impl.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-    </configuration>
-    <configuration name="XLSXObject" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.visoft.templates.entity.XLSXObject" />
-      <module name="apache-fop-example" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.visoft.templates.entity.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-    </configuration>
-    <configuration default="true" type="Application" factoryName="Application">
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-    </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <patterns />
-    </configuration>
-    <configuration default="true" type="ArquillianTestNG" factoryName="">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="SUITE_NAME" />
-      <option name="PACKAGE_NAME" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
-      <option name="GROUP_NAME" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <option name="VM_PARAMETERS" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" />
-      <option name="OUTPUT_DIRECTORY" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <option name="USE_DEFAULT_REPORTERS" value="false" />
-      <option name="PROPERTIES_FILE" />
-      <properties />
-      <listeners />
-    </configuration>
-    <configuration default="true" type="GrailsRunConfigurationType" factoryName="Grails">
-      <setting name="vmparams" value="" />
-      <setting name="cmdLine" value="run-app" />
-      <setting name="passParentEnv" value="true" />
-      <setting name="launchBrowser" value="true" />
-      <setting name="launchBrowserUrl" value="" />
-      <setting name="depsClasspath" value="false" />
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-    </configuration>
-    <configuration default="true" type="JUnit" factoryName="JUnit">
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <patterns />
-    </configuration>
-    <configuration name="Unnamed" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
-      <module name="apache-fop-example" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.visoft.Application" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-    </configuration>
-    <configuration default="true" type="TestNG" factoryName="TestNG">
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="SUITE_NAME" />
-      <option name="PACKAGE_NAME" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
-      <option name="GROUP_NAME" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="OUTPUT_DIRECTORY" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <option name="USE_DEFAULT_REPORTERS" value="false" />
-      <option name="PROPERTIES_FILE" />
-      <properties />
-      <listeners />
-    </configuration>
+  <component name="RunManager" selected="Spring Boot.Application">
     <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android Application">
       <module name="" />
       <option name="DEPLOY" value="true" />
@@ -796,6 +712,139 @@
       <listeners />
       <method />
     </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <option name="HEIGHT" value="0" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="WIDTH" value="0" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="A" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.visoft.services.A" />
+      <module name="po-fop-pdfbox-itext" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.visoft.services.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HandlingTrafficAccidentReportImpl" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.visoft.services.impl.HandlingTrafficAccidentReportImpl" />
+      <module name="po-fop-pdfbox-itext" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.visoft.services.impl.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HandlingTrafficAccidentSummaryReportImpl" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.visoft.services.impl.HandlingTrafficAccidentSummaryReportImpl" />
+      <module name="po-fop-pdfbox-itext" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.visoft.services.impl.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="XLSXController" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.visoft.api.XLSXController" />
+      <module name="po-fop-pdfbox-itext" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.visoft.api.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="VM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="ArquillianTestNG" factoryName="">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="VM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="GrailsRunConfigurationType" factoryName="Grails">
+      <setting name="vmparams" value="" />
+      <setting name="cmdLine" value="run-app" />
+      <setting name="passParentEnv" value="true" />
+      <setting name="launchBrowser" value="true" />
+      <setting name="launchBrowserUrl" value="" />
+      <setting name="depsClasspath" value="false" />
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="po-fop-pdfbox-itext" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.visoft.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.visoft.Application" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="TestNG" factoryName="TestNG">
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
       <node-interpreter>project</node-interpreter>
       <node-options />
@@ -803,22 +852,22 @@
       <tasks />
       <arguments />
       <envs />
+      <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Spring Boot.Unnamed" />
-      <item itemvalue="Application.POIXls" />
-      <item itemvalue="Application.XLSXObject" />
-      <item itemvalue="Application.ChecklistXlsx" />
-      <item itemvalue="Application.TestClass" />
-      <item itemvalue="Application.NCRXlsx" />
+      <item itemvalue="Spring Boot.Application" />
+      <item itemvalue="Application.A" />
+      <item itemvalue="Application.HandlingTrafficAccidentSummaryReportImpl" />
+      <item itemvalue="Application.XLSXController" />
+      <item itemvalue="Application.HandlingTrafficAccidentReportImpl" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.NCRXlsx" />
-        <item itemvalue="Application.POIXls" />
-        <item itemvalue="Application.TestClass" />
-        <item itemvalue="Application.ChecklistXlsx" />
-        <item itemvalue="Application.XLSXObject" />
+        <item itemvalue="Spring Boot.Application" />
+        <item itemvalue="Application.XLSXController" />
+        <item itemvalue="Application.HandlingTrafficAccidentReportImpl" />
+        <item itemvalue="Application.HandlingTrafficAccidentSummaryReportImpl" />
+        <item itemvalue="Application.A" />
       </list>
     </recent_temporary>
   </component>
@@ -859,6 +908,11 @@
       <workItem from="1538154942521" duration="514000" />
       <workItem from="1538155490969" duration="46104000" />
       <workItem from="1538551094296" duration="87290000" />
+      <workItem from="1554384236994" duration="8969000" />
+      <workItem from="1554394341693" duration="72000" />
+      <workItem from="1554394445817" duration="19131000" />
+      <workItem from="1554706991064" duration="68547000" />
+      <workItem from="1554907994369" duration="82150000" />
     </task>
     <task id="LOCAL-00001" summary="anton.dev:xlsx templetes without logo">
       <created>1538154210614</created>
@@ -871,7 +925,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="698655000" />
+    <option name="totallyTimeSpent" value="877524000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -884,66 +938,67 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info anchor="right" id="Palette" order="0" />
-      <window_info anchor="bottom" id="Event Log" order="0" sideWeight="0.50159913" side_tool="true" weight="0.320304" />
-      <window_info anchor="right" id="Maven Projects" order="1" weight="0.108208954" />
-      <window_info anchor="bottom" id="Database Changes" order="1" show_stripe_button="false" />
-      <window_info id="Capture Tool" order="0" />
-      <window_info anchor="right" id="Designer" order="2" />
-      <window_info anchor="right" id="Database" order="3" />
-      <window_info id="Structure" order="0" sideWeight="0.29641694" side_tool="true" weight="0.16577825" />
-      <window_info anchor="right" id="Ant Build" order="4" />
-      <window_info id="UI Designer" order="0" />
-      <window_info anchor="bottom" id="Debug" order="0" sideWeight="0.49840087" visible="true" weight="0.3767644" />
-      <window_info anchor="bottom" id="TODO" order="0" />
-      <window_info anchor="bottom" id="Messages" order="0" weight="0.32790446" />
-      <window_info id="Palette&#9;" order="0" />
-      <window_info id="Image Layers" order="0" />
-      <window_info anchor="bottom" id="Java Enterprise" order="0" />
-      <window_info anchor="right" id="Capture Analysis" order="5" />
-      <window_info anchor="right" x="0" y="0" width="434" height="856" id="Documentation" order="8" side_tool="true" weight="0.32995737" />
-      <window_info anchor="bottom" id="Version Control" order="0" weight="0.78656554" />
-      <window_info anchor="bottom" id="Run" order="0" sideWeight="0.4978678" weight="0.4495114" />
-      <window_info anchor="bottom" id="Spring" order="0" />
-      <window_info anchor="bottom" id="Terminal" order="0" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.9010989" visible="true" weight="0.2468017" />
-      <window_info anchor="right" id="Bean Validation" order="6" />
       <window_info id="Web" order="0" sideWeight="0.0989011" side_tool="true" weight="0.2468017" />
-      <window_info anchor="bottom" id="Find" order="0" weight="0.32899022" />
-      <window_info anchor="right" id="Theme Preview" order="7" />
-      <window_info id="Favorites" order="0" side_tool="true" />
-    </layout>
-    <layout-to-restore>
-      <window_info anchor="right" id="Palette" order="0" />
-      <window_info anchor="bottom" id="Version Control" order="0" weight="0.78656554" />
-      <window_info id="Web" order="0" sideWeight="0.0989011" side_tool="true" visible="true" weight="0.2468017" />
-      <window_info anchor="right" id="Capture Analysis" order="1" />
       <window_info id="Capture Tool" order="1" />
-      <window_info anchor="right" id="Theme Preview" order="7" />
-      <window_info active="true" content_ui="combo" id="Project" order="2" sideWeight="0.9010989" visible="true" weight="0.2468017" />
+      <window_info content_ui="combo" id="Project" order="2" sideWeight="0.9010989" visible="true" weight="0.25426438" />
       <window_info id="Structure" order="3" sideWeight="0.29641694" side_tool="true" weight="0.16577825" />
-      <window_info anchor="right" id="Ant Build" order="2" />
-      <window_info anchor="bottom" id="Database Changes" order="10" show_stripe_button="false" />
-      <window_info anchor="bottom" id="TODO" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4978678" visible="true" weight="0.3083605" />
       <window_info id="Image Layers" order="4" />
-      <window_info anchor="right" id="Designer" order="3" />
-      <window_info anchor="bottom" id="Spring" order="3" />
       <window_info id="UI Designer" order="5" />
-      <window_info anchor="bottom" id="Debug" order="4" sideWeight="0.49840087" weight="0.26384366" />
-      <window_info anchor="right" id="Bean Validation" order="4" />
-      <window_info anchor="right" x="0" y="0" width="434" height="856" id="Documentation" order="8" side_tool="true" weight="0.32995737" />
-      <window_info anchor="right" id="Database" order="5" />
       <window_info id="Palette&#9;" order="6" />
+      <window_info id="Favorites" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="0" weight="0.78656554" />
+      <window_info anchor="bottom" id="TODO" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4978678" weight="0.28850326" />
+      <window_info anchor="bottom" id="Spring" order="3" />
+      <window_info anchor="bottom" id="Debug" order="4" sideWeight="0.49840087" weight="0.27874187" />
       <window_info anchor="bottom" id="Terminal" order="5" />
       <window_info anchor="bottom" id="Event Log" order="6" sideWeight="0.50159913" side_tool="true" weight="0.320304" />
       <window_info anchor="bottom" id="Java Enterprise" order="7" />
-      <window_info anchor="bottom" id="Find" order="8" weight="0.32899022" />
-      <window_info anchor="bottom" id="Messages" order="9" weight="0.32790446" />
-      <window_info anchor="right" id="Maven Projects" order="6" visible="true" weight="0.108208954" />
+      <window_info anchor="bottom" id="Find" order="8" weight="0.3286334" />
+      <window_info anchor="bottom" id="Messages" order="9" weight="0.3275488" />
+      <window_info anchor="bottom" id="Database Changes" order="10" show_stripe_button="false" />
+      <window_info active="true" anchor="bottom" id="Run Dashboard" order="11" visible="true" weight="0.44685465" />
+      <window_info anchor="right" id="Palette" order="0" />
+      <window_info anchor="right" id="Maven Projects" order="1" visible="true" weight="0.108208954" />
+      <window_info anchor="right" id="Designer" order="2" />
+      <window_info anchor="right" id="Database" order="3" />
+      <window_info anchor="right" id="Ant Build" order="4" />
+      <window_info anchor="right" id="Capture Analysis" order="5" />
+      <window_info anchor="right" id="Bean Validation" order="6" weight="0.32995737" />
+      <window_info anchor="right" id="Theme Preview" order="7" />
+      <window_info anchor="right" x="0" y="0" width="434" height="856" id="Documentation" order="8" side_tool="true" weight="0.32995737" />
+    </layout>
+    <layout-to-restore>
+      <window_info id="Web" order="0" sideWeight="0.0989011" side_tool="true" weight="0.2468017" />
+      <window_info id="Capture Tool" order="1" />
+      <window_info active="true" content_ui="combo" id="Project" order="2" sideWeight="0.9010989" visible="true" weight="0.25426438" />
+      <window_info id="Structure" order="3" sideWeight="0.29641694" side_tool="true" weight="0.16577825" />
+      <window_info id="Image Layers" order="4" />
+      <window_info id="UI Designer" order="5" />
+      <window_info id="Palette&#9;" order="6" />
       <window_info id="Favorites" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="0" weight="0.78656554" />
+      <window_info anchor="bottom" id="TODO" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4978678" weight="0.25813448" />
+      <window_info anchor="bottom" id="Spring" order="3" />
+      <window_info anchor="bottom" id="Debug" order="4" sideWeight="0.49840087" weight="0.27874187" />
+      <window_info anchor="bottom" id="Terminal" order="5" />
+      <window_info anchor="bottom" id="Event Log" order="6" sideWeight="0.50159913" side_tool="true" weight="0.320304" />
+      <window_info anchor="bottom" id="Java Enterprise" order="7" />
+      <window_info anchor="bottom" id="Find" order="8" weight="0.3286334" />
+      <window_info anchor="bottom" id="Messages" order="9" weight="0.3275488" />
+      <window_info anchor="bottom" id="Database Changes" order="10" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Run Dashboard" order="11" visible="true" weight="0.35032538" />
+      <window_info anchor="right" id="Palette" order="0" />
+      <window_info anchor="right" id="Maven Projects" order="1" weight="0.108208954" />
+      <window_info anchor="right" id="Designer" order="2" />
+      <window_info anchor="right" id="Database" order="3" />
+      <window_info anchor="right" id="Ant Build" order="4" />
+      <window_info anchor="right" id="Capture Analysis" order="5" />
+      <window_info anchor="right" id="Bean Validation" order="6" weight="0.32995737" />
+      <window_info anchor="right" id="Theme Preview" order="7" />
+      <window_info anchor="right" x="0" y="0" width="434" height="856" id="Documentation" order="8" side_tool="true" weight="0.32995737" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -984,10 +1039,127 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints-dialog>
-        <breakpoints-dialog />
-      </breakpoints-dialog>
-      <option name="time" value="337" />
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/visoft/services/FOPPdf.java</url>
+          <line>41</line>
+          <properties />
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/visoft/services/FOPPdf.java</url>
+          <line>59</line>
+          <properties />
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/visoft/services/FOPPdf.java</url>
+          <line>75</line>
+          <properties />
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/visoft/services/FOPPdf.java</url>
+          <line>69</line>
+          <properties />
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/visoft/services/FOPPdf.java</url>
+          <line>61</line>
+          <properties />
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/visoft/api/TemplateController.java</url>
+          <line>42</line>
+          <properties />
+          <option name="timeStamp" value="25" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/visoft/services/TemplateService.java</url>
+          <line>126</line>
+          <properties />
+          <option name="timeStamp" value="29" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/visoft/services/impl/NCRReportImpl.java</url>
+          <line>28</line>
+          <properties />
+          <option name="timeStamp" value="34" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/visoft/services/TemplateService.java</url>
+          <line>99</line>
+          <properties />
+          <option name="timeStamp" value="37" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/visoft/dto/DeficienciesReportDTO.java</url>
+          <line>51</line>
+          <properties />
+          <option name="timeStamp" value="42" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/visoft/services/SummaryReportService.java</url>
+          <properties />
+          <option name="timeStamp" value="93" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/visoft/services/impl/HandlingTrafficAccidentSummaryReportImpl.java</url>
+          <line>49</line>
+          <properties />
+          <option name="timeStamp" value="108" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/visoft/api/TemplateController.java</url>
+          <line>50</line>
+          <properties />
+          <option name="timeStamp" value="125" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/visoft/services/impl/HandlingTrafficAccidentReportImpl.java</url>
+          <line>26</line>
+          <properties />
+          <option name="timeStamp" value="138" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/visoft/utils/excelReportUtils/XLSXReportUtils.java</url>
+          <line>238</line>
+          <properties />
+          <option name="timeStamp" value="141" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/visoft/utils/excelReportUtils/ReportLogoValidator.java</url>
+          <line>14</line>
+          <properties />
+          <option name="timeStamp" value="142" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/visoft/utils/excelReportUtils/ReportLogoValidator.java</url>
+          <line>25</line>
+          <properties />
+          <option name="timeStamp" value="143" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/visoft/api/XLSXController.java</url>
+          <line>28</line>
+          <properties />
+          <option name="timeStamp" value="144" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/visoft/utils/MineTypeValidator.java</url>
+          <line>10</line>
+          <properties />
+          <option name="timeStamp" value="145" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-field">
+          <url>file://$PROJECT_DIR$/src/main/java/com/visoft/utils/excelReportUtils/XLSXServiceConst.java</url>
+          <line>113</line>
+          <properties field="MAIN_CONTRACTOR_VAL" class="com.visoft.utils.excelReportUtils.XLSXServiceConst" />
+          <option name="timeStamp" value="51" />
+        </line-breakpoint>
+      </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="antWorkspaceConfiguration">
@@ -1044,455 +1216,511 @@
     </expressions>
     <expressions id="evaluateExpression">
       <expression>
-        <expression-string>addChecklistItems(xlsxObject,
-                template.getBody().getBodyLists().get(CHECKLIST_ITEMS_VAL),
-                leftBorderMediumCalibri12Bold,
-                borderThinCalibri12Bold,
-                borderThinCalibri12,
-                rightBorderMediumCalibri12Bold,
-                rightBorderMediumCalibri12)</expression-string>
+        <expression-string>Magic.getMagicMatch(data, true).getMimeType();</expression-string>
+        <language-id>JAVA</language-id>
+        <custom-info>net.sf.jmimemagic.Magic</custom-info>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>Magic.getMagicMatch(reportLogo.getData())</expression-string>
+        <language-id>JAVA</language-id>
+        <custom-info>net.sf.jmimemagic.Magic</custom-info>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>getMineTypeFromByteArray(data)</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>template.getBody().getBodyLists().get(CHECKLIST_ELEMENTS_VAL)</expression-string>
+        <expression-string>summaryReport.getValues()==null</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>template.getBody().getBodyLists().get(&quot;d&quot;)</expression-string>
+        <expression-string>summaryReport.getValues().isEmpty()</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>template.getBody().getBodyLists()</expression-string>
+        <expression-string>summaryReport.getValues()</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>template.getBody()</expression-string>
+        <expression-string>summaryReport</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>template.getBody().getBodyLists().get(&quot;items&quot;)</expression-string>
+        <expression-string>result</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>template</expression-string>
+        <expression-string>summaryReport.getValues()).size</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>bodyElements.get(&quot;remarks&quot;)</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>bodyElements</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>template.getBody().bodyElements</expression-string>
+        <expression-string>summaryReport.getValues().</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/tomcat/embed/tomcat-embed-core/8.5.31/tomcat-embed-core-8.5.31.jar!/org/apache/tomcat/util/net/NioEndpoint.class">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/poi/poi-ooxml-schemas/4.0.1/poi-ooxml-schemas-4.0.1.jar!/org/openxmlformats/schemas/spreadsheetml/x2006/main/impl/CTColorImpl.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="361" selection-start-line="361" selection-end-line="361" />
+        <state relative-caret-position="-182">
+          <caret line="112" column="16" selection-start-line="112" selection-start-column="16" selection-end-line="112" selection-end-column="16" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/tomcat/embed/tomcat-embed-core/8.5.31/tomcat-embed-core-8.5.31.jar!/org/apache/coyote/AbstractProtocol.class">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/poi/poi-ooxml/4.0.1/poi-ooxml-4.0.1-sources.jar!/org/apache/poi/xssf/usermodel/XSSFCellStyle.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="676" selection-start-line="676" selection-end-line="676" />
+        <state relative-caret-position="350">
+          <caret line="897" column="27" selection-start-line="897" selection-start-column="27" selection-end-line="897" selection-end-column="27" />
+          <folding>
+            <element signature="e#43697#43698#0" expanded="true" />
+            <element signature="e#43749#43750#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/tomcat/embed/tomcat-embed-core/8.5.31/tomcat-embed-core-8.5.31.jar!/org/apache/coyote/AbstractProcessorLight.class">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/visoft/services/PoiXSSFCellStyleService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="67">
-          <caret line="37" selection-start-line="37" selection-end-line="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/poi/poi-ooxml/3.17/poi-ooxml-3.17.jar!/org/apache/poi/POIXMLDocument.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="121" selection-start-line="121" selection-end-line="121" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/poi/poi-ooxml/3.17/poi-ooxml-3.17.jar!/org/apache/poi/openxml4j/opc/internal/MemoryPackagePart.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="49" selection-start-line="49" selection-end-line="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/poi/poi-ooxml/3.17/poi-ooxml-3.17.jar!/org/apache/poi/POIXMLDocumentPart.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2601">
-          <caret line="183" column="83" selection-start-line="183" selection-start-column="83" selection-end-line="183" selection-end-column="83" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/5.0.7.RELEASE/spring-webmvc-5.0.7.RELEASE.jar!/org/springframework/web/servlet/DispatcherServlet.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6477">
-          <caret line="425" selection-start-line="425" selection-end-line="425" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/5.0.7.RELEASE/spring-webmvc-5.0.7.RELEASE.jar!/org/springframework/web/servlet/FrameworkServlet.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7582">
-          <caret line="502" selection-start-line="502" selection-end-line="502" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/tomcat/embed/tomcat-embed-core/8.5.31/tomcat-embed-core-8.5.31.jar!/org/apache/catalina/core/ApplicationFilterChain.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1241">
-          <caret line="95" selection-start-line="95" selection-end-line="95" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/5.0.7.RELEASE/spring-web-5.0.7.RELEASE.jar!/org/springframework/web/filter/RequestContextFilter.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="45" selection-start-line="45" selection-end-line="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/visoft/services/XLSXBuilder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+        <state relative-caret-position="70">
+          <caret line="159" column="29" selection-start-line="159" selection-start-column="29" selection-end-line="159" selection-end-column="29" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/poi/poi/3.17/poi-3.17.jar!/org/apache/poi/ss/usermodel/BorderStyle.class">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/poi/poi/4.0.1/poi-4.0.1.jar!/org/apache/poi/ss/usermodel/FillPatternType.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="8" column="11" lean-forward="true" selection-start-line="8" selection-start-column="11" selection-end-line="8" selection-end-column="11" />
+        <state relative-caret-position="100">
+          <caret line="8" column="12" selection-start-line="8" selection-start-column="12" selection-end-line="8" selection-end-column="12" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/poi/poi-ooxml/3.17/poi-ooxml-3.17.jar!/org/apache/poi/xssf/usermodel/XSSFRow.class">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/poi/poi/4.0.1/poi-4.0.1-sources.jar!/org/apache/poi/ss/usermodel/IndexedColors.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="151">
-          <caret line="125" selection-start-line="125" selection-end-line="125" />
+        <state relative-caret-position="191">
+          <caret line="90" column="18" lean-forward="true" selection-start-line="90" selection-start-column="18" selection-end-line="90" selection-end-column="18" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/poi/poi-ooxml/3.17/poi-ooxml-3.17.jar!/org/apache/poi/xssf/usermodel/XSSFCellStyle.class">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/poi/poi/4.0.1/poi-4.0.1-sources.jar!/org/apache/poi/ss/usermodel/FillPatternType.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="34" column="13" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/visoft/templates/entity/Logo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="32" column="13" lean-forward="true" selection-start-line="32" selection-start-column="13" selection-end-line="32" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/visoft/templates/enums/OrderInBlock.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="5" selection-start-line="3" selection-start-column="5" selection-end-line="3" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/poi/poi/3.17/poi-3.17.jar!/org/apache/poi/ss/util/CellRangeAddress.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="15" column="11" selection-start-line="15" selection-start-column="11" selection-end-line="15" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/poi/poi/3.17/poi-3.17.jar!/org/apache/poi/ss/util/CellRangeAddressBase.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="15" column="25" lean-forward="true" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="25" />
+        <state relative-caret-position="451">
+          <caret line="65" column="5" lean-forward="true" selection-start-line="65" selection-start-column="5" selection-end-line="65" selection-end-column="5" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#2256#2257#0" expanded="true" />
+            <element signature="e#2298#2299#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/commons-collections/commons-collections/3.2.1/commons-collections-3.2.1.jar!/org/apache/commons/collections/CollectionUtils.class">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/visoft/dto/SummaryReportDTO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="34" column="10" lean-forward="true" selection-start-line="34" selection-start-column="10" selection-end-line="34" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Java/jdk1.8.0_77/src.zip!/java/util/Map.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="403">
-          <caret line="469" column="65" selection-start-line="469" selection-start-column="65" selection-end-line="469" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Java/jdk1.8.0_77/src.zip!/java/util/Comparator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="108" column="23" selection-start-line="108" selection-start-column="23" selection-end-line="108" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Java/jdk1.8.0_77/src.zip!/java/time/chrono/ChronoZonedDateTime.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="311">
-          <caret line="139" column="24" selection-start-line="139" selection-start-column="24" selection-end-line="139" selection-end-column="24" />
+        <state relative-caret-position="160">
+          <caret line="35" column="44" selection-start-line="35" selection-start-column="44" selection-end-line="35" selection-end-column="44" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#808#809#0" expanded="true" />
+            <element signature="e#837#838#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Java/jdk1.8.0_77/src.zip!/java/time/chrono/AbstractChronology.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="126" column="57" lean-forward="true" selection-start-line="126" selection-start-column="57" selection-end-line="126" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Java/jdk1.8.0_77/src.zip!/java/time/chrono/Chronology.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-250">
-          <caret line="600" column="10" lean-forward="true" selection-start-line="600" selection-start-column="10" selection-end-line="600" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Java/jdk1.8.0_77/src.zip!/java/time/chrono/ThaiBuddhistChronology.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="311">
-          <caret line="114" lean-forward="true" selection-start-line="114" selection-end-line="114" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/11947.ttf">
-      <provider selected="true" editor-type-id="fontseditor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/11947.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2805" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/Employees-HE.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/template-HE.xsl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-546" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/VarelaRound-Regular.ttf">
-      <provider selected="true" editor-type-id="fontseditor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/VarelaRound-Regular.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-51" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/userconfig.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="16" lean-forward="true" selection-start-line="21" selection-start-column="16" selection-end-line="21" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/visoft/cellStyleUtil/FontParams.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="37" column="29" selection-start-line="37" selection-start-column="29" selection-end-line="37" selection-end-column="29" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/visoft/cellStyleUtil/CellStyleUtil.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="160" column="33" selection-start-line="160" selection-start-column="33" selection-end-line="160" selection-end-column="33" />
+        <state relative-caret-position="270">
+          <caret line="170" column="55" lean-forward="true" selection-start-line="170" selection-start-column="55" selection-end-line="170" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/tomcat/embed/tomcat-embed-core/8.5.31/tomcat-embed-core-8.5.31.jar!/org/apache/catalina/core/StandardEngineValve.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="93">
+          <caret line="31" selection-start-line="31" selection-end-line="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/tomcat/embed/tomcat-embed-core/8.5.31/tomcat-embed-core-8.5.31.jar!/org/apache/catalina/core/ApplicationFilterChain.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="94">
+          <caret line="91" selection-start-line="91" selection-end-line="91" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Java/jdk1.8.0_77/src.zip!/java/util/ArrayList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="94">
+          <caret line="652" selection-start-line="652" selection-end-line="652" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/tomcat/embed/tomcat-embed-core/8.5.31/tomcat-embed-core-8.5.31.jar!/org/apache/catalina/authenticator/AuthenticatorBase.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="234" column="14" lean-forward="true" selection-start-line="234" selection-start-column="14" selection-end-line="234" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/visoft/utils/excelReportUtils/SummaryReportUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="183">
+          <caret line="13" column="24" selection-start-line="13" selection-start-column="24" selection-end-line="13" selection-end-column="24" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/visoft/services/impl/ChecklistXlsx.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/visoft/utils/excelReportUtils/SummaryReportConverter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="491">
-          <caret line="98" column="57" lean-forward="true" selection-start-line="98" selection-start-column="57" selection-end-line="98" selection-end-column="57" />
+        <state relative-caret-position="220">
+          <caret line="11" column="55" lean-forward="true" selection-start-line="11" selection-start-column="55" selection-end-line="11" selection-end-column="55" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/commons/commons-collections4/4.1/commons-collections4-4.1.jar!/org/apache/commons/collections4/map/LinkedMap.class">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/visoft/templates/entity/XLSXObject.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="58" lean-forward="true" selection-start-line="58" selection-end-line="58" />
+        <state relative-caret-position="480">
+          <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
+          <folding>
+            <element signature="e#490#491#0" expanded="true" />
+            <element signature="e#525#526#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/5.0.7.RELEASE/spring-webmvc-5.0.7.RELEASE.jar!/org/springframework/web/servlet/mvc/method/annotation/RequestMappingHandlerAdapter.class">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/poi/poi/4.0.1/poi-4.0.1-sources.jar!/org/apache/poi/ss/usermodel/Sheet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="642" column="15" lean-forward="true" selection-start-line="642" selection-start-column="15" selection-end-line="642" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/poi/poi-ooxml/4.0.1/poi-ooxml-4.0.1-sources.jar!/org/apache/poi/xssf/usermodel/XSSFSheet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="291">
+          <caret line="2859" column="28" lean-forward="true" selection-start-line="2859" selection-start-column="28" selection-end-line="2859" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/visoft/services/impl/SafetySupervisoryTreatmentAfterMonitoringSummaryReportImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="35" column="57" lean-forward="true" selection-start-line="35" selection-start-column="57" selection-end-line="35" selection-end-column="57" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/visoft/services/XSSFCellStyleService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="200" column="61" lean-forward="true" selection-start-line="200" selection-start-column="61" selection-end-line="200" selection-end-column="61" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/visoft/services/impl/HandlingTrafficAccidentSummaryReportImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="376">
+          <caret line="55" column="39" lean-forward="true" selection-start-line="55" selection-start-column="39" selection-end-line="55" selection-end-column="39" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/visoft/services/SummaryReportService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="26" column="64" lean-forward="true" selection-start-line="26" selection-start-column="64" selection-end-line="26" selection-end-column="64" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <marker date="1555424587776" expanded="true" signature="1051:1882" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/visoft/services/impl/FailesSafetySummaryReportImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="371">
+          <caret line="57" column="51" lean-forward="true" selection-start-line="57" selection-start-column="51" selection-end-line="57" selection-end-column="51" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/visoft/utils/excelReportUtils/SummaryReportServiceConst.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="458">
+          <caret line="121" column="30" lean-forward="true" selection-start-line="121" selection-start-column="30" selection-end-line="121" selection-end-column="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/visoft/services/impl/TreatmentOfImpairedByMonitoringReportImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="311">
+          <caret line="54" column="8" selection-start-line="54" selection-start-column="8" selection-end-line="54" selection-end-column="8" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/visoft/utils/excelReportUtils/XLSXServiceConst.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="163">
-          <caret line="571" selection-start-line="571" selection-end-line="571" />
+          <caret line="126" column="12" selection-start-line="126" selection-start-column="12" selection-end-line="126" selection-end-column="12" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/visoft/Application.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/visoft/services/impl/FailesSafetyReportImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="24" column="1" lean-forward="true" selection-start-line="24" selection-start-column="1" selection-end-line="24" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/visoft/services/impl/NCRXlsx.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="113" column="99" selection-start-line="113" selection-start-column="99" selection-end-line="113" selection-end-column="99" />
+        <state relative-caret-position="183">
+          <caret line="27" selection-start-line="27" selection-end-line="27" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/visoft/services/impl/POCXlsx.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/visoft/api/SummaryReportController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="116" column="17" selection-start-line="116" selection-start-column="17" selection-end-line="116" selection-end-column="17" />
+        <state>
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/visoft/services/impl/ApprovalOfSuppliersXlsx.java">
+    <entry file="jar://C:/Java/jdk1.8.0_77/src.zip!/java/io/BufferedOutputStream.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="95" column="99" lean-forward="true" selection-start-line="95" selection-start-column="99" selection-end-line="95" selection-end-column="99" />
+        <state relative-caret-position="191">
+          <caret line="57" column="12" selection-start-line="57" selection-start-column="12" selection-end-line="57" selection-end-column="12" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#1188#1189#0" expanded="true" />
+            <element signature="e#1219#1220#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/visoft/services/impl/PreliminaryMaterialsInspectionXlsx.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/5.0.7.RELEASE/spring-webmvc-5.0.7.RELEASE.jar!/org/springframework/web/servlet/mvc/method/annotation/StreamingResponseBody.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="287">
-          <caret line="84" column="23" lean-forward="true" selection-start-line="84" selection-start-column="23" selection-end-line="84" selection-end-column="23" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/visoft/services/Const.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="142">
-          <caret line="108" column="44" lean-forward="true" selection-start-line="108" selection-start-column="44" selection-end-line="108" selection-end-column="44" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/5.0.7.RELEASE/spring-web-5.0.7.RELEASE.jar!/org/springframework/web/method/support/InvocableHandlerMethod.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="128" selection-start-line="128" selection-end-line="128" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="39" lean-forward="true" selection-start-line="2" selection-start-column="21" selection-end-line="2" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/visoft/api/TemplateController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="156">
-          <caret line="37" selection-start-line="37" selection-end-line="37" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/visoft/services/impl/ApprovalOfSubcontractorsXLSX.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="108" column="18" lean-forward="true" selection-start-line="108" selection-start-column="18" selection-end-line="108" selection-end-column="18" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/visoft/services/TemplateService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="130">
-          <caret line="91" column="39" lean-forward="true" selection-start-line="91" selection-start-column="39" selection-end-line="91" selection-end-column="39" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/visoft/services/POIXls.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="174">
-          <caret line="45" column="29" lean-forward="true" selection-start-line="45" selection-start-column="29" selection-end-line="45" selection-end-column="29" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#21396#21397#0" expanded="true" />
-            <element signature="e#21474#21475#0" expanded="true" />
-            <element signature="e#56080#56081#0" expanded="true" />
-            <element signature="e#56154#56155#0" expanded="true" />
-            <marker date="1538924350914" expanded="true" signature="46304:46953" ph="..." />
-          </folding>
+        <state relative-caret-position="160">
+          <caret line="12" column="9" selection-start-line="12" selection-start-column="9" selection-end-line="12" selection-end-column="9" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/visoft/services/Input2OutputService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="174">
-          <caret line="14" column="61" lean-forward="true" selection-start-line="14" selection-start-column="61" selection-end-line="14" selection-end-column="61" />
+        <state relative-caret-position="240">
+          <caret line="16" column="51" lean-forward="true" selection-start-line="16" selection-start-column="51" selection-end-line="16" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/visoft/dto/DeficienciesReportDTO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="183">
+          <caret line="33" column="17" selection-start-line="33" selection-start-column="17" selection-end-line="33" selection-end-column="17" />
+          <folding>
+            <element signature="e#792#793#0" expanded="true" />
+            <element signature="e#825#826#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/visoft/dto/ReportBody.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="8" column="15" selection-start-line="8" selection-start-column="15" selection-end-line="8" selection-end-column="15" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#577#578#0" expanded="true" />
+            <element signature="e#612#613#0" expanded="true" />
+            <element signature="e#797#798#0" expanded="true" />
+            <element signature="e#829#830#0" expanded="true" />
+            <element signature="e#994#995#0" expanded="true" />
+            <element signature="e#1027#1028#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/visoft/api/TemplateController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="351">
+          <caret line="53" selection-start-line="53" selection-end-line="53" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/visoft/services/FOPPdf.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/visoft/utils/ReportValidationService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="370">
-          <caret line="77" column="52" lean-forward="true" selection-start-line="77" selection-start-column="52" selection-end-line="77" selection-end-column="52" />
+        <state relative-caret-position="83">
+          <caret line="16" selection-start-line="16" selection-end-line="16" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#904#929#1" expanded="true" />
-            <element signature="e#977#991#1" expanded="true" />
-            <element signature="e#1028#1040#1" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/5.0.7.RELEASE/spring-web-5.0.7.RELEASE-sources.jar!/org/springframework/web/method/support/InvocableHandlerMethod.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="191">
+          <caret line="217" selection-start-line="217" selection-end-line="217" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/tomcat/embed/tomcat-embed-core/8.5.31/tomcat-embed-core-8.5.31.jar!/org/apache/catalina/valves/ErrorReportValve.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="167">
+          <caret line="29" selection-start-line="29" selection-end-line="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/tomcat/embed/tomcat-embed-core/8.5.31/tomcat-embed-core-8.5.31.jar!/org/apache/tomcat/util/threads/TaskThread.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="35" selection-start-line="35" selection-end-line="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/visoft/api/ErrorController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/net/sf/jmimemagic/jmimemagic/0.1.4/jmimemagic-0.1.4.jar!/net/sf/jmimemagic/Magic.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="145">
+          <caret line="106" selection-start-line="106" selection-end-line="106" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/slf4j/jcl-over-slf4j/1.7.26/jcl-over-slf4j-1.7.26.jar!/org/apache/commons/logging/impl/SLF4JLocationAwareLog.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="145">
+          <caret line="59" selection-start-line="59" selection-end-line="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/ch/qos/logback/logback-classic/1.0.13/logback-classic-1.0.13.jar!/ch/qos/logback/classic/Level.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="129">
+          <caret line="152" selection-start-line="152" selection-end-line="152" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/ch/qos/logback/logback-classic/1.0.13/logback-classic-1.0.13.jar!/ch/qos/logback/classic/LoggerContext.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="145">
+          <caret line="193" selection-start-line="193" selection-end-line="193" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/ch/qos/logback/logback-classic/1.0.13/logback-classic-1.0.13.jar!/ch/qos/logback/classic/Logger.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="349">
+          <caret line="249" lean-forward="true" selection-start-line="249" selection-end-line="249" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/visoft/services/impl/HandlingTrafficAccidentReportImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="482">
+          <caret line="33" column="13" lean-forward="true" selection-start-line="33" selection-start-column="13" selection-end-line="33" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/visoft/dto/ReportLogo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="13" column="16" lean-forward="true" selection-start-line="13" selection-start-column="16" selection-end-line="13" selection-end-column="16" />
+          <folding>
+            <element signature="e#319#320#0" expanded="true" />
+            <element signature="e#352#353#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/visoft/utils/MineTypeValidator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="9" column="36" lean-forward="true" selection-start-line="9" selection-start-column="36" selection-end-line="9" selection-end-column="36" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/visoft/utils/excelReportUtils/ReportLogoValidator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="13" column="34" selection-start-line="13" selection-start-column="34" selection-end-line="13" selection-end-column="34" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/visoft/utils/excelReportUtils/XLSXReportUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="236" column="39" lean-forward="true" selection-start-line="236" selection-start-column="39" selection-end-line="236" selection-end-column="39" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Java/jdk1.8.0_77/src.zip!/java/lang/NumberFormatException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="305">
+          <caret line="64" selection-start-line="64" selection-end-line="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/visoft/api/XLSXController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="302">
+          <caret line="28" column="38" lean-forward="true" selection-start-line="28" selection-start-column="38" selection-end-line="28" selection-end-column="38" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/visoft/services/XLSXService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

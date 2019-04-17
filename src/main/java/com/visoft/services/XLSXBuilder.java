@@ -6,5 +6,6 @@ import org.springframework.web.servlet.mvc.method.annotation.StreamingResponseBo
 import java.io.IOException;
 
 public interface XLSXBuilder {
+
     StreamingResponseBody buildXLSX(TemplateDTO template) throws IOException;
 }

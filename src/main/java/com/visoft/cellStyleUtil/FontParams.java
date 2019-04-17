@@ -3,11 +3,19 @@ package com.visoft.cellStyleUtil;
 public class FontParams {
     private String fontName;
     private boolean isBold;
+    private boolean underline;
     private short fontHeight;
 
     private FontParams(String fontName, boolean isBold, short fontHeight) {
         this.fontName = fontName;
         this.isBold = isBold;
+        this.fontHeight = fontHeight;
+    }
+
+    private FontParams(String fontName, boolean isBold, boolean underline, short fontHeight) {
+        this.fontName = fontName;
+        this.isBold = isBold;
+        this.underline = underline;
         this.fontHeight = fontHeight;
     }
 
@@ -21,6 +29,14 @@ public class FontParams {
 
     public boolean isBold() {
         return isBold;
+    }
+
+    public boolean isUnderline() {
+        return underline;
+    }
+
+    public void setUnderline(boolean underline) {
+        this.underline = underline;
     }
 
     public void setBold(boolean bold) {
@@ -37,6 +53,10 @@ public class FontParams {
 
     public static FontParams setFontParams(String fontName, boolean isBold, short fontHeight) {
         return new FontParams(fontName, isBold, fontHeight);
+    }
+
+    public static FontParams setFontParams(String fontName, boolean isBold, boolean underscore, short fontHeight) {
+        return new FontParams(fontName, isBold, underscore, fontHeight);
     }
 
 

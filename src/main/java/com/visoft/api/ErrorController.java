@@ -1,9 +1,6 @@
 package com.visoft.api;
 
-import com.visoft.exceptions.PathValidationException;
-import com.visoft.exceptions.PreviewLogoException;
-import com.visoft.exceptions.TemplateNameException;
-import com.visoft.exceptions.TemplateValidationException;
+import com.visoft.exceptions.*;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -24,8 +21,7 @@ public class ErrorController extends ResponseEntityExceptionHandler {
     }
 
     @ExceptionHandler(TemplateNameException.class)
-    public ResponseEntity<Object> validationTemplateNameError
-            (TemplateNameException temp){
+    public ResponseEntity<Object> validationTemplateNameError (TemplateNameException temp){
         Map<String, String> errorMessage = new HashMap<>();
         errorMessage.put(temp.getMessage(), temp.getException());
         return new ResponseEntity<>(errorMessage, new HttpHeaders(), HttpStatus.BAD_REQUEST);
@@ -42,6 +38,27 @@ public class ErrorController extends ResponseEntityExceptionHandler {
     public ResponseEntity<Object> validationError(PreviewLogoException temp){
         Map<String, Integer> errorMessage = new HashMap<>();
         errorMessage.put(temp.getMessage(), temp.getException());
+        return new ResponseEntity<>(errorMessage, new HttpHeaders(), HttpStatus.BAD_REQUEST);
+    }
+
+//    @ExceptionHandler(DeficienciesReportException.class)
+//    public ResponseEntity<Object> validationError(DeficienciesReportException temp){
+//        Map<String, String> errorMessage = new HashMap<>();
+//        errorMessage.put(temp.getMessage(), temp.getException());
+//        return new ResponseEntity<>(errorMessage, new HttpHeaders(), HttpStatus.BAD_REQUEST);
+//    }
+
+    @ExceptionHandler(DeficienciesReportException.class)
+    public ResponseEntity<Object> validationReportError(DeficienciesReportException temp) {
+        Map<String, Map<String, String>> errorMessage = new HashMap<>();
+        errorMessage.put(temp.getMessage(), temp.getValidationException());
+        return new ResponseEntity<>(errorMessage, new HttpHeaders(), HttpStatus.BAD_REQUEST);
+    }
+
+    @ExceptionHandler(SummaryReportException.class)
+    public ResponseEntity<Object> validationSummaryReportError(SummaryReportException temp) {
+        Map<String, Map<String, String>> errorMessage = new HashMap<>();
+        errorMessage.put(temp.getMessage(), temp.getValidationException());
         return new ResponseEntity<>(errorMessage, new HttpHeaders(), HttpStatus.BAD_REQUEST);
     }
 }

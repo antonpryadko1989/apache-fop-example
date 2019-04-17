@@ -38,10 +38,8 @@ public class FOPPdf {
 	@Autowired
 	private Input2OutputService resultService;
 
-	private static final String RESOURCES_DIR = "src/main/resources/";
-
 	StreamingResponseBody getPDFFile(TemplateDTO template) {
-		File f =  Paths.get(templatesRepository, template.getProjectId(),  template.getTemplateName()).toFile();
+		File f =  Paths.get(templatesRepository,  template.getTemplateName()).toFile();
 		if(f.isDirectory()){
 			throw new PathValidationException("error", "It's directory");
 		}
@@ -62,7 +60,7 @@ public class FOPPdf {
 		JSONObject jsonObject = new JSONObject(template);
 		String str = xmlStart  + XML.toString(jsonObject) + xmlEnd;
 		StreamSource xmlSource = new StreamSource(new ByteArrayInputStream(str.getBytes()));
-		FopFactory fopFactory = FopFactory.newInstance(Paths.get(RESOURCES_DIR, "/userconfig.xml").toFile());
+		FopFactory fopFactory = FopFactory.newInstance(Paths.get(templatesRepository, "/userconfig.xml").toFile());
 		FOUserAgent foUserAgent = fopFactory.newFOUserAgent();
 		ByteArrayOutputStream out = new ByteArrayOutputStream();
 		try {

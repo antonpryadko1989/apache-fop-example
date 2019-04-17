@@ -21,9 +21,6 @@ public class TemplateController {
     @Value("${templatesPath}")
     private String templatesPath;
 
-    @Value("${app.xls}")
-    private String appXLS;
-
     @Value("${app.xlsx}")
     private String appXLSX;
 

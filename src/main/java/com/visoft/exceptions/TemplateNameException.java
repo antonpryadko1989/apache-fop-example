@@ -1,7 +1,5 @@
 package com.visoft.exceptions;
 
-import java.util.Map;
-
 public class TemplateNameException extends RuntimeException{
     private String exception;
 

@@ -7,14 +7,14 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import static com.visoft.services.Const.*;
+import static com.visoft.utils.Const.*;
 
 public class TemplateDTO {
     private String templateName;
     private String projectId;
     private String outPutName;
     private String sheetName;
-    private TemplateBody body;
+    private Body body;
     private ConfigType configType;
 
 
@@ -25,7 +25,7 @@ public class TemplateDTO {
                        String projectId,
                        String outPutName,
                        String sheetName,
-                       TemplateBody body,
+                       Body body,
                        ConfigType configType) {
         this.templateName = templateName;
         this.projectId = projectId;
@@ -67,11 +67,11 @@ public class TemplateDTO {
         this.sheetName = sheetName;
     }
 
-    public TemplateBody getBody() {
+    public Body getBody() {
         return body;
     }
 
-    public void setBody(TemplateBody body) {
+    public void setBody(Body body) {
         this.body = body;
     }
 
@@ -110,8 +110,8 @@ public class TemplateDTO {
         return template;
     }
 
-    private static TemplateBody setDefaultBody(String templateName) {
-        TemplateBody body = new TemplateBody();
+    private static Body setDefaultBody(String templateName) {
+        Body body = new Body();
         body.setLogo(setDefaultLogo());
         switch (templateName) {
             case NCR:
