@@ -12,7 +12,6 @@ import org.springframework.web.servlet.mvc.method.annotation.StreamingResponseBo
 
 import javax.servlet.http.HttpServletResponse;
 import java.io.*;
-import java.util.Arrays;
 
 @Controller
 @RequestMapping(value = "/visoft/api")

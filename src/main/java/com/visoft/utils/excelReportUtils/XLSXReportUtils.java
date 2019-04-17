@@ -2,7 +2,6 @@ package com.visoft.utils.excelReportUtils;
 
 import com.visoft.dto.DeficienciesReportDTO;
 import com.visoft.dto.ReportBody;
-import com.visoft.dto.ReportLogo;
 import com.visoft.templates.entity.XLSXObject;
 import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.collections4.map.LinkedMap;
