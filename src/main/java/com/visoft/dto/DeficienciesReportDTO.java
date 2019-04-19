@@ -1,10 +1,13 @@
 package com.visoft.dto;
 
+import java.util.List;
+
 public class DeficienciesReportDTO {
 
     private String reportName;
     private String outputName;
     private ReportBody reportBody;
+    private List<byte[]> docs;
 
     public DeficienciesReportDTO() {
     }
@@ -13,6 +16,14 @@ public class DeficienciesReportDTO {
         this.reportName = reportName;
         this.outputName = outputName;
         this.reportBody = reportBody;
+    }
+
+    public DeficienciesReportDTO(String reportName, String outputName, ReportBody reportBody, List<byte[]> docs) {
+        this.reportName = reportName;
+        this.outputName = outputName;
+        this.reportBody = reportBody;
+        this.docs = docs;
+
     }
 
     public String getReportName() {
@@ -39,12 +50,21 @@ public class DeficienciesReportDTO {
         this.reportBody = reportBody;
     }
 
+    public List<byte[]> getDocs() {
+        return docs;
+    }
+
+    public void setDocs(List<byte[]> docs) {
+        this.docs = docs;
+    }
+
     @Override
     public String toString() {
         return "DeficienciesReportDTO{" +
                 "reportName='" + reportName + '\'' +
                 ", outputName='" + outputName + '\'' +
                 ", reportBody=" + reportBody +
+                ", docs=" + docs +
                 '}';
     }
 

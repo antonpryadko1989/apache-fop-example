@@ -1,12 +1,10 @@
 package com.visoft.utils.excelReportUtils;
 
 import com.visoft.dto.ReportLogo;
-import net.sf.jmimemagic.MagicException;
-import net.sf.jmimemagic.MagicMatchNotFoundException;
-import net.sf.jmimemagic.MagicParseException;
 
 import java.util.Optional;
 
+import static com.visoft.services.Extensions.imageExtensions;
 import static com.visoft.utils.MineTypeValidator.getMineTypeFromByteArray;
 
 public class ReportLogoValidator {
@@ -25,8 +23,8 @@ public class ReportLogoValidator {
     private static boolean checkImageMineType(byte[] data){
         boolean result = true;
         if(data!=null) try {
-            result = getMineTypeFromByteArray(data).equals("image/png");
-        } catch (MagicException | MagicMatchNotFoundException | MagicParseException e) {
+            result = imageExtensions.contains(getMineTypeFromByteArray(data));
+        } catch (Throwable e ) {
             e.printStackTrace();
             result = false;
         }
